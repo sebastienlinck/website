@@ -4,6 +4,7 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
 
 RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1
 RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1
+require all denied
 
 <IfModule mod_expires.c>
 ExpiresActive On
