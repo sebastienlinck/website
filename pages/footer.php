@@ -34,5 +34,5 @@
 	
 ?>
 <footer>
-	Sébastien Linck -<?php echo get_last_update(".", "./css/", "./pages/");?> -<a href="mentions-legales">Mentions légales</a>
+	Sébastien Linck - <?php echo get_last_update(".", "./css/", "./pages/");?> - <a href="mentions-legales">Mentions légales</a>
 </footer>
