@@ -19,7 +19,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
 		<meta name="keywords" content="reseaux, NS2, algopath, sebastien linck, these">
 		<meta name="description" content="Site web de Sébastien Linck - Enseignant contractuel URCA - Formations - Enseignements - Doctorat - Travaux de recherche">
 		<meta name="author" content="Sebastien Linck">
