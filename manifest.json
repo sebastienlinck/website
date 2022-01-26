@@ -20,10 +20,10 @@
 	],
     "theme_color": "#EFEFEF",
     "background_color": "#EFEFEF",
-    "start_url": "https://slinck.com/index.php",
+    "start_url": "https://www.slinck.com",
     "display": "standalone",
     "orientation": "portrait",
-    "url": "https://slinck.com",
+    "url": "https://www.slinck.com",
     "lang": "French",
 	"categories": ["research", "education", "personnal"],
     "screenshots": []
