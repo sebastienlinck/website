@@ -50,12 +50,15 @@ img.social-icons {
 	vertical-align:middle;
 }
 
-.icon-text,.material-icons {
-	vertical-align:middle;
-}
-
 .icon-text::before,.icon-text::after {
 	content:' ';
+}
+
+.icon {
+	vertical-align:middle;
+	filter: invert(1);
+	height:1.2em;
+	width:auto;
 }
 
 header {
