@@ -31,19 +31,18 @@
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon120.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon152.png">
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="./css/style.css">
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script async src="./js/outils.js"></script>
 		<link rel="manifest" href="/manifest.json">
 		<script async src="./sw.js"></script>	
 		<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw" />
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		new Date().getTime(),event:'gtm.js'});
+		var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-M85B535');</script>
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72813591-1"></script>
 		<script>
@@ -62,7 +61,6 @@
 				<h1>Sébastien Linck</h1>
 				<h2>Professeur contractuel</h2>   
 			</header>
-			
 			<nav>
 				<div class="ssmenu hamburger">
 					<div class='barre'></div>
