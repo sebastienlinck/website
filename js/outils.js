@@ -5,7 +5,7 @@ function onSubmit(token) {
 $(document).ready(function() {
 	
 	$(window).scroll(function () {
-        if ($(this).scrollTop() > 100) 
+        if ($(this).scrollTop() > 200) 
 		{
             $('.enhaut').fadeIn("slow");
 		} 

@@ -88,7 +88,7 @@
 			</main>
 			<?php include("./pages/footer.php"); ?>
 		</div>
-		<img src="./img/top_arrow.png" alt="fleche haut" class="enhaut">
+		<img src="./img/circle-arrow-top.svg" alt="fleche haut" class="enhaut">
 	</body>
 	
 	<?php 

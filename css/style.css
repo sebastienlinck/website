@@ -268,13 +268,13 @@ footer a {
 }
 
 .enhaut {
-	display:none;
-	width:2.2em;
-	margin-left:-1em;
+	width:2.5em;
 	height:auto;
 	position:fixed;
 	bottom:3em;
-	left:50%;
+	margin: auto;
+	left: 0;
+	right: 0;
 }
 
 form {
