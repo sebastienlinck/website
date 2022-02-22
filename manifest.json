@@ -1,31 +1,35 @@
 {
-    "short_name": "Linck",
-    "name": "CV Sebastien Linck",
-    "icons": [
-        {
-            "src": "https://slinck.com/img/favicon144.png",
-            "sizes": "48x48 72x72 96x96 128x128 144x144",
-            "type": "image/png",
-			"purpose": "any maskable"
-		},
-        {
-            "src": "https://slinck.com/img/favicon.png",
-            "sizes": "256x256",
-            "type": "image/png"
-		},
-        {
-            "src": "https://slinck.com/img/favicon512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-		}
-	],
-    "theme_color": "#EFEFEF",
-    "background_color": "#EFEFEF",
-    "start_url": "https://www.slinck.com",
-    "display": "standalone",
-    "orientation": "portrait",
-    "url": "https://www.slinck.com",
-    "lang": "French",
-	"categories": ["research", "education", "personnal"],
-    "screenshots": []
+  "short_name": "Linck",
+  "name": "CV Sebastien Linck",
+  "icons": [
+    {
+      "src": "https://slinck.com/img/favicon144.png",
+      "sizes": "48x48 72x72 96x96 128x128 144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://slinck.com/img/favicon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://slinck.com/img/favicon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#EFEFEF",
+  "background_color": "#EFEFEF",
+  "start_url": "https://www.slinck.com",
+  "display": "standalone",
+  "orientation": "portrait",
+  "url": "https://www.slinck.com",
+  "lang": "French",
+  "categories": [
+    "research",
+    "education",
+    "personnal"
+  ],
+  "screenshots": []
 }

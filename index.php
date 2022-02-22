@@ -37,7 +37,11 @@
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script async src="./js/outils.js"></script>
 		<link rel="manifest" href="/manifest.json">
-		<script async src="./sw.js"></script>	
+		<script type="module">
+			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+			const el = document.createElement('pwa-update');
+			document.body.appendChild(el);
+		</script>	
 		<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw" />
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});
