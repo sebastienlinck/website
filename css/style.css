@@ -268,14 +268,19 @@ footer a {
 }
 
 .enhaut {
+	background:black;
+	mask-image:url(../img/circle-arrow-top.svg);
+	-webkit-mask-image:url(../img/circle-arrow-top.svg);
+	background-blend-mode:lighten;
+	mask-size:100%;
 	display:none;
-	width:2.5em;
-	height:auto;
+	width:3em;
+	height:3em;
+	margin:auto;
 	position:fixed;
-	bottom:3em;
-	margin: auto;
-	left: 0;
-	right: 0;
+	bottom:4em;
+	left:0;
+	right:0;
 }
 
 form {
