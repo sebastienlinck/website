@@ -20,11 +20,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="keywords" content="reseaux, NS2, algopath, sebastien linck, these">
-		<meta name="description" content="Site web de Sébastien Linck - Enseignant contractuel URCA - Formations - Enseignements - Doctorat - Travaux de recherche">
+		<meta name="description" content="Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 		<meta name="author" content="Sebastien Linck">
 		<meta name="theme-color" content="#EFEFEF">
-		<title><?php echo ucfirst($page); ?> - Site de Sébastien Linck - Enseignant URCA</title>	
-		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant contractuel URCA">
+		<title><?php echo ucfirst($page); ?> - Site de Sébastien Linck - Enseignant</title>	
+		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant">
 		<meta property="og:type" content="article">
 		<meta property="og:url" content="https://www.slinck.com">
 		<meta property="og:image" content="img/linck.jpg">
