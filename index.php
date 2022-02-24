@@ -42,9 +42,9 @@
 			gtag('config', 'UA-72813591-1');
 		</script>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async defer></script> 
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<script async src="./js/outils.js"></script>
+		<script src="./js/outils.js" async defer></script>
 		<link rel="manifest" href="/slinck.webmanifest">
 		<script type="module">
 			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
