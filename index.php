@@ -32,6 +32,16 @@
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
 		<link rel="stylesheet" href="./css/style.css">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72813591-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'UA-72813591-1');
+		</script>
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script async src="./js/outils.js"></script>
@@ -47,13 +57,6 @@
 		var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-M85B535');</script>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72813591-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-72813591-1');
-		</script>
 	</head>
 	<body>
 		<noscript>
