@@ -4,3 +4,15 @@ RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
 
 RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1
 RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/svg "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresDefault "modification plus 1 day"
+<Files index.php>
+Header append Cache-Control "public, must-revalidate"
+</Files>
+</IfModule> 
