@@ -3,7 +3,6 @@ function onSubmit(token) {
 }
 
 $(document).ready(function() {
-	
 	$(window).scroll(function () {
         if ($(this).scrollTop() > 300) 
 		{

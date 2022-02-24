@@ -6,12 +6,9 @@
 	font-family:Montserrat,Verdana,Helvetica,sans-serif;
 }
 
-html {
-	overflow-y:scroll;
-}
-
 body {
 	background-color:#FFF;
+	scroll-behavior: smooth;
 }
 
 #page {
@@ -282,6 +279,11 @@ footer a {
 	bottom:4em;
 	left:0;
 	right:0;
+	transition:opacity 1s;
+}
+
+.invisible {
+	opacity:0;
 }
 
 form {

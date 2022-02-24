@@ -24,19 +24,18 @@
 		<meta name="author" content="Sebastien Linck">
 		<meta name="theme-color" content="#EFEFEF">
 		<title><?php echo ucfirst($page); ?> - Site de Sébastien Linck - Enseignant</title>	
-		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant">
+		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 		<meta property="og:type" content="article">
 		<meta property="og:url" content="https://www.slinck.com">
 		<meta property="og:image" content="img/linck.jpg">
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon120.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon152.png">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
 		<link rel="stylesheet" href="./css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script async src="./js/outils.js"></script>
-		<link rel="manifest" href="/manifest.json">
+		<link rel="manifest" href="/slinck.webmanifest">
 		<script type="module">
 			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 			const el = document.createElement('pwa-update');
