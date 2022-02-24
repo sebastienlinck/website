@@ -42,7 +42,7 @@
 			gtag('config', 'UA-72813591-1');
 		</script>
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" async></script> 
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="./js/outils.js" async defer></script>
 		<link rel="manifest" href="/slinck.webmanifest">
