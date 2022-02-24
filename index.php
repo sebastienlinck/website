@@ -74,19 +74,19 @@
 					<div class='barre'></div>
 				</div>
 				<ul>
-					<li><a href="accueil"><img class="icon" src="./img/home.svg"><span class="icon-text">Accueil</span></a></li>
-					<li><a href="enseignements"><img class="icon" src="./img/school.svg"><span class="icon-text">Enseignements</span></a></li>
+					<li><a href="accueil"><img class="icon" src="./img/home.svg" width="32" height="32"><span class="icon-text">Accueil</span></a></li>
+					<li><a href="enseignements"><img class="icon" src="./img/school.svg" width="32" height="32"><span class="icon-text">Enseignements</span></a></li>
 					<li>
 						<div class="ssmenu expand">
-							<span class="titremenu"><img class="icon" src="./img/computer.svg"><span class="icon-text">Recherche</span><img class="icon" src="./img/small-arrow-bottom.svg"></span>
+							<span class="titremenu"><img class="icon" src="./img/computer.svg" width="32" height="32"><span class="icon-text">Recherche</span><img class="icon" src="./img/small-arrow-bottom.svg" width="32" height="32"></span>
 						</div>
 						<ul>       
 							<li><a href="these">Ma Thèse</a></li>
 							<li><a href="algopath">AlgoPath</a></li>
 						</ul>
 					</li>
-					<li><a href="publications"><img class="icon" src="./img/book.svg"><span class="icon-text">Publications</span></a></li>
-					<li><a href="contact"><img class="icon" src="./img/mail.svg"><span class="icon-text">Contact</span></a></li>
+					<li><a href="publications"><img class="icon" src="./img/book.svg" width="32" height="32"><span class="icon-text">Publications</span></a></li>
+					<li><a href="contact"><img class="icon" src="./img/mail.svg" width="32" height="32"><span class="icon-text">Contact</span></a></li>
 				</ul>				
 			</nav>			
 			<main id="container">
