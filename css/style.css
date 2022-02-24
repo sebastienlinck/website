@@ -6,7 +6,7 @@
 	font-family:Montserrat,Verdana,Helvetica,sans-serif;
 }
 
-body {
+html, body {
 	background-color:#FFF;
 	scroll-behavior: smooth;
 }
