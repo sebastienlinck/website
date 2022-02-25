@@ -266,6 +266,7 @@ footer a {
 	-webkit-mask-image: url(../img/circle-arrow-top.svg);
 	background-blend-mode: lighten;
 	mask-size: 100%;
+	-webkit-mask-size: 100%;
 	display: none;
 	width: 3em;
 	height: 3em;
