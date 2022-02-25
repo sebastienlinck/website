@@ -51,12 +51,6 @@ img.social-icons {
 	content: ' ';
 }
 
-.icon {
-	vertical-align: middle;
-	filter: invert(1);
-	height: 1.2em;
-	width: auto;
-}
 i {
 	vertical-align: middle;
 	font-size: 1.2em;
