@@ -20,13 +20,13 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 <html lang="fr">
 
 <head>
+	<title><?php echo ucfirst($page); ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="keywords" content="reseaux, NS2, algopath, sebastien linck, these">
 	<meta name="description" content="Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
 	<meta name="theme-color" content="#EFEFEF">
-	<title><?php echo ucfirst($page); ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://www.slinck.com">
