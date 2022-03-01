@@ -49,25 +49,22 @@
 			
 			gtag('config', 'UA-72813591-1');
 		</script>
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<script src="./js/outils.js"></script>
 		<link rel="manifest" href="/slinck.webmanifest">
 		<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw" />
 		<script>
 			(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-			'gtm.start': new Date().getTime(),
-			event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-			j = d.createElement(s),
-			dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js'
+				});
+				var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
 			})(window, document, 'script', 'dataLayer', 'GTM-M85B535');
 		</script>
 	</head>
@@ -110,6 +107,7 @@
 		</div>
 		<div class="enhaut"><a href="#page"><i class="fi fi-br-angle-square-up"></i></a></div>
 	</body>
+	<script src="./js/outils.js"></script>
 	<script type="module">
 		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate/dist/pwa-update.js';
 		const el = document.createElement('pwa-update');
