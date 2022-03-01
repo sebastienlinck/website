@@ -268,7 +268,7 @@ footer a {
 	text-align: center;
 	position: fixed;
 	bottom: 2rem;
-	right: 2.5em;
+	right: calc(5% - 2rem);
 	z-index:5;
 }
 
@@ -398,5 +398,12 @@ form button:hover {
 		display: block;
 		margin: 1em auto;
 		max-width: 60%;
+	}
+	
+	.enhaut {
+		bottom: 2rem;
+		right: 0;
+		left:0:
+		z-index:5;
 	}
 }
