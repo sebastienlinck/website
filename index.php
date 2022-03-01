@@ -34,7 +34,8 @@
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
-		<link rel="stylesheet" href="./css/uicons-regular-rounded.css">
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 		<link rel="stylesheet" href="./css/style.css">
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72813591-1"></script>
@@ -107,7 +108,7 @@
 			</main>
 			<?php include("./pages/footer.php"); ?>
 		</div>
-		<div class="enhaut"></div>
+		<div class="enhaut"><a href="#page"><i class="fi fi-br-angle-square-up"></i></a></div>
 	</body>
 	<script type="module">
 		import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate/dist/pwa-update.js';

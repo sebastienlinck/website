@@ -15,11 +15,6 @@ $(document).ready(function() {
 		}
 	});
 	
-    $('.enhaut').click(function () {
-		$('html, body').animate({scrollTop:0}, 'slow');
-		return false;
-	});
-	
 	$('.ssmenu').click(function() {
 		$(this).siblings().toggle();
 	});
