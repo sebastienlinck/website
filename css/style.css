@@ -57,7 +57,7 @@ i {
 }
 
 header {
-	margin: 1em auto;
+	margin: 1em 0;
 	padding: 1.5em;
 	height: 8em;
 	text-align: left;
@@ -147,10 +147,9 @@ nav li:hover {
 }
 
 section {
-	margin: 1em auto;
+	margin: 1em 0;
 	padding-bottom: .5em;
 	min-height: 10vh;
-	font-size: 1em;
 	line-height: 150%;
 	background: #EFEFEF;
 	border-radius: .5em;
@@ -222,10 +221,9 @@ img.img-round {
 }
 
 footer {
-	margin: 1em auto;
+	margin: 1em 0;
 	padding: 1em 0;
 	text-align: center;
-	font-size: 1em;
 	color: #FFF;
 	background-color: #333;
 	border-radius: .5em;
