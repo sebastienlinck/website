@@ -2,7 +2,7 @@
 	<h3>Mes coordonnées</h3>
 	<div id="cols3">
 		<article>
-			<img class="img-round" src="img/linck.jpg" alt="Sébastien Linck" title="Sébastien Linck">
+			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck">
 		</article>
 
 		<article>
