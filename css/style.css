@@ -19,8 +19,6 @@ html, body {
 }
 
 #container {
-	display: block;
-	width: 100%;
 	margin: 0 auto;
 }
 
@@ -158,7 +156,6 @@ section {
 }
 
 article {
-	display: block;
 	padding: 1em 2em;
 }
 
