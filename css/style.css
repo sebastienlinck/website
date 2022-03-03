@@ -28,6 +28,10 @@ p {
 	margin-bottom: .5em;
 }
 
+p:last-of-type {
+	margin: 0;
+}
+
 a {
 	text-decoration: none;
 	font-style: italic;
@@ -42,7 +46,6 @@ img.social-icons {
 	border: none;
 	border-radius: .5em;
 	overflow: hidden;
-	vertical-align: middle;
 }
 
 .icon-text::before, .icon-text::after {
@@ -96,7 +99,6 @@ nav>ul {
 nav>ul>li {
 	display: inline-block;
 	position: relative;
-	vertical-align: middle;
 }
 
 nav a {
@@ -146,7 +148,6 @@ nav li:hover {
 
 section {
 	margin: 1em 0;
-	padding-bottom: .5em;
 	min-height: 10vh;
 	line-height: 150%;
 	background: #EFEFEF;
@@ -214,7 +215,6 @@ img.img-round {
 	border: none;
 	border-radius: 50%;
 	overflow: hidden;
-	vertical-align: middle;
 }
 
 footer {
