@@ -18,7 +18,6 @@ function mostRecentModifiedFileTime($dirName, $doRecursive)
 	$d->close();
 	return ucwords(strftime("%B %Y", $lastModified));
 }
-
 ?>
 <footer>
 	Sébastien Linck - <?php echo mostRecentModifiedFileTime(".", 1); ?> - <a href="mentions-legales">Mentions légales</a>

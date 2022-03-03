@@ -180,12 +180,6 @@ section ul {
 	list-style-type: circle;
 }
 
-section lh {
-	margin: .5em 1em;
-	font-weight: 700;
-	font-size: 1.1em;
-}
-
 section ul li {
 	margin: .5em 1em;
 }
