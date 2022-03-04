@@ -1,6 +1,6 @@
 <section>
 	<h3>Mes coordonnées</h3>
-	<div id="cols3">
+	<div class="cols">
 		<article>
 			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck">
 		</article>

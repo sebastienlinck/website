@@ -164,7 +164,6 @@ section h3 {
 	padding: .4em 1em;
 	font-size: 1.3em;
 	font-variant: small-caps;
-	font-weight: 700;
 	line-height: 1.8em;
 	color: #212121;
 	background-color: #999;
@@ -184,20 +183,11 @@ section ul li {
 	margin: .5em 1em;
 }
 
-#cols2 {
+.cols {
 	display: table;
 }
 
-#cols2>* {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-#col3 {
-	display: table;
-}
-
-#cols3>* {
+.cols>* {
 	display: table-cell;
 	vertical-align: middle;
 }
