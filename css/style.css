@@ -15,7 +15,7 @@ html, body {
 	margin: 0 auto;
 	max-width: 1600px;
 	min-width: 1000px;
-	scroll-behavior: inherit;
+	scroll-behavior: smooth;
 }
 
 #container {
