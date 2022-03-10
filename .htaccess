@@ -1,9 +1,10 @@
-RewriteEngine on
+<IfModule mod_rewrite.c>
+RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
-
-RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1
-RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1 [L]
+</IfModule>
 
 <IfModule mod_expires.c>
 ExpiresActive On
@@ -12,4 +13,4 @@ ExpiresByType image/svg "access plus 1 month"
 ExpiresByType image/png "access plus 1 month"
 ExpiresByType application/pdf "access plus 1 month"
 ExpiresDefault "modification plus 1 day"
-</IfModule> 
+</IfModule>
