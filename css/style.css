@@ -227,9 +227,16 @@ footer a {
 	width: 2.2em;
 	height: 2.2em;
 	border-radius: 50%;
-	background-color: #000;
+	background-color: #333;
 	padding: .5em;
+	
 }
+
+.hamburger i {
+	color:white;
+	font-size:2.2em;
+}
+
 
 .hamburger .barre {
 	height: .3em;
@@ -288,96 +295,96 @@ form button:hover {
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
-
+	
 	header {
 		margin: 0;
 		padding: 1em;
 		border-radius: 0;
 		height: auto;
 	}
-
+	
 	header h1 {
 		font-size: 1.6em;
 	}
-
+	
 	header h2 {
 		font-size: 1.1em;
 	}
-
+	
 	.hamburger, .ssmenu {
 		display: inline-block;
 	}
-
+	
 	nav {
 		position: fixed;
 		top: 2.3em;
 		right: 2.3em;
 		background-color: rgba(51, 51, 51, 0.7);
 	}
-
+	
 	nav ul {
 		display: none;
 		margin: 0;
 		padding: 0;
 		text-align: left;
 	}
-
+	
 	nav ul li, ul li ul {
 		text-align: left;
 		line-height: 1.5em;
 		display: block;
 	}
-
+	
 	nav a {
 		display: inline-block;
 	}
-
+	
 	nav ul li ul {
 		position: static;
 	}
-
+	
 	#page {
 		width: 100%;
 		margin: 0;
 		padding: 0;
 		min-width: 0;
 	}
-
+	
 	.cols {
 		display: block;
 		padding: 0;
 		margin: 0;
 	}
-
+	
 	.cols>* {
 		display: block;
 	}
-
+	
 	section {
 		margin: 0;
 		border-radius: 0;
 	}
-
+	
 	section ul li {
 		text-align: justify;
 		margin-right: 0;
 	}
-
+	
 	article {
 		padding: 1em;
 	}
-
+	
 	footer {
 		margin: 0;
 		border-radius: 0;
 	}
-
+	
 	img.img-round {
 		display: block;
 		margin: 1em auto;
 		max-width: 60%;
 	}
-
+	
 	.enhaut {
 		bottom: 2rem;
 		right: 0;

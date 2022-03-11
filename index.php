@@ -80,9 +80,7 @@
 			</header>
 			<nav>
 				<div class="ssmenu hamburger">
-					<div class='barre'></div>
-					<div class='barre'></div>
-					<div class='barre'></div>
+					<i class="fi fi-br-menu-burger"></i>
 				</div>
 				<ul>
 					<li><a href="accueil"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
