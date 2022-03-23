@@ -36,13 +36,12 @@
 	<article>
 		<p>Après avoir travaillé dans les différents passages obligés d'une transmission de données, nous avions pris le cas d'un transfert particulier : la transmission de données continues. Nous avions conçu un système complet de diffusion vidéo qui permettait de proposer une qualité de diffusion optimale et dépendant directement de la bande passante disponible à chaque instant pour la vidéo diffusée. </p>
 		
-		<p>Cette plate-forme de diffusion était modulaire de manière horizontale, par l'ajout d'éléments intermédiaires dans la chaine de diffusion comme le mixeur et verticale, par l'intégration d'un choix possible dans le protocole de transport utilisé sous RTP.</p>
-		<p>Cette <strong>modularité</strong> se présentait sous deux formes :
-			<ul>
-				<li><strong>Horizontale</strong>, par l'ajout d'éléments intermédiaires dans la chaine de diffusion comme le mixeur. Cet élément permettait par exemple de ré-encoder, d'adapter la vidéo à certaines contraintes;</li>
-				<li><strong>Verticale</strong>, par l'intégration d'un choix possible dans le protocole de transport utilisé sous RTP.</li>
-			</ul></p>
-			<p>Dans notre cas, nous avions testé DCCP (Datagram Congestion Control Protocol) qui est un protocole de transport actuel et modulaire au niveau transport comme au niveau contrôle de congestion. Une vidéo de qualité était obtenue grâce à une communication entre les couches (cross-layer) transport et application de la pile OSI. Sur la source, DCCP déterminait la bande passante disponible et l'encodeur vidéo (mixeur) choisit ou non si un ré-encodage à la volée de la vidéo est nécessaire. Cette communication inter-couches permettait à l'application vidéo d'obtenir des informations précises sur l'état du lien et de réagir à ses fluctuations.</p>
+		<p>Cette plate-forme de diffusion était modulaire de manière horizontale, par l'ajout d'éléments intermédiaires dans la chaine de diffusion comme le mixeur et verticale, par l'intégration d'un choix possible dans le protocole de transport utilisé sous RTP. Cette <strong>modularité</strong> se présentait sous deux formes :</p>
+		<ul>
+			<li><strong>Horizontale</strong>, par l'ajout d'éléments intermédiaires dans la chaine de diffusion comme le mixeur. Cet élément permettait par exemple de ré-encoder, d'adapter la vidéo à certaines contraintes;</li>
+			<li><strong>Verticale</strong>, par l'intégration d'un choix possible dans le protocole de transport utilisé sous RTP.</li>
+		</ul>
+		<p>Dans notre cas, nous avions testé DCCP (Datagram Congestion Control Protocol) qui est un protocole de transport actuel et modulaire au niveau transport comme au niveau contrôle de congestion. Une vidéo de qualité était obtenue grâce à une communication entre les couches (cross-layer) transport et application de la pile OSI. Sur la source, DCCP déterminait la bande passante disponible et l'encodeur vidéo (mixeur) choisit ou non si un ré-encodage à la volée de la vidéo est nécessaire. Cette communication inter-couches permettait à l'application vidéo d'obtenir des informations précises sur l'état du lien et de réagir à ses fluctuations.</p>
 	</article>
 </section>
 
