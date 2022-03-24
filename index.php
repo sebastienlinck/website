@@ -79,14 +79,14 @@
 				<h2>Professeur contractuel</h2>
 			</header>
 			<nav>
-				<div class="ssmenu hamburger">
+				<div class="hamburger expand">
 					<i class="fi fi-br-menu-burger"></i>
 				</div>
 				<ul>
 					<li><a href="accueil"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
 					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i><span class="icon-text">Enseignements</span></a></li>
 					<li>
-						<div class="ssmenu expand">
+						<div class="expand">
 							<span class="titremenu"><i class="fi fi-rr-computer"></i><span class="icon-text">Recherche</span><i class="fi fi-rr-angle-small-down"></i></span>
 						</div>
 						<ul>
@@ -94,7 +94,7 @@
 							<li><a href="algopath">AlgoPath</a></li>
 						</ul>
 					</li>
-					<li><a href="publications"><i class="fi fi-rr-book-alt"></i><span class="icon-text">Publications</span></a></li>
+					<li><a href="publications"><i class="fi fi-rr-edit"></i><span class="icon-text">Publications</span></a></li>
 					<li><a href="contact"><i class="fi fi-rr-envelope"></i><span class="icon-text">Contact</span></a></li>
 				</ul>
 			</nav>

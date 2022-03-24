@@ -3,7 +3,7 @@ function onSubmit(token) {
 }
 
 window.addEventListener('scroll', event => {
-	if (document.documentElement.scrollTop > 300) {
+	if (document.documentElement.scrollTop > 400) {
 		document.querySelector('.enhaut').classList.add('visible');
 	} 
 	else {
@@ -11,13 +11,8 @@ window.addEventListener('scroll', event => {
 	}
 });
 
-document.querySelectorAll('.ssmenu').forEach(item => {
+document.querySelectorAll('.expand').forEach(item => {
 	item.addEventListener('click', event => {
 		item.nextElementSibling.classList.toggle('visible');
 	})
-})
-
-document.querySelector('.enhaut').addEventListener('click', function(e) {
-	e.preventDefault();
-	window.scrollTo({top: 0, behavior: 'smooth'});
 })

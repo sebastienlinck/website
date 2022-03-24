@@ -8,14 +8,14 @@
 
 html, body {
 	background-color: #FFF;
+	scroll-behavior: smooth;
 }
 
 #page {
 	width: 80%;
 	margin: 0 auto;
 	max-width: 1600px;
-	min-width: 1000px;
-	scroll-behavior: smooth;
+	min-width: 980px;
 }
 
 #container {
@@ -93,6 +93,9 @@ nav ul {
 }
 
 nav>ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 	border-radius: .5em;
 }
 
@@ -129,6 +132,7 @@ nav a {
 
 nav ul li ul {
 	display: none;
+	flex-direction: column;
 	z-index: 2;
 	position: absolute;
 	width: 100%;
@@ -139,7 +143,8 @@ nav ul li ul {
 }
 
 nav ul li:hover ul {
-	display: block;
+	display: flex;
+	flex-direction: column;
 }
 
 nav li:hover {
@@ -226,7 +231,7 @@ footer a {
 	z-index: 3;
 	width: 2.2em;
 	height: 2.2em;
-	border-radius: 50%;
+	border-radius: .5em;
 	background-color: #333;
 	padding: .5em;
 	
@@ -237,18 +242,11 @@ footer a {
 	font-size:2.2em;
 }
 
-
-.hamburger .barre {
-	height: .3em;
-	margin: .3em auto;
-	background: #FFF;
-	border-radius: .5em;
-}
-
 .enhaut {
 	display: none;
+	width: 2.2rem;
 	color: black;
-	font-size: 2em;
+	font-size: 2rem;
 	margin: auto;
 	text-align: center;
 	position: fixed;
@@ -258,7 +256,11 @@ footer a {
 }
 
 .visible {
-	display: block;
+	display: flex;
+}
+
+.invisible {
+	display: none;
 }
 
 form {
@@ -291,7 +293,7 @@ form button:hover {
 	background: #000;
 }
 
-@media all and (max-width:960px) {
+@media all and (max-width: 1024px) {
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
@@ -311,7 +313,7 @@ form button:hover {
 		font-size: 1.1em;
 	}
 	
-	.hamburger, .ssmenu {
+	.hamburger {
 		display: inline-block;
 	}
 	
@@ -324,6 +326,8 @@ form button:hover {
 	
 	nav ul {
 		display: none;
+		flex-direction: column;
+		align-items: flex-start;
 		margin: 0;
 		padding: 0;
 		text-align: left;
@@ -332,7 +336,8 @@ form button:hover {
 	nav ul li, ul li ul {
 		text-align: left;
 		line-height: 1.5em;
-		display: block;
+		display: flex;
+		flex-direction: column;
 	}
 	
 	nav a {
@@ -386,9 +391,7 @@ form button:hover {
 	}
 	
 	.enhaut {
-		bottom: 2rem;
-		right: 0;
-		left: 0;
-		z-index: 5;
+		bottom: 2.2em;
+		right: calc(50% - 1.1rem);
 	}
 }
