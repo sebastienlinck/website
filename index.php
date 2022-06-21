@@ -41,12 +41,10 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72813591-1"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-			
 			function gtag() {
 			dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
-			
 			gtag('config', 'UA-72813591-1');
 		</script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
