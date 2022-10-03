@@ -100,7 +100,6 @@ nav>ul {
 }
 
 nav>ul>li {
-	display: inline-block;
 	position: relative;
 }
 
@@ -189,21 +188,15 @@ section ul li {
 }
 
 .cols {
-	display: table;
-}
-
-.cols>* {
-	display: table-cell;
-	vertical-align: middle;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 img.img-round {
-	display: inline-block;
 	width: 18em;
 	height: auto;
-	border: none;
 	border-radius: 50%;
-	overflow: hidden;
 }
 
 footer {
@@ -265,7 +258,7 @@ footer a {
 
 form {
 	text-align: center;
-	max-width: 32em;
+	max-width: 34em;
 }
 
 input, textarea {
