@@ -180,12 +180,14 @@ article h4 {
 
 section ul {
 	margin: .5em 1em;
-	list-style-type: circle;
+	list-style-type: '\2714';
 }
 
 section ul li {
 	margin: .5em 1em;
+	padding-left: .5em;
 }
+
 
 .cols {
 	display: flex;

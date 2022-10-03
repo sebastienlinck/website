@@ -10,7 +10,7 @@
 			<br>
 			École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe<br>
 			Campus Sup Ardenne - 9A rue Claude Chrétien<br>
-			08000 - Charleville-Mézières<br><br>
+			08000 Charleville-Mézières<br><br>
 			contact(@)slinck(.)com
 			<br><br>
 			<a target="_blank" href="https://fr.linkedin.com/in/slinck/"><img class="social-icons" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn"></a>

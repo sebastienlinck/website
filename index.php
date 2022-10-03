@@ -74,7 +74,7 @@
 		<div id="page">
 			<header>
 				<h1>Sébastien Linck</h1>
-				<h2>Professeur contractuel</h2>
+				<h2>Enseignant en informatique</h2>
 			</header>
 			<nav>
 				<div class="hamburger expand">
