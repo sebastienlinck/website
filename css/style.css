@@ -222,8 +222,7 @@ footer a {
 	top: 1em;
 	right: 1em;
 	z-index: 3;
-	width: 2.2em;
-	height: 2.2em;
+	height: 3.1em;
 	border-radius: .5em;
 	background-color: #333;
 	padding: .5em;
@@ -323,7 +322,7 @@ form button:hover {
 	nav ul {
 		display: none;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: stretch;
 		margin: 0;
 		padding: 0;
 		text-align: left;
@@ -334,10 +333,16 @@ form button:hover {
 		line-height: 1.5em;
 		display: flex;
 		flex-direction: column;
+		align-items: stretch;
 	}
 	
 	nav a {
-		display: inline-block;
+		display: block;
+		text-align: left;
+	}
+
+	.titremenu {
+		text-align: left;
 	}
 	
 	nav ul li ul {
