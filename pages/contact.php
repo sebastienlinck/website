@@ -29,7 +29,7 @@
 			<form id="contact-form" action="pages/send_form.php" method="post">
 				<input required type="text" aria-label="name" name="name" id="name" value="<?php echo isset($_SESSION['inputs']['name']) ? $_SESSION['inputs']['name'] : ''; ?>" placeholder="Votre nom">
 				<input required type="email" aria-label="email" name="email" id="email" value="<?php echo isset($_SESSION['inputs']['email']) ? $_SESSION['inputs']['email'] : ''; ?>" placeholder="Votre email">
-				<textarea rows="4" required aria-label="message" id="message" name="message" placeholder="Votre message"><?php echo isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
+				<textarea rows="6" required aria-label="message" id="message" name="message" placeholder="Votre message"><?php echo isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
 				<button class="g-recaptcha" data-sitekey="6LcBwRgUAAAAADQmcYmD0Tr0LTMM78W0k3Qmabl7" data-callback='onSubmit'>Envoyer</button>
 			</form>
 		</article>

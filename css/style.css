@@ -264,9 +264,8 @@ form {
 }
 
 input, textarea {
-	padding: .5em 0;
+	padding: .5em;
 	line-height: 150%;
-	text-indent: .5em;
 	margin: .3em 0;
 	border: 1px solid #ccc;
 	border-radius: .5em;
