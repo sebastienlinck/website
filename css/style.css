@@ -4,6 +4,7 @@
 	text-align: left;
 	font-size: 1em;
 	font-family: Montserrat, Verdana;
+	box-sizing: border-box;
 }
 
 html, body {
@@ -17,8 +18,7 @@ html, body {
 	max-width: 1600px;
 	min-width: 980px;
 }
-
-#container {
+main {
 	margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@ i {
 header {
 	margin: 1em 0;
 	padding: 1.5em;
-	height: 8em;
+	height: 10em;
 	text-align: left;
 	font-weight: 700;
 	background-color: #EFEFEF;
@@ -104,15 +104,13 @@ nav>ul>li {
 }
 
 nav a {
-	text-decoration: none;
-	font-style: italic;
 	font-weight: 700;
 	color: #000;
 	display: block;
+	line-height: 2.6em;
 	text-align: center;
 	font-size: 1.3em;
 	font-style: normal;
-	line-height: 2.6em;
 	color: #FFF;
 	padding: 0 .8em;
 }
@@ -354,17 +352,11 @@ form button:hover {
 	}
 	
 	.cols {
-		display: block;
-		padding: 0;
-		margin: 0;
-	}
-	
-	.cols>* {
-		display: block;
+		display: flex;
+		justify-content: space-around;
 	}
 	
 	section {
-		margin: 0;
 		border-radius: 0;
 	}
 	
@@ -378,7 +370,6 @@ form button:hover {
 	}
 	
 	footer {
-		margin: 0;
 		border-radius: 0;
 	}
 	

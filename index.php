@@ -96,7 +96,7 @@
 					<li><a href="contact"><i class="fi fi-rr-envelope"></i><span class="icon-text">Contact</span></a></li>
 				</ul>
 			</nav>
-			<main id="container">
+			<main>
 				<?php include($auth_pages[$page]); ?>
 			</main>
 			<?php include("./pages/footer.php"); ?>
