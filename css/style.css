@@ -226,7 +226,6 @@ footer a {
 	border-radius: .5em;
 	background-color: #333;
 	padding: .5em;
-	
 }
 
 .hamburger i {
@@ -305,7 +304,7 @@ form button:hover {
 	}
 	
 	header h2 {
-		font-size: 1.1em;
+		font-size: 1.2em;
 	}
 	
 	.hamburger {
@@ -378,7 +377,6 @@ form button:hover {
 	}
 	
 	img.img-round {
-		display: block;
 		margin: 1em auto;
 		max-width: 60%;
 	}
