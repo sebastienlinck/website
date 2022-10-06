@@ -352,8 +352,7 @@ form button:hover {
 	}
 	
 	.cols {
-		display: flex;
-		justify-content: space-around;
+		flex-direction: column;
 	}
 	
 	section {
