@@ -27,27 +27,31 @@
   "orientation": "portrait",
   "url": "https://www.slinck.com",
   "lang": "fr",
-  "categories": [
-    "research",
-    "education",
-    "personnal"
-  ],
+  "categories": ["research", "education", "personnal"],
   "scope": "https://www.slinck.com/",
   "description": "Site web de présentation de mes enseignements et de mes travaux scientifiques.",
-  "screenshots": [],
+  "screenshots" : [
+	  {
+		"src": "https://slinck.com/img/index.webp",
+		"sizes": "750x1334",
+		"type": "image/webp",
+		"platform": "narrow",
+		"label": "Page d'accueil de l'application"
+	  }
+  ],
   "shortcuts" : [
-  {
-    "name": "Mes publications",
-    "url": "/publications",
-  },
-  {
-    "name": "Mes enseignements",
-    "url": "/enseignements"
-  },
-  {
-    "name": "Ma thèse",
-    "url": "/these"
-  }
-]
+	  {
+		"name": "Mes publications",
+		"url": "/publications",
+	  },
+	  {
+		"name": "Mes enseignements",
+		"url": "/enseignements"
+	  },
+	  {
+		"name": "Ma thèse",
+		"url": "/these"
+	  }
+  ]
 
 }
