@@ -34,5 +34,20 @@
   ],
   "scope": "https://www.slinck.com/",
   "description": "Site web de présentation de mes enseignements et de mes travaux scientifiques.",
-  "screenshots": []
+  "screenshots": [],
+  "shortcuts" : [
+  {
+    "name": "Mes publications",
+    "url": "/publications",
+  },
+  {
+    "name": "Mes enseignements",
+    "url": "/enseignements"
+  },
+  {
+    "name": "Ma thèse",
+    "url": "/these"
+  }
+]
+
 }
