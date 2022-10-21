@@ -371,6 +371,10 @@ form button:hover {
 	article {
 		padding: 1em;
 	}
+
+	.cols>article {
+		text-align: center;
+	}
 	
 	footer {
 		border-radius: 0;
@@ -378,7 +382,7 @@ form button:hover {
 	
 	img.img-round {
 		margin: 1em auto;
-		max-width: 60%;
+		max-width: 80%;
 	}
 	
 	.enhaut {
