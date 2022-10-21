@@ -31,5 +31,7 @@
     "education",
     "personnal"
   ],
+  "scope": "https://www.slinck.com/",
+  "description": "Site web de présentation de mes enseignements et de mes travaux scientifiques.",
   "screenshots": []
 }
