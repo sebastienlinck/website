@@ -1,5 +1,5 @@
 {
-  "short_name": "Linck",
+  "short_name": "CV_Linck",
   "name": "CV Sebastien Linck",
   "icons": [
     {
@@ -42,7 +42,7 @@
   "shortcuts" : [
 	  {
 		"name": "Mes publications",
-		"url": "/publications",
+		"url": "/publications"
 	  },
 	  {
 		"name": "Mes enseignements",
@@ -53,5 +53,4 @@
 		"url": "/these"
 	  }
   ]
-
 }
