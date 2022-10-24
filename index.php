@@ -10,7 +10,7 @@
 	$auth_pages['contact'] = './pages/contact.php';
 	$auth_pages['these'] = './pages/these.html';
 	$auth_pages['algopath'] = './pages/algopath.html';
-	$auth_pages['mentions-legales'] = './pages/mentions-legales.html';
+	$auth_pages['mentions-legales'] = './pages/mentions-legales.html';	
 	
 	$page = 'accueil';
 	if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
@@ -42,7 +42,7 @@
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
-			dataLayer.push(arguments);
+				dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
 			gtag('config', 'UA-72813591-1');
@@ -52,17 +52,17 @@
 		<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw" />
 		<script>
 			(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-			'gtm.start': new Date().getTime(),
-			event: 'gtm.js'
-			});
-			var f = d.getElementsByTagName(s)[0],
-			j = d.createElement(s),
-			dl = l != 'dataLayer' ? '&l=' + l : '';
-			j.async = true;
-			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
+				w[l] = w[l] || [];
+				w[l].push({
+					'gtm.start': new Date().getTime(),
+					event: 'gtm.js'
+				});
+				var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
 			})(window, document, 'script', 'dataLayer', 'GTM-M85B535');
 		</script>
 	</head>
@@ -105,10 +105,10 @@
 			<a href="#page"><i class="fi fi-br-angle-square-up"></i></a>
 		</div>
 		<script src="./js/outils.js"></script>
-		<script type="module">
-			import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate/dist/pwa-update.js';
-			const el = document.createElement('pwa-update');
-			document.body.appendChild(el);
+		<script>
+			if (typeof navigator.serviceWorker !== 'undefined') {
+				navigator.serviceWorker.register('sw.js')
+			}
 		</script>
 	</body>
 	<?php
