@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "com.slinck.www.twa",
+                     "sha256_cert_fingerprints": ["A3:90:00:B8:F0:AE:CD:5B:FC:52:E2:47:C4:43:54:56:C5:39:11:C2:9F:EE:A5:12:8D:B7:42:56:E4:5D:C9:C4"] }
+      }
+]
