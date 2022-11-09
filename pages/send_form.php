@@ -18,7 +18,7 @@
 		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 		$headers .= 'From: ' . htmlspecialchars($_POST['email'] . "\r\n");
 		
-		$subject = utf8_encode('Message envoyé par ') . htmlspecialchars($_POST['name']);
+		$subject = 'Message de ' . htmlspecialchars($_POST['name']);
 		$message_content = '
 		<html>
 		<body>
