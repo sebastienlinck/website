@@ -25,12 +25,6 @@
 		<body>
 		<table>
 		<tr>
-		<td><b>Sujet du message:</b></td>
-		</tr>
-		<tr>
-		<td>' . $subject . '</td>
-		</tr>
-		<tr>
 		<td><b>Contenu du message:</b></td>
 		</tr>
 		<tr>
