@@ -3,6 +3,7 @@ AddType image/webp .webp
 <IfModule mod_headers.c>
 Header always set X-Content-Type-Options "nosniff"
 Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+Header set X-Frame-Options: "sameorigin"
 </IfModule>
 
 <IfModule mod_rewrite.c>
