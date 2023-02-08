@@ -1,3 +1,5 @@
+AddType image/webp .webp
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
