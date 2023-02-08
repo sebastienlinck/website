@@ -16,5 +16,4 @@ ExpiresDefault "modification plus 1 day"
 </IfModule>
 
 ErrorDocument 404 https://www.slinck.com
-# Use HTTP Strict Transport Security to force client to use secure connections only Header 
 Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
