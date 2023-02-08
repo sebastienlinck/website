@@ -1,5 +1,10 @@
 AddType image/webp .webp
 
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+</IfModule>
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
@@ -8,7 +13,6 @@ RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L]
 RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1 [L]
 </IfModule>
 
-Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
 
 <IfModule mod_expires.c>
 ExpiresActive On
