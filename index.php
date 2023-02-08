@@ -26,6 +26,8 @@
 		<meta name="keywords" content="reseaux, NS2, algopath, sebastien linck, these">
 		<meta name="description" content="<?php echo ucfirst($page); ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 		<meta name="author" content="Sebastien Linck">
+		<link rel="canonical" href="<?php echo 'https://'.$_SERVER['HTTP_HOST'].'/'.$page; ?>">
+
 		<meta name="theme-color" content="#EFEFEF">
 		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 		<meta property="og:type" content="article">
