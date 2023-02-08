@@ -16,4 +16,3 @@ ExpiresDefault "modification plus 1 day"
 </IfModule>
 
 ErrorDocument 404 https://www.slinck.com
-Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
