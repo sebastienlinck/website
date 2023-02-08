@@ -4,7 +4,6 @@
 	ini_set('display_errors', TRUE);
 	setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
 	session_start();
-	$auth_pages['accueil'] = './pages/accueil.html';
 	$auth_pages['enseignements'] = './pages/enseignements.html';
 	$auth_pages['publications'] = './pages/publications.html';
 	$auth_pages['contact'] = './pages/contact.php';
@@ -67,7 +66,7 @@
 					<i class="fi fi-br-menu-burger"></i>
 				</div>
 				<ul>
-					<li><a href="accueil"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
+					<li><a href=""><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
 					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i><span class="icon-text">Enseignements</span></a></li>
 					<li>
 						<div class="expand">
