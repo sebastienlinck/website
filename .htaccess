@@ -24,8 +24,8 @@ ExpiresByType application/pdf "access plus 1 month"
 ExpiresDefault "modification plus 1 day"
 </IfModule>
 
-<IfModule security2_module>
-SecRuleEngine on
+<IfModule security2_module.c>
+SecRuleEngine On
 ServerTokens Min
 SecServerSignature " "
 </IfModule> 
