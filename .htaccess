@@ -1,3 +1,5 @@
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
