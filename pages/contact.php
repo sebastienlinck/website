@@ -14,7 +14,7 @@
 			contact(@)slinck(.)com
 			<br><br>
 			<a target="_blank" href="https://fr.linkedin.com/in/slinck/"><img class="social-icons" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn"></a>
-			<a target="_blank" href="https://www.researchgate.net/profile/Sebastien_Linck"><img class="social-icons" src="img/researchgate.svg" alt="Profil ResearchGate" title="Profil ResearchGate"></a>
+			<a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck"><img class="social-icons" src="img/researchgate.svg" alt="Profil ResearchGate" title="Profil ResearchGate"></a>
 		</article>
 
 		<article>
