@@ -27,7 +27,7 @@
 		<meta name="description" content="Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 		<meta name="author" content="Sebastien Linck">
 		<meta name="theme-color" content="#EFEFEF">
-		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
+		<meta property="og:title" content="<?php echo ucfirst($page); ?> - Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 		<meta property="og:type" content="article">
 		<meta property="og:url" content="https://www.slinck.com">
 		<meta property="og:image" content="img/linck.webp">
