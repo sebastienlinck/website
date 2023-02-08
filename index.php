@@ -13,6 +13,7 @@
 	
 	$page = 'accueil';
 	if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
+	
 		$page = $_GET['page'];
 	}
 ?>
@@ -66,7 +67,7 @@
 					<i class="fi fi-br-menu-burger"></i>
 				</div>
 				<ul>
-					<li><a href="#"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
+					<li><a href="accueil"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
 					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i><span class="icon-text">Enseignements</span></a></li>
 					<li>
 						<div class="expand">
