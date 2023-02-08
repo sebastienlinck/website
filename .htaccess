@@ -14,3 +14,5 @@ ExpiresByType image/png "access plus 1 month"
 ExpiresByType application/pdf "access plus 1 month"
 ExpiresDefault "modification plus 1 day"
 </IfModule>
+
+ErrorDocument 404 https://www.slinck.com
