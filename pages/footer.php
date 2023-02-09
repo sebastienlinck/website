@@ -21,5 +21,5 @@
 	}
 ?>
 <footer>
-	Sébastien Linck - <?php  echo ucwords(datefmt_format($fmt, mostRecentModifiedFileTime(".", 1))); ?> - <a href="mentions-legales">Mentions légales</a>
+	Sébastien Linck - <?php  echo ucwords(datefmt_format($fmt, mostRecentModifiedFileTime(".", 1))); ?> - <a href="mentions-legales" rel="nofollow">Mentions légales</a>
 </footer>
