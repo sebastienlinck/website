@@ -61,7 +61,7 @@
 			</header>
 			<nav>
 				<div class="hamburger expand">
-					<i class="fi fi-br-menu-burger"></i>
+					<i class="fi fi-rr-menu-burger"></i>
 				</div>
 				<ul>
 					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
@@ -85,7 +85,7 @@
 			<?php include("./pages/footer.php"); ?>
 		</div>
 		<div class="enhaut">
-			<a href="#page"><i class="fi fi-br-angle-square-up"></i></a>
+			<a href="#page"><i class="fi fi-rr-angle-square-up"></i></a>
 		</div>
 		<script src="./js/outils.js"></script>
 		<script>
