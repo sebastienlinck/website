@@ -33,7 +33,6 @@
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
-		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
 		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 		<link rel="stylesheet" href="./css/style.css">
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
