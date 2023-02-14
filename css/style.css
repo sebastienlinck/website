@@ -10,6 +10,7 @@
 html, body {
 	background-color: #FFF;
 	scroll-behavior: smooth;
+	scrollbar-gutter: stable both-edges;
 }
 
 #page {
@@ -339,7 +340,7 @@ form button:hover {
 		display: block;
 		text-align: left;
 	}
-
+	
 	.titremenu {
 		text-align: left;
 	}
@@ -371,7 +372,7 @@ form button:hover {
 	article {
 		padding: 1em;
 	}
-
+	
 	.cols>article {
 		text-align: center;
 	}
