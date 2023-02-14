@@ -63,19 +63,19 @@
 					<i class="fi fi-rr-menu-burger"></i>
 				</div>
 				<ul>
-					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><i class="fi fi-rr-home"></i><span class="icon-text">Accueil</span></a></li>
-					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i><span class="icon-text">Enseignements</span></a></li>
+					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><i class="fi fi-rr-home"></i>Accueil</a></li>
+					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i>Enseignements</a></li>
 					<li>
 						<div class="expand">
-							<span class="titremenu"><i class="fi fi-rr-computer"></i><span class="icon-text">Recherche</span><i class="fi fi-rr-angle-small-down"></i></span>
+							<span class="titremenu"><i class="fi fi-rr-computer"></i>Recherche<i class="fi fi-rr-angle-small-down"></i>
 						</div>
 						<ul>
 							<li><a href="these">Ma Thèse</a></li>
 							<li><a href="algopath">AlgoPath</a></li>
 						</ul>
 					</li>
-					<li><a href="publications"><i class="fi fi-rr-edit"></i><span class="icon-text">Publications</span></a></li>
-					<li><a href="contact"><i class="fi fi-rr-envelope"></i><span class="icon-text">Contact</span></a></li>
+					<li><a href="publications"><i class="fi fi-rr-edit"></i>Publications</a></li>
+					<li><a href="contact"><i class="fi fi-rr-envelope"></i>Contact</a></li>
 				</ul>
 			</nav>
 			<main>

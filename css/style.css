@@ -50,7 +50,7 @@ img.social-icons {
 	overflow: hidden;
 }
 
-.icon-text::before, .icon-text::after {
+i::before, i::after {
 	content: ' ';
 }
 
@@ -135,7 +135,7 @@ nav ul li ul {
 	z-index: 2;
 	position: absolute;
 	width: 100%;
-	box-shadow: .3em .3em .3em #555;
+	box-shadow: .3em .3em .3em #555, .3em 0 .3em #555 ;
 	border-bottom-right-radius: .5em;
 	border-bottom-left-radius: .5em;
 	overflow: hidden;
