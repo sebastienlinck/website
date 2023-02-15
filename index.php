@@ -102,7 +102,7 @@
 						"background": "#efefef"
 					},
 					"button": {
-						"background": "#555555"
+						"background": "#555"
 					}
 				},
 				"showLink": false,
