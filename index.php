@@ -33,6 +33,7 @@
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 		<link rel="stylesheet" href="./css/style.css">
 		<!-- Google Tag Manager -->
@@ -41,10 +42,10 @@
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
 		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-CX6WD4QDPN');
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-CX6WD4QDPN');
 		</script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<link rel="manifest" href="/slinck.webmanifest">
@@ -92,6 +93,21 @@
 			if (typeof navigator.serviceWorker !== 'undefined') {
 				navigator.serviceWorker.register('sw.js')
 			}
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+		<script>
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#efefef"
+					},
+					"button": {
+						"background": "#555555"
+					}
+				},
+				"showLink": false,
+				"theme": "classic"
+			});
 		</script>
 	</body>
 	<?php
