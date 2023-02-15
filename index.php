@@ -67,7 +67,7 @@
 					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i>Enseignements</a></li>
 					<li>
 						<div class="expand">
-							<span class="titremenu"><i class="fi fi-rr-computer"></i>Recherche<i class="fi fi-rr-angle-small-down"></i>
+							<span class="titremenu"><i class="fi fi-rr-computer"></i>Recherche<i class="fi fi-rr-angle-small-down"></i></span>
 						</div>
 						<ul>
 							<li><a href="these">Ma Thèse</a></li>
