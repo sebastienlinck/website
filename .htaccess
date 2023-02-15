@@ -22,5 +22,3 @@ ExpiresDefault "modification plus 1 day"
 </IfModule>
 
 ServerSignature Off
-
-ErrorDocument 404 https://www.slinck.com
