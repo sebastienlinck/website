@@ -55,7 +55,7 @@
 		</noscript>
 		<div id="page">
 			<header>
-				<h1>Sébastien Linck</h1>
+				<h1>Sébastien Linck <?php if ($page!="accueil") echo " - ".ucfirst($page);?></h1>
 				<h2>Enseignant en informatique - Responsable de formation</h2>
 			</header>
 			<nav>
