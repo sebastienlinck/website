@@ -35,24 +35,25 @@
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
 		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 		<link rel="stylesheet" href="./css/style.css">
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-M85B535');</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72813591-1"></script>
+		<!-- Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M85B535');</script>
+		<!-- End Google Tag Manager -->
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
 		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-72813591-1');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-CX6WD4QDPN');
 		</script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<link rel="manifest" href="/slinck.webmanifest">
 		<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
 	</head>
 	<body>
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M85B535" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-		</noscript>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M85B535" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 		<div id="page">
 			<header>
 				<h1>Sébastien Linck <?php if ($page!="accueil") echo " - ".ucfirst($page);?></h1>
