@@ -106,11 +106,15 @@
 					}
 				},
 				"showLink": false,
-				"theme": "classic"
+				"theme": "classic",
+				"content": {
+					"message": "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.",
+					"dismiss": "J'ai compris"
+				}
 			});
 		</script>
 	</body>
 	<?php
 		session_unset();
 	?>
-</html>
+</html>	
