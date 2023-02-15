@@ -13,7 +13,7 @@
 			08000 Charleville-Mézières<br><br>
 			contact(@)slinck(.)com
 			<br><br>
-			<a target="_blank" href="https://fr.linkedin.com/in/slinck/"><img class="social-icons" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn"></a>
+			<a target="_blank" href="https://wwww.linkedin.com/in/slinck/"><img class="social-icons" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn"></a>
 			<a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck"><img class="social-icons" src="img/researchgate.svg" alt="Profil ResearchGate" title="Profil ResearchGate"></a>
 		</article>
 
