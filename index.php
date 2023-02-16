@@ -107,6 +107,7 @@
 				},
 				"showLink": false,
 				"theme": "classic",
+				"position": "bottom-left",
 				"content": {
 					"message": "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.",
 					"dismiss": "J'ai compris"
