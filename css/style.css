@@ -66,12 +66,12 @@ header {
 	text-align: left;
 }
 
-header h1 {
+h1 {
 	color: #333;
 	font-size: 2.9em;
 }
 
-header h2 {
+h2 {
 	color: #555;
 	font-size: 1.8em;
 	margin-top: .5em;
@@ -153,10 +153,10 @@ section {
 }
 
 article {
-	padding: 1em;
+	padding: 1.5em;
 }
 
-section h3 {
+h3 {
 	background-color: #999;
 	color: #212121;
 	font-size: 1.3em;
@@ -165,7 +165,7 @@ section h3 {
 	padding: .4em 1em;
 }
 
-article h4 {
+h4 {
 	color: #212121;
 	font-size: 1.1em;
 }
@@ -290,10 +290,10 @@ form button:hover {
 		margin: 0;
 		padding: 1em;
 	}
-	header h1 {
+	h1 {
 		font-size: 1.6em;
 	}
-	header h2 {
+	h2 {
 		font-size: 1.2em;
 	}
 	.hamburger {
@@ -355,7 +355,7 @@ form button:hover {
 	footer {
 		border-radius: 0;
 	}
-	img.img-round {
+	.img-round {
 		margin: 1em auto;
 		max-width: 80%;
 	}
