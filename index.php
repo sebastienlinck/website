@@ -34,7 +34,6 @@
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
 		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 		<link rel="stylesheet" href="./css/style.css">
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M85B535');</script>
@@ -62,22 +61,22 @@
 			</header>
 			<nav>
 				<div class="hamburger expand">
-					<i class="fi fi-rr-menu-burger"></i>
+					<img class="icons" src="./img/fi-rr-menu-burger.svg">
 				</div>
 				<ul>
-					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><i class="fi fi-rr-home"></i>Accueil</a></li>
-					<li><a href="enseignements"><i class="fi fi-rr-e-learning"></i>Enseignements</a></li>
+					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/fi-rr-home.svg">Accueil</a></li>
+					<li><a href="enseignements"><img class="icons" src="./img/fi-rr-e-learning.svg">Enseignements</a></li>
 					<li>
 						<div class="expand">
-							<span class="titremenu"><i class="fi fi-rr-computer"></i>Recherche<i class="fi fi-rr-angle-small-down"></i></span>
+							<span class="titremenu"><img class="icons" src="./img/fi-rr-computer.svg">Recherche<img class="icons" src="./img/fi-rr-angle-small-down.svg"></span>
 						</div>
 						<ul>
 							<li><a href="these">Ma Thèse</a></li>
 							<li><a href="algopath">AlgoPath</a></li>
 						</ul>
 					</li>
-					<li><a href="publications"><i class="fi fi-rr-edit"></i>Publications</a></li>
-					<li><a href="contact"><i class="fi fi-rr-envelope"></i>Contact</a></li>
+					<li><a href="publications"><img class="icons" src="./img/fi-rr-edit.svg">Publications</a></li>
+					<li><a href="contact"><img class="icons" src="./img/fi-rr-envelope.svg">Contact</a></li>
 				</ul>
 			</nav>
 			<main>
@@ -86,7 +85,7 @@
 			<?php include("./pages/footer.php"); ?>
 		</div>
 		<div class="enhaut">
-			<a href="#page"><i class="fi fi-rr-angle-square-up"></i></a>
+			<a href="#page"><img class="icons" src="./img/fi-rr-angle-square-up.svg"></a>
 		</div>
 		<script src="./js/outils.js"></script>
 		<script>

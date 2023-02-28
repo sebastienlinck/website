@@ -10,14 +10,13 @@
 html, body {
 	background-color: #fff;
 	scroll-behavior: smooth;
-	scrollbar-gutter: stable both-edges;
 }
 
 #page {
 	margin: 0 auto;
 	max-width: 1600px;
 	min-width: 980px;
-	width: 70%;
+	width: 75%;
 }
 
 p {
@@ -53,6 +52,14 @@ i::before, i::after {
 i {
 	font-size: 1.2em;
 	vertical-align: middle;
+}
+
+.icons {
+	height: 1.2em;
+	width: auto;
+	filter: invert(100%);
+	vertical-align: middle;
+	margin: 0 5px;
 }
 
 header {
@@ -103,24 +110,24 @@ nav>ul>li {
 
 nav a {
 	color: #fff;
-	display: block;
+	display: flex;
+	align-items: center;
 	font-size: 1.3em;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 2.6em;
 	padding: 0 .8em;
-	text-align: center;
 }
 
 .titremenu {
 	color: #fff;
-	display: block;
+	display: flex;
+	align-items: center;
 	font-size: 1.3em;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 2.6em;
 	padding: 0 .8em;
-	text-align: center;
 }
 
 nav ul li ul {
@@ -150,6 +157,7 @@ section {
 	line-height: 160%;
 	margin: 1em 0;
 	min-height: 10vh;
+	overflow: hidden;
 }
 
 article {
@@ -213,7 +221,6 @@ footer a {
 	background-color: #333;
 	border-radius: .5em;
 	display: none;
-	height: 3.1em;
 	padding: .5em;
 	position: fixed;
 	right: 1em;
@@ -221,9 +228,8 @@ footer a {
 	z-index: 3;
 }
 
-.hamburger i {
-	color: #fff;
-	font-size: 2.2em;
+.hamburger .icons {
+	height: 2.4em;
 }
 
 .enhaut {
@@ -309,9 +315,9 @@ form button:hover {
 		align-items: stretch;
 		display: none;
 		flex-flow: column;
-		margin: 0;
-		padding: 0;
-		text-align: left;
+	margin: 0;
+	padding: 0;
+	text-align: left;
 	}
 	nav ul li, ul li ul {
 		align-items: stretch;
