@@ -61,7 +61,7 @@
 			</header>
 			<nav>
 				<div class="hamburger expand">
-					<img class="icons" src="./img/fi-rr-menu-burger.svg">
+					<img class="icons" src="./img/fi-rr-menu-burger.svg" alt="icone menu">
 				</div>
 				<ul>
 					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/fi-rr-home.svg" alt="icone accueil">Accueil</a></li>
