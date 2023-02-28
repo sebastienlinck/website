@@ -10,6 +10,7 @@
 html, body {
 	background-color: #fff;
 	scroll-behavior: smooth;
+	overflow: overlay;
 }
 
 #page {
@@ -315,9 +316,9 @@ form button:hover {
 		align-items: stretch;
 		display: none;
 		flex-flow: column;
-	margin: 0;
-	padding: 0;
-	text-align: left;
+		margin: 0;
+		padding: 0;
+		text-align: left;
 	}
 	nav ul li, ul li ul {
 		align-items: stretch;
