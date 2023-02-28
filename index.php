@@ -64,19 +64,19 @@
 					<img class="icons" src="./img/fi-rr-menu-burger.svg">
 				</div>
 				<ul>
-					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/fi-rr-home.svg">Accueil</a></li>
-					<li><a href="enseignements"><img class="icons" src="./img/fi-rr-e-learning.svg">Enseignements</a></li>
+					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/fi-rr-home.svg" alt="icone accueil">Accueil</a></li>
+					<li><a href="enseignements"><img class="icons" src="./img/fi-rr-e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
 						<div class="expand">
-							<span class="titremenu"><img class="icons" src="./img/fi-rr-computer.svg">Recherche<img class="icons" src="./img/fi-rr-angle-small-down.svg"></span>
+							<span class="titremenu"><img class="icons" src="./img/fi-rr-computer.svg" alt="icone recherche">Recherche<img class="icons" src="./img/fi-rr-angle-small-down.svg" alt="icone sous-menu"></span>
 						</div>
 						<ul>
 							<li><a href="these">Ma Thèse</a></li>
 							<li><a href="algopath">AlgoPath</a></li>
 						</ul>
 					</li>
-					<li><a href="publications"><img class="icons" src="./img/fi-rr-edit.svg">Publications</a></li>
-					<li><a href="contact"><img class="icons" src="./img/fi-rr-envelope.svg">Contact</a></li>
+					<li><a href="publications"><img class="icons" src="./img/fi-rr-edit.svg" alt="icone publications">Publications</a></li>
+					<li><a href="contact"><img class="icons" src="./img/fi-rr-envelope.svg"  alt="icone contact">Contact</a></li>
 				</ul>
 			</nav>
 			<main>
@@ -85,7 +85,7 @@
 			<?php include("./pages/footer.php"); ?>
 		</div>
 		<div class="enhaut">
-			<a href="#page"><img class="icons" src="./img/fi-rr-angle-square-up.svg"></a>
+			<a href="#page"><img class="icons" src="./img/fi-rr-angle-square-up.svg"  alt="icone retour"></a>
 		</div>
 		<script src="./js/outils.js"></script>
 		<script>
