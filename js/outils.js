@@ -3,7 +3,7 @@ function onSubmit(token) {
 }
 
 window.addEventListener('scroll', event => {
-	if (document.documentElement.scrollTop > 400) {
+	if (document.documentElement.scrollTop > 300) {
 		document.querySelector('.enhaut').classList.add('visible');
 	} 
 	else {

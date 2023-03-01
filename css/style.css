@@ -1,7 +1,7 @@
 * {
 	box-sizing: border-box;
 	font-family: Montserrat, Verdana;
-	font-size: 1em;
+	font-size: 1rem;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -10,7 +10,6 @@
 html, body {
 	background-color: #fff;
 	scroll-behavior: smooth;
-	overflow: overlay;
 }
 
 #page {
@@ -21,9 +20,9 @@ html, body {
 }
 
 p {
-	margin-bottom: .5em;
+	margin-bottom: .5rem;
 	text-align: justify;
-	text-indent: 3.2em;
+	text-indent: 3.2rem;
 }
 
 p:last-of-type {
@@ -32,31 +31,21 @@ p:last-of-type {
 
 a {
 	color: #000;
-	font-style: italic;
 	font-weight: 700;
 	text-decoration: none;
 }
 
 .social-icons {
 	border: none;
-	border-radius: .5em;
+	border-radius: .5rem;
 	height: auto;
-	margin-right: 1em;
+	margin-right: 1rem;
 	overflow: hidden;
-	width: 3.5em;
-}
-
-i::before, i::after {
-	content: ' ';
-}
-
-i {
-	font-size: 1.2em;
-	vertical-align: middle;
+	width: 3.5rem;
 }
 
 .icons {
-	height: 1.2em;
+	height: 1.8rem;
 	width: auto;
 	filter: invert(100%);
 	vertical-align: middle;
@@ -64,31 +53,31 @@ i {
 }
 
 header {
+	height: 10rem;
 	background-color: #efefef;
-	border-radius: .5em;
-	box-shadow: .3em .3em .3em #555;
-	font-weight: 700;
-	height: 10em;
-	margin: 1em 0;
-	padding: 1.5em;
-	text-align: left;
+	border-radius: .5rem;
+	box-shadow: .3rem .3rem .3rem #555;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	margin: 1rem 0;
+	padding: 1.5rem;
 }
 
 h1 {
 	color: #333;
-	font-size: 2.9em;
+	font-size: 3rem;
 }
 
 h2 {
 	color: #555;
-	font-size: 1.8em;
-	margin-top: .5em;
+	font-size: 2rem;
 }
 
 nav {
 	background-color: #333;
-	border-radius: .5em;
-	box-shadow: .3em .3em .3em #555;
+	border-radius: .5rem;
+	box-shadow: .3rem .3rem .3rem #555;
 	color: #fff;
 }
 
@@ -99,7 +88,7 @@ nav ul {
 }
 
 nav>ul {
-	border-radius: .5em;
+	border-radius: .5rem;
 	display: flex;
 	flex-flow: row;
 	justify-content: center;
@@ -111,35 +100,40 @@ nav>ul>li {
 
 nav a {
 	color: #fff;
-	display: flex;
 	align-items: center;
-	font-size: 1.3em;
+	font-size: 1.4rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 2.6em;
-	padding: 0 .8em;
+	line-height: 4rem;
+	padding: 0 .8rem;
 }
 
 .titremenu {
-	color: #fff;
 	display: flex;
 	align-items: center;
-	font-size: 1.3em;
+	font-size: 1.4rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 2.6em;
-	padding: 0 .8em;
+	line-height: 4rem;
+	padding: 0 .8rem;
 }
 
 nav ul li ul {
-	border-bottom-left-radius: .5em;
-	border-bottom-right-radius: .5em;
-	box-shadow: .3em .3em .3em #555, .3em 0 .3em #555;
+	border-bottom-left-radius: .5rem;
+	border-bottom-right-radius: .5rem;
+	box-shadow: .3rem .3rem .3rem #555, .3rem 0 .3rem #555;
 	display: none;
+	flex-flow: column;
 	overflow: hidden;
 	position: absolute;
 	width: 100%;
+	align-items: center;
 	z-index: 2;
+}
+
+nav ul li ul li {
+	width: 100%;
+	text-align: center;
 }
 
 nav ul li:hover ul {
@@ -153,40 +147,46 @@ nav li:hover {
 
 section {
 	background: #efefef;
-	border-radius: .5em;
-	box-shadow: .3em .3em .3em #555;
+	border-radius: .5rem;
+	box-shadow: .3rem .3rem .3rem #555;
 	line-height: 160%;
-	margin: 1em 0;
+	margin: 1rem 0;
 	min-height: 10vh;
 	overflow: hidden;
 }
 
 article {
-	padding: 1.5em;
+	padding: 1.5rem;
 }
 
 h3 {
 	background-color: #999;
 	color: #212121;
-	font-size: 1.3em;
+	font-size: 1.4rem;
 	font-variant: small-caps;
-	line-height: 1.8em;
-	padding: .4em 1em;
+	line-height: 2rem;
+	padding: .4rem 1.5rem;
 }
 
 h4 {
 	color: #212121;
-	font-size: 1.1em;
+	font-size: 1.2rem;
+	padding: 0 1.5rem;	
 }
 
 section ul {
 	list-style-type: '\2714';
-	margin: .5em 1em;
+	margin: .5rem 1.5rem;
 }
 
+section ul:last-of-type {
+	margin-bottom: 0;
+}
+
+
 section ul li {
-	margin: .5em 1em;
-	padding-left: .5em;
+	margin: .5rem 1rem;
+	padding-left: .5rem;
 }
 
 .cols {
@@ -198,44 +198,40 @@ section ul li {
 .img-round {
 	border-radius: 50%;
 	height: auto;
-	width: 18em;
+	width: 18rem;
 }
 
 footer {
 	background-color: #333;
-	border-radius: .5em;
-	box-shadow: .3em .3em .3em #555;
+	border-radius: .5rem;
+	box-shadow: .3rem .3rem .3rem #555;
 	color: #fff;
-	margin: 1em 0;
-	padding: 1em 0;
+	margin: 1rem 0;
+	line-height: 4rem;
 	text-align: center;
 }
 
 footer a {
 	color: #fff;
-	font-style: normal;
-	font-weight: 400;
-	text-decoration: none;
 }
 
 .hamburger {
 	background-color: #333;
-	border-radius: .5em;
+	border-radius: .5rem;
 	display: none;
-	padding: .5em;
+	padding: .5rem;
 	position: fixed;
-	right: 1em;
-	top: 1em;
+	right: 1rem;
+	top: 1rem;
 	z-index: 3;
 }
 
 .hamburger .icons {
-	height: 2.4em;
+	height: 2.4rem;
 }
 
 .enhaut {
 	bottom: 2rem;
-	color: #000;
 	display: none;
 	font-size: 2.4rem;
 	margin: auto;
@@ -244,6 +240,10 @@ footer a {
 	text-align: center;
 	width: 2.2rem;
 	z-index: 5;
+}
+
+.enhaut .icons {
+	filter: none;
 }
 
 .visible {
@@ -255,16 +255,16 @@ footer a {
 }
 
 form {
-	max-width: 34em;
+	max-width: 34rem;
 	text-align: center;
 }
 
 input, textarea {
 	border: 1px solid #ccc;
-	border-radius: .5em;
+	border-radius: .5rem;
 	line-height: 150%;
-	margin: .3em 0;
-	padding: .5em;
+	margin: .3rem 0;
+	padding: .5rem;
 	width: 100%;
 }
 
@@ -275,10 +275,10 @@ textarea {
 form button {
 	background-color: #333;
 	border: none;
-	border-radius: .5em;
+	border-radius: .5rem;
 	color: #fff;
-	font-size: 1.1em;
-	line-height: 2em;
+	font-size: 1.1rem;
+	line-height: 2rem;
 	text-align: center;
 	width: 100%;
 }
@@ -291,17 +291,17 @@ form button:hover {
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
-	header {
+	header, footer, article {
 		border-radius: 0;
 		height: auto;
 		margin: 0;
-		padding: 1em;
+		padding: 1rem;
 	}
 	h1 {
-		font-size: 1.6em;
+		font-size: 1.6rem;
 	}
 	h2 {
-		font-size: 1.2em;
+		font-size: 1.2rem;
 	}
 	.hamburger {
 		display: inline-block;
@@ -309,8 +309,8 @@ form button:hover {
 	nav {
 		background-color: rgba(51, 51, 51, 0.7);
 		position: fixed;
-		right: 2.3em;
-		top: 2.3em;
+		right: 2.3rem;
+		top: 2.3rem;
 	}
 	nav ul {
 		align-items: stretch;
@@ -324,16 +324,14 @@ form button:hover {
 		align-items: stretch;
 		display: flex;
 		flex-flow: column;
-		line-height: 1.5em;
+		line-height: 1.5rem;
 		text-align: left;
 	}
 	nav a {
 		display: block;
 		text-align: left;
 	}
-	.titremenu {
-		text-align: left;
-	}
+
 	nav ul li ul {
 		position: static;
 	}
@@ -353,21 +351,17 @@ form button:hover {
 		margin-right: 0;
 		text-align: justify;
 	}
-	article {
-		padding: 1em;
-	}
+
 	.cols>article {
 		text-align: center;
 	}
-	footer {
-		border-radius: 0;
-	}
+	
 	.img-round {
-		margin: 1em auto;
+		margin: 1rem auto;
 		max-width: 80%;
 	}
 	.enhaut {
-		bottom: 2.2em;
+		bottom: 2.2rem;
 		right: calc(50% - 1.1rem);
 	}
 }
