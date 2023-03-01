@@ -68,7 +68,7 @@
 					<li><a href="enseignements"><img class="icons" src="./img/fi-rr-e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
 						<div class="expand">
-							<span class="titremenu"><img class="icons" src="./img/fi-rr-computer.svg" alt="icone recherche">Recherche<img class="icons" src="./img/fi-rr-angle-small-down.svg" alt="icone sous-menu"></span>
+							<span class="titremenu"><img class="icons" src="./img/fi-rr-search.svg" alt="icone recherche">Recherche<img class="icons" src="./img/fi-rr-angle-small-down.svg" alt="icone sous-menu"></span>
 						</div>
 						<ul>
 							<li><a href="these">Ma Thèse</a></li>

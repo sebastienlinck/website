@@ -49,7 +49,7 @@ a {
 	width: auto;
 	filter: invert(100%);
 	vertical-align: middle;
-	margin: 0 5px;
+	margin: 0 .5rem;
 }
 
 header {
