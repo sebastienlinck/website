@@ -156,7 +156,7 @@ section {
 }
 
 article {
-	padding: 1.5rem;
+	padding: 1rem 1.5rem;
 }
 
 h3 {
@@ -176,7 +176,7 @@ h4 {
 
 section ul {
 	list-style-type: '\2714';
-	margin: .5rem 1.5rem;
+	margin: .5rem 1rem;
 }
 
 section ul:last-of-type {
