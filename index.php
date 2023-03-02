@@ -60,23 +60,23 @@
 				<h2>Enseignant en informatique - Responsable de formation</h2>
 			</header>
 			<nav>
-				<div class="hamburger expand">
-					<img class="icons" src="./img/fi-rr-menu-burger.svg" alt="icone menu">
+				<div class="hamburger">
+					<img class="icons" src="./img/menu-burger.svg" alt="icone menu">
 				</div>
 				<ul>
-					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/fi-rr-home.svg" alt="icone accueil">Accueil</a></li>
-					<li><a href="enseignements"><img class="icons" src="./img/fi-rr-e-learning.svg" alt="icone enseignement">Enseignements</a></li>
+					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
+					<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
-						<div class="expand">
-							<span class="titremenu"><img class="icons" src="./img/fi-rr-search.svg" alt="icone recherche">Recherche<img class="icons" src="./img/fi-rr-angle-small-down.svg" alt="icone sous-menu"></span>
-						</div>
+						<a class="sousmenu">
+							<img class="icons" src="./img/search.svg" alt="icone recherche">Recherche<img class="icons" src="./img/angle-small-down.svg" alt="icone sous-menu">
+						</a>
 						<ul>
-							<li><a href="these">Ma Thèse</a></li>
-							<li><a href="algopath">AlgoPath</a></li>
+							<li><a href="these"><img class="icons" src="./img/graduation-cap.svg" alt="icone recherche">Ma Thèse</a></li>
+							<li><a href="algopath"><img class="icons" src="./img/puzzle-piece.svg" alt="icone recherche">AlgoPath</a></li>
 						</ul>
 					</li>
-					<li><a href="publications"><img class="icons" src="./img/fi-rr-edit.svg" alt="icone publications">Publications</a></li>
-					<li><a href="contact"><img class="icons" src="./img/fi-rr-envelope.svg"  alt="icone contact">Contact</a></li>
+					<li><a href="publications"><img class="icons" src="./img/edit.svg" alt="icone publications">Publications</a></li>
+					<li><a href="contact"><img class="icons" src="./img/envelope.svg"  alt="icone contact">Contact</a></li>
 				</ul>
 			</nav>
 			<main>
@@ -85,7 +85,7 @@
 			<?php include("./pages/footer.php"); ?>
 		</div>
 		<div class="enhaut">
-			<a href="#page"><img class="icons" src="./img/fi-rr-angle-square-up.svg"  alt="icone retour"></a>
+			<a href="#page"><img class="icons" src="./img/angle-square-up.svg"  alt="icone retour"></a>
 		</div>
 		<script src="./js/outils.js"></script>
 		<script>

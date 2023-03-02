@@ -9,35 +9,26 @@
 	$response = file_get_contents($url . "?secret=" . $privatekey . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
 	$data = json_decode($response);
 	
-	
 	if (isset($data->success) and $data->success == true) {
 		$_SESSION['success'] = 1;
 		$to = 'contact@slinck.com';
 		
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
+		$headers = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-		$headers .= 'From: ' . htmlspecialchars($_POST['email'] . "\r\n");
+		$headers .= 'From: '.htmlspecialchars($_POST['email'] . "\r\n");
 		
-		$subject = 'Message envoyé par ' . htmlspecialchars($_POST['name']);
+		$subject = 'Message envoyé par '.htmlspecialchars($_POST['name']);
 		$subject = trim(iconv_mime_encode('',$subject,array("input-charset"=>"UTF-8","output-charset"=>"UTF-8")),' :');
-		$message_content = '
-		<html>
-		<body>
-		<table>
-		<tr>
-		<td><b>Contenu du message:</b></td>
-		</tr>
-		<tr>
-		<td>' . htmlspecialchars($_POST['message']) . '</td>
-		</tr>
-		</table>
-		</body>
-		</html>';
+		$message_content = '<html><body><p><b>Contenu du message:</b></p><p>';
+		$message_content .= htmlspecialchars($_POST['message']);
+		$message_content .= '</p></body></html>';
 		mail($to, $subject, $message_content, $headers);
-		header('Location: ../contact');
+		
 	} 
 	else {
 		$_SESSION['success'] = 0;
 		$_SESSION['inputs'] = $_POST;
-		header('Location: ../contact');
 	}
+	header('Location: ../contact');
+	exit();
+?>

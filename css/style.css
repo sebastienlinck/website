@@ -45,11 +45,9 @@ a {
 }
 
 .icons {
-	height: 1.8rem;
+	height: 1.8em;
 	width: auto;
 	filter: invert(100%);
-	vertical-align: middle;
-	margin: 0 .5rem;
 }
 
 header {
@@ -100,7 +98,9 @@ nav>ul>li {
 
 nav a {
 	color: #fff;
+	display: flex;
 	align-items: center;
+	gap: .5rem;
 	font-size: 1.4rem;
 	font-style: normal;
 	font-weight: 700;
@@ -108,7 +108,7 @@ nav a {
 	padding: 0 .8rem;
 }
 
-.titremenu {
+.sousmenu {
 	display: flex;
 	align-items: center;
 	font-size: 1.4rem;
