@@ -60,14 +60,14 @@
 				<h2>Enseignant en informatique - Responsable de formation</h2>
 			</header>
 			<nav>
-				<div class="hamburger">
+				<div class="hamburger expand">
 					<img class="icons" src="./img/menu-burger.svg" alt="icone menu">
 				</div>
 				<ul>
 					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
 					<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
-						<a class="sousmenu">
+						<a class="sousmenu expand">
 							<img class="icons" src="./img/search.svg" alt="icone recherche">Recherche<img class="icons" src="./img/angle-small-down.svg" alt="icone sous-menu">
 						</a>
 						<ul>

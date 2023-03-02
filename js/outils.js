@@ -11,7 +11,7 @@ window.addEventListener('scroll', event => {
 	}
 });
 
-document.querySelectorAll('.hamburger .sousmenu').forEach(item => {
+document.querySelectorAll('.expand').forEach(item => {
 	item.addEventListener('click', event => {
 		item.nextElementSibling.classList.toggle('visible');
 	})
