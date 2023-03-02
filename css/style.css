@@ -291,27 +291,33 @@ form button:hover {
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
+	
 	header, footer, article {
 		border-radius: 0;
 		height: auto;
 		margin: 0;
 		padding: 1rem;
 	}
+	
 	h1 {
 		font-size: 1.6rem;
 	}
+	
 	h2 {
 		font-size: 1.2rem;
 	}
+	
 	.hamburger {
-		display: inline-block;
+		display: flex;
 	}
+	
 	nav {
 		background-color: rgba(51, 51, 51, 0.7);
 		position: fixed;
 		right: 2.3rem;
 		top: 2.3rem;
 	}
+	
 	nav ul {
 		align-items: stretch;
 		display: none;
@@ -320,6 +326,7 @@ form button:hover {
 		padding: 0;
 		text-align: left;
 	}
+	
 	nav ul li, ul li ul {
 		align-items: stretch;
 		display: flex;
@@ -327,26 +334,26 @@ form button:hover {
 		line-height: 1.5rem;
 		text-align: left;
 	}
-	nav a {
-		display: block;
-		text-align: left;
-	}
 
 	nav ul li ul {
 		position: static;
 	}
+	
 	#page {
 		margin: 0;
 		min-width: 0;
 		padding: 0;
 		width: 100%;
 	}
+	
 	.cols {
 		flex-flow: column;
 	}
+	
 	section {
 		border-radius: 0;
 	}
+	
 	section ul li {
 		margin-right: 0;
 		text-align: justify;
@@ -360,6 +367,7 @@ form button:hover {
 		margin: 1rem auto;
 		max-width: 80%;
 	}
+	
 	.enhaut {
 		bottom: 2.2rem;
 		right: calc(50% - 1.1rem);
