@@ -182,6 +182,10 @@ article {
 	margin: 0 1.5rem;
 }
 
+article:last-of-type {
+	margin-bottom: 1rem;
+}
+
 h4 {
 	color: #212121;
 	font-size: 1.2rem;
