@@ -15,7 +15,7 @@ html, body {
 #page {
 	margin: 0 auto;
 	max-width: 1600px;
-	min-width: 980px;
+	min-width: 1000px;
 	width: 75%;
 	display: flex;
 	flex-flow: column nowrap;
@@ -58,7 +58,7 @@ a {
 }
 
 header {
-	height: 10rem;
+	min-height: 10rem;
 	background-color: #efefef;
 	border-radius: .5rem;
 	box-shadow: .3rem .3rem .3rem #555;
@@ -325,6 +325,17 @@ button:hover {
 }
 
 @media all and (max-width: 1024px) {
+	#page {
+		margin: 0;
+		min-width: 0;
+		padding: 0;
+		width: 100%;
+	}
+	
+	#page::before, #page::after {
+		content: none;
+	}
+
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
@@ -338,6 +349,10 @@ button:hover {
 		height: auto;
 		margin: 0;
 		padding: 1rem;
+	}
+
+	header {
+		min-height: 4rem;
 	}
 	
 	h1 {
@@ -378,13 +393,6 @@ button:hover {
 	
 	nav ul li ul {
 		position: static;
-	}
-	
-	#page {
-		margin: 0;
-		min-width: 0;
-		padding: 0;
-		width: 100%;
 	}
 	
 	.cols {
