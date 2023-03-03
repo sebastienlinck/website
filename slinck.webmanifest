@@ -12,7 +12,7 @@
       "src": "https://slinck.com/img/favicon.png",
       "sizes": "256x256",
       "type": "image/png",
-	  "purpose": "any"
+      "purpose": "any"
     },
     {
       "src": "https://slinck.com/img/favicon512.png",
@@ -25,32 +25,39 @@
   "start_url": "https://www.slinck.com/",
   "display": "standalone",
   "orientation": "portrait",
-  "url": "https://www.slinck.com",
   "lang": "fr",
-  "categories": ["research", "education", "personnal"],
+  "categories": [
+    "research",
+    "education",
+    "personnal"
+  ],
   "scope": "https://www.slinck.com/",
   "description": "Site web de présentation de mes enseignements dispensés et de mes travaux de recherche",
-  "screenshots" : [
-	  {
-		"src": "https://slinck.com/img/index.webp",
-		"sizes": "750x1334",
-		"type": "image/webp",
-		"platform": "narrow",
-		"label": "Page d'accueil de l'application"
-	  }
+  "screenshots": [
+    {
+      "src": "https://slinck.com/img/index.webp",
+      "sizes": "750x1334",
+      "type": "image/webp"
+    }
   ],
-  "shortcuts" : [
-	  {
-		"name": "Mes publications",
-		"url": "/publications"
-	  },
-	  {
-		"name": "Mes enseignements",
-		"url": "/enseignements"
-	  },
-	  {
-		"name": "Ma thèse",
-		"url": "/these"
-	  }
-  ]
+  "shortcuts": [
+    {
+      "name": "Mes publications",
+      "url": "/publications"
+    },
+    {
+      "name": "Mes enseignements",
+      "url": "/enseignements"
+    },
+    {
+      "name": "Ma thèse",
+      "url": "/these"
+    }
+  ],
+  "dir": "auto",
+  "display_override": [
+    "standalone",
+    "fullscreen"
+  ],
+  "prefer_related_applications": false
 }
