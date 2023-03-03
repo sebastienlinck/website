@@ -68,7 +68,7 @@
 					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
 					<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
-						<a class="sousmenu expand">
+						<a class="sousmenu expand" href="#">
 							<img class="icons" src="./img/chart-network.svg" alt="icone recherche">Recherche<img class="icons" src="./img/angle-small-down.svg" alt="icone sous-menu">
 						</a>
 						<ul>
