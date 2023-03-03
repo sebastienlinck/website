@@ -2,6 +2,8 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', TRUE);
 	setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
+	session_set_cookie_params(["SameSite" => "Strict"]);
+	session_set_cookie_params(["Secure" => "true"]);
 	session_start();
 	$auth_pages['accueil'] = './pages/accueil.html';
 	$auth_pages['enseignements'] = './pages/enseignements.html';
@@ -33,7 +35,6 @@
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 		<link rel="stylesheet" href="./css/style.css">
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M85B535');</script>
@@ -68,7 +69,7 @@
 					<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
 						<a class="sousmenu expand">
-							<img class="icons" src="./img/search.svg" alt="icone recherche">Recherche<img class="icons" src="./img/angle-small-down.svg" alt="icone sous-menu">
+							<img class="icons" src="./img/chart-network.svg" alt="icone recherche">Recherche<img class="icons" src="./img/angle-small-down.svg" alt="icone sous-menu">
 						</a>
 						<ul>
 							<li><a href="these"><img class="icons" src="./img/graduation-cap.svg" alt="icone recherche">Ma Thèse</a></li>
@@ -83,6 +84,13 @@
 				<?php include($auth_pages[$page]); ?>
 			</main>
 			<?php include("./pages/footer.php"); ?>
+			<section id="cookie">
+				<h3></h3>
+				<article>
+					<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
+					<button>J'ai compris</button>
+				</article>
+			</section>
 		</div>
 		<div class="enhaut">
 			<a href="#page"><img class="icons" src="./img/angle-square-up.svg"  alt="icone retour"></a>
@@ -92,26 +100,6 @@
 			if (typeof navigator.serviceWorker !== 'undefined') {
 				navigator.serviceWorker.register('sw.js')
 			}
-		</script>
-		<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-		<script>
-			window.cookieconsent.initialise({
-				"palette": {
-					"popup": {
-						"background": "#efefef"
-					},
-					"button": {
-						"background": "#555"
-					}
-				},
-				"showLink": false,
-				"theme": "classic",
-				"position": "bottom-left",
-				"content": {
-					"message": "Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.",
-					"dismiss": "J'ai compris"
-				}
-			});
 		</script>
 	</body>
 	<?php

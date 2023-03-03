@@ -32,7 +32,7 @@ p {
 	text-indent: 3.2rem;
 }
 
-p:last-of-type {
+p:last-child {
 	margin: 0;
 }
 
@@ -289,7 +289,7 @@ textarea {
 	resize: vertical;
 }
 
-form button {
+button {
 	background-color: #333;
 	border: none;
 	border-radius: .5rem;
@@ -298,15 +298,39 @@ form button {
 	line-height: 2rem;
 	text-align: center;
 	width: 100%;
+	transition: all 0.2s ease;
+	cursor: pointer;
 }
 
-form button:hover {
-	background: #000;
+button:hover {
+	background: #999;
+}
+
+#cookie {
+	position: fixed;
+	bottom: 50px;
+	right: -400px;
+	max-width: 375px;
+	border: 1px solid black;
+	transition: all 0.3s ease;
+	z-index:3;
+}
+
+#cookie.show {
+	right: 20px;
+}
+
+#cookie p {
+	text-indent: 0;
 }
 
 @media all and (max-width: 1024px) {
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
+	}
+	
+	#page::before, #page::after {
+		content: none;
 	}
 	
 	header, footer, article {
