@@ -35,7 +35,7 @@
 		<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
-		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/style.min.css">
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -98,7 +98,7 @@
 		<div class="enhaut">
 			<a href="#page"><img class="icons" src="./img/angle-square-up.svg"  alt="icone retour"></a>
 		</div>
-		<script src="./js/outils.js"></script>
+		<script src="./js/outils.min.js"></script>
 		<script>
 			if (typeof navigator.serviceWorker !== 'undefined') {
 				navigator.serviceWorker.register('sw.js')
