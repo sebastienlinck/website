@@ -29,6 +29,6 @@
 	else {
 		$_SESSION['success'] = 0;
 	}
-	header('Location: ../hp.php');
+	header('Location: ../contact');
 	exit();
 ?>
