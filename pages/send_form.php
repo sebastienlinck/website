@@ -1,34 +1,34 @@
 <?php
 	session_start();
-	if (isset($_POST['g-recaptcha-response'])) {
-		$captcha = $_POST['g-recaptcha-response'];
+	function honeypot_validade($req) {
+		if (!empty($req)) {
+			$honeypot_fields = ["name","email","message"];
+			foreach ($honeypot_fields as $field) {
+				if (isset($req[$field]) && !empty($req[$field])) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
-	
-	$url = 'https://www.google.com/recaptcha/api/siteverify';
-	$privatekey = "6LcBwRgUAAAAAACkjLU8TC6gwBYT9z7_-tV4-k2w";
-	$response = file_get_contents($url . "?secret=" . $privatekey . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-	$data = json_decode($response);
-	
-	if (isset($data->success) and $data->success == true) {
+	if (honeypot_validade($_REQUEST)) {
 		$_SESSION['success'] = 1;
 		$to = 'contact@slinck.com';
 		
 		$headers = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-		$headers .= 'From: '.htmlspecialchars($_POST['email'] . "\r\n");
+		$headers .= 'From: '.htmlspecialchars($_REQUEST['emailslinck'] . "\r\n");
 		
-		$subject = 'Message envoyé par '.htmlspecialchars($_POST['name']);
+		$subject = 'Message envoyé par '.htmlspecialchars($_REQUEST['nameslinck']);
 		$subject = trim(iconv_mime_encode('',$subject,array("input-charset"=>"UTF-8","output-charset"=>"UTF-8")),' :');
 		$message_content = '<html><body><p><b>Contenu du message:</b></p><p>';
-		$message_content .= htmlspecialchars($_POST['message']);
+		$message_content .= htmlspecialchars($_REQUEST['messageslinck']);
 		$message_content .= '</p></body></html>';
-		mail($to, $subject, $message_content, $headers);
-		
+		mail($to, $subject, $message_content, $headers);	
 	} 
 	else {
 		$_SESSION['success'] = 0;
-		$_SESSION['inputs'] = $_POST;
 	}
-	header('Location: ../contact');
+	header('Location: ../hp.php');
 	exit();
 ?>

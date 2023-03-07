@@ -47,7 +47,6 @@
 			gtag('js', new Date());
 			gtag('config', 'G-CX6WD4QDPN');
 		</script>
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<link rel="manifest" href="/slinck.webmanifest">
 		<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
 	</head>

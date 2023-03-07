@@ -289,6 +289,16 @@ textarea {
 	resize: vertical;
 }
 
+.honeypot {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0;
+	width: 0;
+	z-index: -1;
+}
+
 button {
 	background-color: #333;
 	border: none;
@@ -335,7 +345,7 @@ button:hover {
 	#page::before, #page::after {
 		content: none;
 	}
-
+	
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
@@ -350,7 +360,7 @@ button:hover {
 		margin: 0;
 		padding: 1rem;
 	}
-
+	
 	header {
 		min-height: 4rem;
 	}
