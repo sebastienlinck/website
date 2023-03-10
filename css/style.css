@@ -182,7 +182,7 @@ article {
 	margin: 0 1.5rem;
 }
 
-article:last-of-type {
+article:last-of-type, .cols article {
 	margin-bottom: 1rem;
 }
 
