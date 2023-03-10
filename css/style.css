@@ -182,7 +182,7 @@ article {
 	margin: 0 1.5rem;
 }
 
-article:last-of-type, .cols article {
+article:last-of-type {
 	margin-bottom: 1rem;
 }
 
@@ -211,12 +211,14 @@ article ul li {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 1rem;
 }
 
 .img-round {
 	border-radius: 50%;
 	height: auto;
 	width: 18rem;
+	vertical-align: middle;
 }
 
 footer {
