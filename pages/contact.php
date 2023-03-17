@@ -4,7 +4,6 @@
 		<article>
 			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck">
 		</article>
-		
 		<article>
 			<h4>Sébastien Linck</h4>
 			<br>
@@ -27,11 +26,8 @@
 				<input required type="text" aria-label="name" name="nameslinck" id="nameslinck" placeholder="Votre nom">
 				<input required type="email" aria-label="emailslinck" name="emailslinck" id="emailslinck" placeholder="Votre email">
 				<textarea rows="6" required aria-label="message" id="messageslinck" name="messageslinck" placeholder="Votre message"></textarea>
-				<label class="honeypot" for="name"></label>
-				<input class="honeypot" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here">
-				<label class="honeypot" for="email"></label>
-				<input class="honeypot" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here">
-				<label class="honeypot" for="message"></label>
+				<input class="honeypot" autocomplete="off" type="text" id="name" name="name">
+				<input class="honeypot" autocomplete="off" type="email" id="email" name="email">
 				<textarea class="honeypot" autocomplete="off" id="message" name="message"></textarea>
 				<button type='submit'>Envoyer</button>
 			</form>
