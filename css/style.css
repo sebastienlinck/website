@@ -6,12 +6,10 @@
 	padding: 0;
 	text-align: left;
 }
-
 html, body {
 	background-color: #fff;
 	scroll-behavior: smooth;
 }
-
 #page {
 	margin: 0 auto;
 	max-width: 1600px;
@@ -21,27 +19,22 @@ html, body {
 	flex-flow: column nowrap;
 	gap: 1rem;
 }
-
 #page::before, #page::after {
 	content: "";
 }
-
 p {
 	margin-bottom: .5rem;
 	text-align: justify;
 	text-indent: 3.2rem;
 }
-
 p:last-child {
 	margin: 0;
 }
-
 a {
 	color: #000;
 	font-weight: 700;
 	text-decoration: none;
 }
-
 .social-icons {
 	border: none;
 	border-radius: .5rem;
@@ -50,13 +43,11 @@ a {
 	overflow: hidden;
 	width: 3.5rem;
 }
-
 .icons {
 	height: 1.8em;
 	width: auto;
 	filter: invert(100%);
 }
-
 header {
 	min-height: 10rem;
 	background-color: #efefef;
@@ -67,41 +58,34 @@ header {
 	justify-content: space-between;
 	padding: 1.5rem;
 }
-
 h1 {
 	color: #333;
 	font-size: 3rem;
 }
-
 h2 {
 	color: #555;
 	font-size: 2rem;
 }
-
 nav {
 	background-color: #333;
 	border-radius: .5rem;
 	box-shadow: .3rem .3rem .3rem #555;
 	color: #fff;
 }
-
 nav ul {
 	background-color: #333;
 	list-style: none;
 	text-align: center;
 }
-
 nav>ul {
 	border-radius: .5rem;
 	display: flex;
 	flex-flow: row;
 	justify-content: center;
 }
-
 nav>ul>li {
 	position: relative;
 }
-
 nav a {
 	color: #fff;
 	display: flex;
@@ -113,7 +97,6 @@ nav a {
 	line-height: 4rem;
 	padding: 0 .8rem;
 }
-
 .sousmenu {
 	display: flex;
 	align-items: center;
@@ -123,7 +106,6 @@ nav a {
 	line-height: 4rem;
 	padding: 0 .8rem;
 }
-
 nav ul li ul {
 	border-bottom-left-radius: .5rem;
 	border-bottom-right-radius: .5rem;
@@ -136,27 +118,22 @@ nav ul li ul {
 	align-items: center;
 	z-index: 2;
 }
-
 nav ul li ul li {
 	width: 100%;
 	text-align: center;
 }
-
 nav ul li:hover ul {
 	display: flex;
 	flex-flow: column;
 }
-
 nav li:hover {
 	background: #000;
 }
-
 main {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: 1rem;
 }
-
 section {
 	background: #efefef;
 	border-radius: .5rem;
@@ -168,7 +145,6 @@ section {
 	gap: 1rem;
 	overflow: hidden;
 }
-
 h3 {
 	background-color: #999;
 	color: #212121;
@@ -177,50 +153,40 @@ h3 {
 	line-height: 2rem;
 	padding: .5rem 1.5rem;
 }
-
 article, .cols article:last-of-type {
 	margin: 0 1.5rem;
 }
-
 article:last-of-type {
 	margin-bottom: 1rem;
 }
-
 h4 {
 	color: #212121;
 	font-size: 1.2rem;
 	padding: 0 1rem;	
 }
-
 article ul {
 	list-style-type: '\2714';
 	margin: .5rem 1rem;
 }
-
 article ul:last-of-type {
 	margin-bottom: 0;
 }
-
-
 article ul li {
 	margin: .5rem 1rem;
 	padding-left: .5rem;
 }
-
 .cols {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 1rem;
 }
-
 .img-round {
 	border-radius: 50%;
 	height: auto;
 	width: 18rem;
 	vertical-align: middle;
 }
-
 footer {
 	background-color: #333;
 	border-radius: .5rem;
@@ -229,11 +195,9 @@ footer {
 	line-height: 4rem;
 	text-align: center;
 }
-
 footer a {
 	color: #fff;
 }
-
 .hamburger {
 	background-color: rgba(51, 51, 51, .8);
 	border-radius: .5rem;
@@ -244,11 +208,9 @@ footer a {
 	top: 1rem;
 	z-index: 3;
 }
-
 .hamburger .icons {
 	height: 2.4rem;
 }
-
 .enhaut {
 	bottom: 2rem;
 	display: none;
@@ -259,25 +221,20 @@ footer a {
 	text-align: center;
 	z-index: 5;
 }
-
 .enhaut .icons {
 	filter: none;
 	height: 2.4rem;
 }
-
 .visible {
 	display: flex;
 }
-
 .invisible {
 	display: none;
 }
-
 form {
 	max-width: 34rem;
 	text-align: center;
 }
-
 input, textarea {
 	border: 1px solid #ccc;
 	border-radius: .5rem;
@@ -286,11 +243,9 @@ input, textarea {
 	padding: .5rem;
 	width: 100%;
 }
-
 textarea {
 	resize: vertical;
 }
-
 .honeypot {
 	opacity: 0;
 	position: absolute;
@@ -300,7 +255,6 @@ textarea {
 	width: 0;
 	z-index: -1;
 }
-
 button {
 	background-color: #333;
 	border: none;
@@ -313,11 +267,9 @@ button {
 	transition: all 0.2s ease;
 	cursor: pointer;
 }
-
 button:hover {
 	background: #999;
 }
-
 #cookie {
 	position: fixed;
 	bottom: 50px;
@@ -327,11 +279,9 @@ button:hover {
 	transition: all 0.3s ease;
 	z-index:3;
 }
-
 #cookie.show {
 	right: 20px;
 }
-
 #cookie p {
 	text-indent: 0;
 }
@@ -343,49 +293,39 @@ button:hover {
 		padding: 0;
 		width: 100%;
 	}
-	
 	#page::before, #page::after {
 		content: none;
 	}
-	
 	section, nav, header, footer, nav ul li ul {
 		box-shadow: none;
 	}
-	
 	#page::before, #page::after {
 		content: none;
 	}
-	
 	header, footer, article {
 		border-radius: 0;
 		height: auto;
 		margin: 0;
 		padding: 1rem;
 	}
-	
 	header {
 		min-height: 4rem;
 	}
-	
 	h1 {
 		font-size: 1.6rem;
 	}
-	
 	h2 {
 		font-size: 1.2rem;
 	}
-	
 	.hamburger {
 		display: flex;
 	}
-	
 	nav {
 		background-color: rgba(51, 51, 51, 0.7);
 		position: fixed;
 		right: 2.3rem;
 		top: 2.3rem;
 	}
-	
 	nav ul {
 		align-items: stretch;
 		display: none;
@@ -394,7 +334,6 @@ button:hover {
 		padding: 0;
 		text-align: left;
 	}
-	
 	nav ul li, ul li ul {
 		align-items: stretch;
 		display: flex;
@@ -402,35 +341,28 @@ button:hover {
 		line-height: 1.5rem;
 		text-align: left;
 	}
-	
 	nav ul li ul {
 		position: static;
 	}
-	
 	.cols {
 		flex-flow: column;
 	}
-	
 	section {
 		border-radius: 0;
 	}
-	
 	section ul li {
 		margin-right: 0;
 		text-align: justify;
 	}
-	
 	.cols>article {
 		text-align: center;
 	}
-	
 	.img-round {
 		margin: 1rem auto;
 		max-width: 80%;
 	}
-	
 	.enhaut {
 		bottom: 2.2rem;
 		right: calc(50% - 1.1rem);
 	}
-}
+}																
