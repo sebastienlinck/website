@@ -1,5 +1,1 @@
 Sitemap: http://www.slinck.com/sitemap.xml
-
-User-agent: *
-Disallow: /articles/ 
-Disallow: /emploi/
