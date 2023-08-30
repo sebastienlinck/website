@@ -4,14 +4,14 @@
 		if (!empty($req)) {
 			$honeypot_fields = ["name","email","message"];
 			foreach ($honeypot_fields as $field) {
-				if (isset($req[$field]) && !empty($req[$field])) {
+				if (!empty($req[$field])) {
 					return false;
 				}
 			}
 		}
 		return true;
 	}
-	if (honeypot_validade($_REQUEST)) {
+	if (honeypot_validade($_REQUEST)&&!empty($_REQUEST['emailslinck'])&&!empty($_REQUEST['nameslinck'])&&!empty($_REQUEST['messageslinck'])) {
 		$_SESSION['success'] = 1;
 		$to = 'contact@slinck.com';
 		
@@ -31,4 +31,3 @@
 	}
 	header('Location: ../contact');
 	exit();
-?>

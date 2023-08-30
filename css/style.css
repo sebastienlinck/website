@@ -254,6 +254,7 @@ textarea {
 	height: 0;
 	width: 0;
 	z-index: -1;
+	visibility: hidden;
 }
 button {
 	background-color: #333;
