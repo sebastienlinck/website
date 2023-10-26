@@ -18,17 +18,19 @@
 		</article>
 		<article>
 			<?php
-				if (isset($_SESSION['success']) and $_SESSION['success'] == 1) {
-					echo "Votre message a bien été transmis !";
-				}
+			if (isset($_SESSION['success']) and $_SESSION['success'] == 1) {
+				echo "Votre message a bien été transmis !";
+			}
 			?>
 			<form id="contact-form" action="pages/send_form.php" method="post">
-				<input required type="text" aria-label="name" name="nameslinck" id="nameslinck" placeholder="Votre nom">
-				<input required type="email" aria-label="emailslinck" name="emailslinck" id="emailslinck" placeholder="Votre email">
-				<textarea rows="6" required aria-label="message" id="messageslinck" name="messageslinck" placeholder="Votre message"></textarea>
-				<input class="honeypot" autocomplete="off" type="text" id="name" name="name">
-				<input class="honeypot" autocomplete="off" type="email" id="email" name="email">
-				<textarea class="honeypot" autocomplete="off" id="message" name="message"></textarea>
+				<label for="nameslinck">Nom</label>
+				<input required type="text" aria-label="name" name="nameslinck" id="nameslinck" required>
+				<label style="display:none;">Ne pas remplir :</label>
+				<input type="text" name="honeypot" id="honeypot">
+				<label for="emailslinck">Courriel</label>
+				<input required type="email" aria-label="email" name="emailslinck" id="emailslinck" required>
+				<label for="messageslinck">Message</label>
+				<textarea rows="6" required aria-label="message" id="messageslinck" name="messageslinck" required></textarea>
 				<button type='submit'>Envoyer</button>
 			</form>
 		</article>

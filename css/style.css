@@ -233,7 +233,9 @@ footer a {
 }
 form {
 	max-width: 34rem;
-	text-align: center;
+}
+form label {
+	text-align: start;
 }
 input, textarea {
 	border: 1px solid #ccc;
@@ -246,15 +248,8 @@ input, textarea {
 textarea {
 	resize: vertical;
 }
-.honeypot {
-	opacity: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 0;
-	width: 0;
-	z-index: -1;
-	visibility: hidden;
+label[style="display:none;"], input[type="text"][name="honeypot"] {
+	display: none;
 }
 button {
 	background-color: #333;
