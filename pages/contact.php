@@ -18,21 +18,35 @@
 		</article>
 		<article>
 			<?php
-			if (isset($_SESSION['success']) and $_SESSION['success'] == 1) {
-				echo "Votre message a bien été transmis !";
-			}
+			$cible = mt_rand(1, 20);
 			?>
 			<form id="contact-form" action="pages/send_form.php" method="post">
-				<label for="nameslinck">Nom</label>
-				<input required type="text" aria-label="name" name="nameslinck" id="nameslinck" required>
-				<label style="display:none;">Ne pas remplir :</label>
-				<input type="text" name="honeypot" id="honeypot">
-				<label for="emailslinck">Courriel</label>
-				<input required type="email" aria-label="email" name="emailslinck" id="emailslinck" required>
-				<label for="messageslinck">Message</label>
-				<textarea rows="6" required aria-label="message" id="messageslinck" name="messageslinck" required></textarea>
-				<button type='submit'>Envoyer</button>
+				<input type="text" name="nom" placeholder="Votre nom" id="nom-contact" required="required">
+				<input type="email" name="mail" placeholder="Votre e-mail" id="mail-contact" required="required">
+				<textarea rows="5" name="message" placeholder="Votre message" required="required"></textarea>
+				<label for="bip1">Sécurité : Placer le curseur sur <?= $cible ?>&nbsp;&nbsp;<span style="float:right;"> Valeur actuelle : <span id="bip2">0</span></span></label>
+				<input type="range" id="bip1" name="bip1" min="0" max="20" oninput="document.getElementById('bip2').textContent=this.value;" onchange="z=document.getElementById('envoyer-contact');if(this.value==<?= $cible ?>){z.disabled=false;}else{z.disabled=true;}">
+				<input type="submit" name="envoyer" value="Envoyer" id="envoyer-contact" disabled onclick="if(document.getElementById('bip1').value!=<?= $cible ?>){return false;}">
+				<input type="hidden" name="tps" value="<?= base_convert(($cible * 3) + date('z'), 10, 4) ?>">
 			</form>
+			<?php
+			if (isset($_REQUEST['envoyer']) && isset($_REQUEST['tps'])) {
+				$tps = (base_convert($_REQUEST['tps'], 4, 10) - date('z')) / 3;
+				if ($tps == $_REQUEST['bip1']) {
+					$to = 'contact@slinck.com';
+					$headers = 'MIME-Version: 1.0' . "\r\n";
+					$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+					$headers .= 'From: ' . strip_tags($_REQUEST['mail'] . "\r\n");
+					$subject = 'Message envoyé par ' . strip_tags($_REQUEST['nom']);
+					$subject = trim(iconv_mime_encode('', $subject, array("input-charset" => "UTF-8", "output-charset" => "UTF-8")), ' :');
+					$message_content = '<html><body><p><b>Contenu du message:</b></p><p>';
+					$message_content .= strip_tags($_REQUEST['message']);
+					$message_content .= '</p></body></html>';
+					mail($to, $subject, $message_content, $headers);
+					echo '<p>Message envoyé</p>';
+				}
+			}
+			?>
 		</article>
 	</div>
 </section>

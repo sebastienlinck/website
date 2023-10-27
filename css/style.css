@@ -248,10 +248,7 @@ input, textarea {
 textarea {
 	resize: vertical;
 }
-label[style="display:none;"], input[type="text"][name="honeypot"] {
-	display: none;
-}
-button {
+input[type=submit] {
 	background-color: #333;
 	border: none;
 	border-radius: .5rem;
@@ -263,9 +260,10 @@ button {
 	transition: all 0.2s ease;
 	cursor: pointer;
 }
-button:hover {
-	background: #999;
+input[type=submit]:disabled {
+	background-color: #ccc;
 }
+
 #cookie {
 	position: fixed;
 	bottom: 50px;
