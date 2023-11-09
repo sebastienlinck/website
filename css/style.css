@@ -276,9 +276,8 @@ input[type="submit"] {
   cursor: pointer;
 }
 input[type="submit"]:disabled {
-  background-color: var(--color-primary-a10);
+  background-color: rgba(0, 0, 0, 0.1);
 }
-
 #cookie {
   position: fixed;
   bottom: 50px;
