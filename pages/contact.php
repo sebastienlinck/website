@@ -5,10 +5,8 @@
 			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck">
 		</article>
 		<article>
-			<h4>Sébastien Linck</h4>
-			<br>
-			École d’ingénieurs en Sciences Industrielles et Numérique<br><br>
-			Campus Sup Ardenne<br>
+			<h5>Sébastien Linck</h5>
+			EiSINe - Campus Sup Ardenne<br>
 			9A rue Claude Chrétien<br>
 			08000 Charleville-Mézières<br><br>
 			contact(@)slinck(.)com
