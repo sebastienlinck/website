@@ -1,10 +1,10 @@
 :root {
-  --color-primary-a0: #fff;
-  --color-primary-a10: #efefef;
-  --color-primary-a50: #999;
-  --color-primary-a60: #333;
-  --color-primary-a70: #212121;
-  --color-primary-a80: #000;
+  --color-a0: #fff;
+  --color-a10: #efefef;
+  --color-a50: #999;
+  --color-a60: #333;
+  --color-a70: #212121;
+  --color-a80: #000;
 }
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@
 }
 html,
 body {
-  background-color: var(--color-primary-a0);
+  background-color: var(--color-a0);
   scroll-behavior: smooth;
 }
 #page {
@@ -41,7 +41,7 @@ p:last-child {
   margin: 0;
 }
 a {
-  color: var(--color-primary-a70);
+  color: var(--color-a70);
   font-weight: 700;
   text-decoration: none;
 }
@@ -60,31 +60,31 @@ a {
 }
 header {
   min-height: 10rem;
-  background-color: var(--color-primary-a10);
+  background-color: var(--color-a10);
   border-radius: 0.5rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-primary-a60);
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-a60);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   padding: 1.5rem;
 }
 h1 {
-  color: var(--color-primary-a60);
+  color: var(--color-a60);
   font-size: 3rem;
 }
 h2 {
-  color: var(--color-primary-a60);
+  color: var(--color-a60);
   font-size: 2rem;
 }
 nav {
-  background-color: var(--color-primary-a60);
+  background-color: var(--color-a60);
   border-radius: 0.5rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-primary-a60);
-  color: var(--color-primary-a0);
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-a60);
+  color: var(--color-a0);
   overflow: hidden;
 }
 nav ul {
-  background-color: var(--color-primary-a60);
+  background-color: var(--color-a60);
   list-style: none;
   text-align: center;
 }
@@ -120,8 +120,8 @@ nav a {
 nav ul li ul {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-primary-a60),
-    0.3rem 0 0.3rem var(--color-primary-a60);
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-a60),
+    0.3rem 0 0.3rem var(--color-a60);
   display: none;
   flex-flow: column;
   overflow: hidden;
@@ -139,7 +139,7 @@ nav ul li:hover ul {
   flex-flow: column;
 }
 nav li:hover {
-  background: var(--color-primary-a70);
+  background: var(--color-a70);
 }
 main {
   display: flex;
@@ -147,9 +147,9 @@ main {
   gap: 1rem;
 }
 section {
-  background: var(--color-primary-a10);
+  background: var(--color-a10);
   border-radius: 0.5rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-primary-a60);
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-a60);
   line-height: 160%;
   min-height: 10vh;
   display: flex;
@@ -158,7 +158,7 @@ section {
   overflow: hidden;
 }
 h3 {
-  background-color: var(--color-primary-a50);
+  background-color: var(--color-a50);
   color: #212121;
   font-size: 1.4rem;
   font-variant: small-caps;
@@ -201,18 +201,18 @@ article ul li {
   vertical-align: middle;
 }
 footer {
-  background-color: var(--color-primary-a60);
+  background-color: var(--color-a60);
   border-radius: 0.5rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-primary-a60);
-  color: var(--color-primary-a0);
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--color-a60);
+  color: var(--color-a0);
   line-height: 4rem;
   text-align: center;
 }
 footer a {
-  color: var(--color-primary-a0);
+  color: var(--color-a0);
 }
 .hamburger {
-  background-color: var(--color-primary-a60);
+  background-color: var(--color-a60);
   opacity: 0.8;
   border-radius: 0.5rem;
   display: none;
@@ -253,7 +253,7 @@ form label {
 }
 input,
 textarea {
-  border: 1px solid var(--color-primary-a10);
+  border: 1px solid var(--color-a10);
   border-radius: 0.5rem;
   line-height: 150%;
   margin: 0.3rem 0;
@@ -261,15 +261,15 @@ textarea {
   width: 100%;
 }
 input[type="range"] {
-  accent-color: var(--color-primary-a60);
+  accent-color: var(--color-a60);
 }
 textarea {
   resize: vertical;
 }
 input[type="submit"] {
-  background-color: var(--color-primary-a60);
+  background-color: var(--color-a60);
   border: none;
-  color: var(--color-primary-a0);
+  color: var(--color-a0);
   font-size: 1.1rem;
   line-height: 2rem;
   text-align: center;
@@ -337,7 +337,7 @@ input[type="submit"]:disabled {
     display: flex;
   }
   nav {
-    background-color: var(--color-primary-a60);
+    background-color: var(--color-a60);
     opacity: 0.7;
     position: fixed;
     right: 2.3rem;
