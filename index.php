@@ -20,12 +20,12 @@
 <!doctype html>
 <html lang="fr">
 	<head>
-		<title><?php echo ucfirst($page); ?> - Site de Sébastien Linck - Enseignant</title>
+		<title><?= ucfirst($page) ?> - Site de Sébastien Linck - Enseignant</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="<?php echo ucfirst($page); ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
+		<meta name="description" content="<?= ucfirst($page) ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 		<meta name="author" content="Sebastien Linck">
-		<link rel="canonical" href="<?php echo 'https://'.$_SERVER['HTTP_HOST']; if ($page!="accueil") echo '/'.$page; ?>">
+		<link rel="canonical" href="<?php echo'https://'.$_SERVER['HTTP_HOST']; if ($page!="accueil") echo '/'.$page; ?>">
 		<meta name="theme-color" content="#EFEFEF">
 		<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 		<meta property="og:type" content="article">
@@ -67,7 +67,7 @@
 					<img class="icons" src="./img/menu-burger.svg" alt="icone menu">
 				</div>
 				<ul>
-					<li><a href="<?php echo 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
+					<li><a href="<?= 'https://'.$_SERVER['HTTP_HOST']?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
 					<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
 					<li>
 						<a class="sousmenu expand" href="#">

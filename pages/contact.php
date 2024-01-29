@@ -28,19 +28,23 @@
 				<input type="hidden" name="tps" value="<?= base_convert(($cible * 3) + date('z'), 10, 4) ?>">
 			</form>
 			<?php
-			if (isset($_REQUEST['envoyer']) && isset($_REQUEST['tps'])) {
+			if (isset($_REQUEST['envoyer'], $_REQUEST['tps']) && is_numeric($_REQUEST['bip1'])) {
 				$tps = (base_convert($_REQUEST['tps'], 4, 10) - date('z')) / 3;
+
 				if ($tps == $_REQUEST['bip1']) {
 					$to = 'contact@slinck.com';
-					$headers = 'MIME-Version: 1.0' . "\r\n";
-					$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-					$headers .= 'From: ' . strip_tags($_REQUEST['mail'] . "\r\n");
-					$subject = 'Message envoyé par ' . strip_tags($_REQUEST['nom']);
-					$subject = trim(iconv_mime_encode('', $subject, array("input-charset" => "UTF-8", "output-charset" => "UTF-8")), ' :');
-					$message_content = '<html><body><h3>Contenu du message:</h3><p>';
-					$message_content .= strip_tags($_REQUEST['message']);
-					$message_content .= '</p></body></html>';
-					mail($to, $subject, $message_content, $headers);
+					$from = strip_tags($_REQUEST['mail']);
+					$nom = strip_tags($_REQUEST['nom']);
+					$message = strip_tags($_REQUEST['message']);
+					$subject = 'Message envoyé par ' . $nom;
+					$subject = trim(iconv_mime_encode('', $subject, ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8']), ' :');
+					$headers = [
+						'MIME-Version: 1.0',
+						'Content-type: text/html; charset=utf-8',
+						'From: ' . $from,
+					];
+					$message = '<html><body><h3>Contenu du message:</h3><p>' . $message . '</p></body></html>';
+					mail($to, $subject, $message, implode("\r\n", $headers));
 					echo '<p>Message envoyé</p>';
 				}
 			}
