@@ -1,69 +1,249 @@
-<section>		
-	<h3>Introduction</h3>
-	<article>
-		<p>Ma thèse, menée au sein du <strong>Laboratoire d'Informatique de l'Université de Franche-Comté (LIFC)</strong>, s'est étalée sur une période de quatre années, débutant en septembre 2004 pour aboutir à sa soutenance en décembre 2008. Dans le cadre de cette recherche, j'ai eu le privilège d'évoluer au sein de l'équipe Systèmes Distribués et Réseaux, plus spécifiquement dans le domaine de l'action Réseau, Mobilité et Adaptation. Sous la direction éclairée de <strong>François Spies</strong> et <strong>Eugen Dedu</strong>, j'ai exploré les méandres complexes des communications dans les réseaux hétérogènes, bénéficiant du soutien financier de la Communauté d'Agglomération du Pays de Montbéliard (CAPM) ainsi que de l'Université de Franche-Comté.</p>
-		
-		<p>Le titre de ma thèse, "<strong>Optimisation et adaptation des communications dans un réseau hétérogène</strong>", reflète fidèlement l'essence de mes travaux de recherche. Mon objectif principal était de répondre à un défi majeur de l'époque : l'optimisation des communications, notamment dans le contexte de la diffusion vidéo ou streaming. Face à l'absence de méthodes de transport adaptées aux applications vidéo, j'ai entrepris d'explorer différentes stratégies, en me concentrant sur les aspects matériel et applicatif des transmissions de données.</p>
-		
-		<p>Au cœur de ma démarche résidait la nécessité de considérer les spécificités des réseaux traversés, tant sur le plan filaire que radio. Conscients des limites des protocoles existants tels que UDP et TCP, nous avons exploré de nouvelles voies pour garantir une expérience utilisateur optimale. Cela impliquait notamment le développement de stratégies de congestion prioritaire, déployées au niveau des équipements actifs du réseau. Ces stratégies visaient à maintenir la qualité de la vidéo tout en retardant autant que possible les interruptions de flux.</p>
-		
-		<p>L'une des caractéristiques les plus innovantes de nos propositions résidait dans leur capacité à s'adapter dynamiquement aux conditions changeantes du réseau. Cependant, cette adaptation ne pouvait se faire isolément : elle nécessitait une synchronisation étroite avec les algorithmes de codage vidéo. Ainsi, notre approche intégrée a permis d'ouvrir de nouvelles perspectives dans le domaine des communications multimédias, offrant des solutions plus efficaces et mieux adaptées aux exigences croissantes des utilisateurs.</p>
-		
-		<p>Au-delà des résultats concrets obtenus, ma thèse a également contribué à enrichir le corpus de connaissances scientifiques dans le domaine des réseaux informatiques, ouvrant la voie à de nouvelles recherches et innovations dans un domaine en constante évolution.</p>
-		
-	</article>
+<section>
+  <h3>Introduction</h3>
+  <article>
+    <p>
+      Ma thèse, menée au sein du
+      <strong
+        >Laboratoire d'Informatique de l'Université de Franche-Comté
+        (LIFC)</strong
+      >, s'est étalée sur une période de quatre années, débutant en septembre
+      2004 pour aboutir à sa soutenance en décembre 2008. Dans le cadre de cette
+      recherche, j'ai eu le privilège d'évoluer au sein de l'équipe Systèmes
+      Distribués et Réseaux, plus spécifiquement dans le domaine de l'action
+      Réseau, Mobilité et Adaptation. Sous la direction éclairée de
+      <strong>François Spies</strong> et <strong>Eugen Dedu</strong>, j'ai
+      exploré les méandres complexes des communications dans les réseaux
+      hétérogènes, bénéficiant du soutien financier de la Communauté
+      d'Agglomération du Pays de Montbéliard (CAPM) ainsi que de l'Université de
+      Franche-Comté.
+    </p>
+
+    <p>
+      Le titre de ma thèse, "<strong
+        >Optimisation et adaptation des communications dans un réseau
+        hétérogène</strong
+      >", reflète fidèlement l'essence de mes travaux de recherche. Mon objectif
+      principal était de répondre à un défi majeur de l'époque : l'optimisation
+      des communications, notamment dans le contexte de la diffusion vidéo ou
+      streaming. Face à l'absence de méthodes de transport adaptées aux
+      applications vidéo, j'ai entrepris d'explorer différentes stratégies, en
+      me concentrant sur les aspects matériel et applicatif des transmissions de
+      données.
+    </p>
+
+    <p>
+      Au cœur de ma démarche résidait la nécessité de considérer les
+      spécificités des réseaux traversés, tant sur le plan filaire que radio.
+      Conscients des limites des protocoles existants tels que UDP et TCP, nous
+      avons exploré de nouvelles voies pour garantir une expérience utilisateur
+      optimale. Cela impliquait notamment le développement de stratégies de
+      congestion prioritaire, déployées au niveau des équipements actifs du
+      réseau. Ces stratégies visaient à maintenir la qualité de la vidéo tout en
+      retardant autant que possible les interruptions de flux.
+    </p>
+
+    <p>
+      L'une des caractéristiques les plus innovantes de nos propositions
+      résidait dans leur capacité à s'adapter dynamiquement aux conditions
+      changeantes du réseau. Cependant, cette adaptation ne pouvait se faire
+      isolément : elle nécessitait une synchronisation étroite avec les
+      algorithmes de codage vidéo. Ainsi, notre approche intégrée a permis
+      d'ouvrir de nouvelles perspectives dans le domaine des communications
+      multimédias, offrant des solutions plus efficaces et mieux adaptées aux
+      exigences croissantes des utilisateurs.
+    </p>
+
+    <p>
+      Au-delà des résultats concrets obtenus, ma thèse a également contribué à
+      enrichir le corpus de connaissances scientifiques dans le domaine des
+      réseaux informatiques, ouvrant la voie à de nouvelles recherches et
+      innovations dans un domaine en constante évolution.
+    </p>
+  </article>
 </section>
 
 <section>
-	<h3>Contrôle de congestion</h3>
-	<article>
-		<p>Dans une phase initiale de notre recherche, notre attention s'est portée sur l'amélioration du contrôle de la congestion au sein d'une architecture de réseau filaire. La congestion, pointée du doigt, résidait principalement au niveau des routeurs, plus spécifiquement dans leurs files d'attente, qui agissaient comme des régulateurs du flux de paquets en éliminant certains d'entre eux. Pour aborder cette problématique, nous avons conçu une extension visant à affiner les politiques de gestion des files d'attente au niveau des routeurs, en prenant en considération des critères tels que l'historique et l'ancienneté d'un flux dans le réseau. Une métrique clé que nous avons employée était la distance parcourue par un paquet, mesurée en fonction du nombre de routeurs traversés.</p>
-		
-		<p>Nous avions intégré cette extension dans une politique de gestion de files d'attente bien établie, connue sous le nom de <strong>RED (Random Early Detection)</strong>, pour former une nouvelle stratégie baptisée <strong>DDRED (Distant-Dependent RED)</strong>. Cette approche inédite nous a permis d'optimiser l'utilisation des ressources réseau en prenant des décisions éclairées sur quels paquets rejeter ou marquer pour la congestion. En effet, au lieu de traiter tous les paquets de manière uniforme, notre politique favorisait ceux ayant parcouru une plus grande distance, tandis que ceux proches de leur source étaient soit rejetés soit marqués par le drapeau ECN.</p>
-		
-		<p>À cette époque, bien que le cœur du réseau demeurait principalement filaire, nous avons constaté une tendance croissante vers l'utilisation de technologies sans fil telles que le <strong>Wi-Fi</strong> ou les réseaux de téléphonie mobile dans les réseaux d'accès. Cette évolution a soulevé de nouveaux défis et opportunités, nécessitant une adaptation constante de nos méthodes pour garantir des performances optimales dans des environnements réseau de plus en plus diversifiés.</p>
-		
-	</article>
+  <h3>Contrôle de congestion</h3>
+  <article>
+    <p>
+      Dans une phase initiale de notre recherche, notre attention s'est portée
+      sur l'amélioration du contrôle de la congestion au sein d'une architecture
+      de réseau filaire. La congestion, pointée du doigt, résidait
+      principalement au niveau des routeurs, plus spécifiquement dans leurs
+      files d'attente, qui agissaient comme des régulateurs du flux de paquets
+      en éliminant certains d'entre eux. Pour aborder cette problématique, nous
+      avons conçu une extension visant à affiner les politiques de gestion des
+      files d'attente au niveau des routeurs, en prenant en considération des
+      critères tels que l'historique et l'ancienneté d'un flux dans le réseau.
+      Une métrique clé que nous avons employée était la distance parcourue par
+      un paquet, mesurée en fonction du nombre de routeurs traversés.
+    </p>
+
+    <p>
+      Nous avions intégré cette extension dans une politique de gestion de files
+      d'attente bien établie, connue sous le nom de
+      <strong>RED (Random Early Detection)</strong>, pour former une nouvelle
+      stratégie baptisée <strong>DDRED (Distant-Dependent RED)</strong>. Cette
+      approche inédite nous a permis d'optimiser l'utilisation des ressources
+      réseau en prenant des décisions éclairées sur quels paquets rejeter ou
+      marquer pour la congestion. En effet, au lieu de traiter tous les paquets
+      de manière uniforme, notre politique favorisait ceux ayant parcouru une
+      plus grande distance, tandis que ceux proches de leur source étaient soit
+      rejetés soit marqués par le drapeau ECN.
+    </p>
+
+    <p>
+      À cette époque, bien que le cœur du réseau demeurait principalement
+      filaire, nous avons constaté une tendance croissante vers l'utilisation de
+      technologies sans fil telles que le <strong>Wi-Fi</strong> ou les réseaux
+      de téléphonie mobile dans les réseaux d'accès. Cette évolution a soulevé
+      de nouveaux défis et opportunités, nécessitant une adaptation constante de
+      nos méthodes pour garantir des performances optimales dans des
+      environnements réseau de plus en plus diversifiés.
+    </p>
+  </article>
 </section>
 
 <section>
-	<h3>Amélioration de la connexion sans-fil</h3>
-	<article>
-		<p>C'est pourquoi, dans un deuxième temps, nous avions proposé une optimisation des protocoles classiques de transport fiables pour ces nouveaux liens. Avec l'émergence des réseaux sans fil et la diversification des technologies de communication, il devenait crucial d'adapter les protocoles de transport pour répondre aux défis spécifiques posés par ces environnements en constante évolution. Notre attention s'est donc portée sur les protocoles de transport utilisant le <strong>RTT (Round-Trip Time)</strong> comme référence pour le contrôle de congestion, ou ceux dont les performances sont étroitement liées à ses variations au fil du temps. Ces protocoles se sont avérés particulièrement sensibles aux perturbations et à l'environnement changeant des réseaux, ce qui entraînait des fluctuations dans les caractéristiques fondamentales de la liaison, telles que la bande passante disponible et le taux d'erreurs.</p>
-		
-		<p>Dans cette optique, nous avons entrepris d'analyser les différents types de perturbations susceptibles d'affecter la performance des protocoles de transport dans les environnements sans fil et filaires. Nous avons distingué les erreurs causées par des interférences des signaux, souvent présentes dans les réseaux sans fil en raison de leur nature plus sujette aux perturbations externes, de celles résultant d'une congestion sur le réseau lui-même, qu'il soit sans fil ou filaire. Une attention particulière a été portée à l'étude des augmentations des temps de transmission, un indicateur crucial de la congestion réseau. Ces augmentations pouvaient être le résultat de files d'attente croissantes dans les routeurs, signalant ainsi une congestion, ou de retransmissions induites par la couche MAC dans les réseaux sans fil conformes à la norme 802.11.</p>
-		
-		<p>En analysant ces différentes sources de perturbation, nous avons identifié un problème courant : l'interprétation erronée des augmentations de temps de transmission. En effet, dans certains cas, une augmentation du temps de transmission ne correspondait pas nécessairement à une congestion, mais plutôt à une simple perturbation due aux retransmissions. Afin de remédier à cette confusion, nous avons proposé une correction du <strong>RTT</strong> en excluant le temps perdu attribuable aux retransmissions de la mesure, garantissant ainsi que le contrôle de congestion ne prenne pas en compte les retransmissions induites par les interférences.</p>
-		
-	</article>
+  <h3>Amélioration de la connexion sans-fil</h3>
+  <article>
+    <p>
+      C'est pourquoi, dans un deuxième temps, nous avions proposé une
+      optimisation des protocoles classiques de transport fiables pour ces
+      nouveaux liens. Avec l'émergence des réseaux sans fil et la
+      diversification des technologies de communication, il devenait crucial
+      d'adapter les protocoles de transport pour répondre aux défis spécifiques
+      posés par ces environnements en constante évolution. Notre attention s'est
+      donc portée sur les protocoles de transport utilisant le
+      <strong>RTT (Round-Trip Time)</strong> comme référence pour le contrôle de
+      congestion, ou ceux dont les performances sont étroitement liées à ses
+      variations au fil du temps. Ces protocoles se sont avérés particulièrement
+      sensibles aux perturbations et à l'environnement changeant des réseaux, ce
+      qui entraînait des fluctuations dans les caractéristiques fondamentales de
+      la liaison, telles que la bande passante disponible et le taux d'erreurs.
+    </p>
+
+    <p>
+      Dans cette optique, nous avons entrepris d'analyser les différents types
+      de perturbations susceptibles d'affecter la performance des protocoles de
+      transport dans les environnements sans fil et filaires. Nous avons
+      distingué les erreurs causées par des interférences des signaux, souvent
+      présentes dans les réseaux sans fil en raison de leur nature plus sujette
+      aux perturbations externes, de celles résultant d'une congestion sur le
+      réseau lui-même, qu'il soit sans fil ou filaire. Une attention
+      particulière a été portée à l'étude des augmentations des temps de
+      transmission, un indicateur crucial de la congestion réseau. Ces
+      augmentations pouvaient être le résultat de files d'attente croissantes
+      dans les routeurs, signalant ainsi une congestion, ou de retransmissions
+      induites par la couche MAC dans les réseaux sans fil conformes à la norme
+      802.11.
+    </p>
+
+    <p>
+      En analysant ces différentes sources de perturbation, nous avons identifié
+      un problème courant : l'interprétation erronée des augmentations de temps
+      de transmission. En effet, dans certains cas, une augmentation du temps de
+      transmission ne correspondait pas nécessairement à une congestion, mais
+      plutôt à une simple perturbation due aux retransmissions. Afin de remédier
+      à cette confusion, nous avons proposé une correction du
+      <strong>RTT</strong> en excluant le temps perdu attribuable aux
+      retransmissions de la mesure, garantissant ainsi que le contrôle de
+      congestion ne prenne pas en compte les retransmissions induites par les
+      interférences.
+    </p>
+  </article>
 </section>
 
 <section>
-	<h3>Plate-forme de diffusion vidéo</h3>
-	<article>
-		<p>Après avoir exploré en détail les différents aspects d'une transmission de données, en nous concentrant sur les points critiques qui influent sur la qualité et la fiabilité de la communication, nous avons dirigé nos efforts vers un cas particulier : la transmission de données continues, en mettant l'accent sur la diffusion vidéo. Nous avons entrepris de concevoir un système complet de diffusion vidéo, visant à offrir une qualité de diffusion optimale, étroitement liée à la bande passante disponible à chaque instant pour la vidéo diffusée.</p>
-		
-		<p>Cette plate-forme de diffusion a été conçue avec une approche modulaire, à la fois horizontale et verticale, afin d'offrir une flexibilité maximale dans la gestion et l'optimisation du flux vidéo. La <strong>modularité</strong> de la plate-forme se manifestait sous deux formes :</p>
-		<ul>
-			<li><strong>Modularité horizontale</strong>, par l'incorporation d'éléments intermédiaires dans la chaîne de diffusion, tels que le mixeur. Ce composant offrait la possibilité de ré-encoder la vidéo ou de l'adapter en fonction de certaines contraintes spécifiques, garantissant ainsi une flexibilité accrue dans le processus de diffusion.</li>
-			<li><strong>Modularité verticale</strong>, par l'intégration d'un choix possible dans le protocole de transport utilisé sous RTP (Real-time Transport Protocol). Cette approche permettait d'explorer différentes options de protocoles de transport, offrant ainsi une adaptabilité supplémentaire en fonction des besoins spécifiques de la diffusion vidéo.</li>
-		</ul>
-		
-		<p>Dans notre cas, nous avons notamment examiné et testé le protocole <strong>DCCP (Datagram Congestion Control Protocol)</strong>, reconnu pour sa modularité à la fois au niveau du transport et du contrôle de congestion. En utilisant DCCP, nous avons établi une communication étroite entre les couches transport et application de la pile OSI (Open Systems Interconnection). Sur la source, DCCP était chargé de déterminer la bande passante disponible, tandis que l'encodeur vidéo (mixeur) pouvait décider, en fonction de ces informations, s'il était nécessaire de procéder à un ré-encodage dynamique de la vidéo en temps réel. Cette communication inter-couches a permis à l'application vidéo de disposer d'informations précises sur l'état du lien et de réagir de manière adaptative aux fluctuations de la bande passante et des conditions du réseau, garantissant ainsi une expérience de diffusion vidéo optimale pour les utilisateurs finaux.</p>
-		
-	</article>
+  <h3>Plate-forme de diffusion vidéo</h3>
+  <article>
+    <p>
+      Après avoir exploré en détail les différents aspects d'une transmission de
+      données, en nous concentrant sur les points critiques qui influent sur la
+      qualité et la fiabilité de la communication, nous avons dirigé nos efforts
+      vers un cas particulier : la transmission de données continues, en mettant
+      l'accent sur la diffusion vidéo. Nous avons entrepris de concevoir un
+      système complet de diffusion vidéo, visant à offrir une qualité de
+      diffusion optimale, étroitement liée à la bande passante disponible à
+      chaque instant pour la vidéo diffusée.
+    </p>
+
+    <p>
+      Cette plate-forme de diffusion a été conçue avec une approche modulaire, à
+      la fois horizontale et verticale, afin d'offrir une flexibilité maximale
+      dans la gestion et l'optimisation du flux vidéo. La
+      <strong>modularité</strong> de la plate-forme se manifestait sous deux
+      formes :
+    </p>
+    <ul>
+      <li>
+        <strong>Modularité horizontale</strong>, par l'incorporation d'éléments
+        intermédiaires dans la chaîne de diffusion, tels que le mixeur. Ce
+        composant offrait la possibilité de ré-encoder la vidéo ou de l'adapter
+        en fonction de certaines contraintes spécifiques, garantissant ainsi une
+        flexibilité accrue dans le processus de diffusion.
+      </li>
+      <li>
+        <strong>Modularité verticale</strong>, par l'intégration d'un choix
+        possible dans le protocole de transport utilisé sous RTP (Real-time
+        Transport Protocol). Cette approche permettait d'explorer différentes
+        options de protocoles de transport, offrant ainsi une adaptabilité
+        supplémentaire en fonction des besoins spécifiques de la diffusion
+        vidéo.
+      </li>
+    </ul>
+
+    <p>
+      Dans notre cas, nous avons notamment examiné et testé le protocole
+      <strong>DCCP (Datagram Congestion Control Protocol)</strong>, reconnu pour
+      sa modularité à la fois au niveau du transport et du contrôle de
+      congestion. En utilisant DCCP, nous avons établi une communication étroite
+      entre les couches transport et application de la pile OSI (Open Systems
+      Interconnection). Sur la source, DCCP était chargé de déterminer la bande
+      passante disponible, tandis que l'encodeur vidéo (mixeur) pouvait décider,
+      en fonction de ces informations, s'il était nécessaire de procéder à un
+      ré-encodage dynamique de la vidéo en temps réel. Cette communication
+      inter-couches a permis à l'application vidéo de disposer d'informations
+      précises sur l'état du lien et de réagir de manière adaptative aux
+      fluctuations de la bande passante et des conditions du réseau,
+      garantissant ainsi une expérience de diffusion vidéo optimale pour les
+      utilisateurs finaux.
+    </p>
+  </article>
 </section>
 
 <section>
-	<h3>Plateforme de simulation Network Simulator v2 (NS-2)</h3>
-	<article>
-		<p>
-		Les progrès réalisés dans ce travail ont été étayés par l'utilisation du simulateur de réseau NS-2 (Network Simulator v2), une plateforme de simulation largement reconnue et utilisée dans le domaine des réseaux informatiques.</p>
-		
-		<p>NS-2 a joué un rôle crucial dans le processus de développement, de validation et d'évaluation de nos améliorations. Nous avons pu valider nos idées et nos algorithmes sur des exemples simples avant de les soumettre à des scénarios plus réalistes et complexes. Cette approche nous a permis de garantir la robustesse et l'efficacité de nos propositions avant leur mise en œuvre dans des environnements réels.</p>
-		
-		<p>Ce simulateur nous a offert la possibilité de modéliser divers aspects des réseaux informatiques, notamment la topologie du réseau, les protocoles de communication, la gestion de la congestion et bien d'autres. Grâce à NS-2, nous avons pu simuler des réseaux hétérogènes et évaluer différentes théories dans des conditions contrôlées et répétables.</p>
-		
-		<p>En résumé, NS-2 s'est révélé être un outil précieux pour la recherche et le développement dans le domaine des réseaux informatiques, offrant une plateforme flexible et puissante pour la conception, la validation et l'évaluation de nouvelles technologies et de nouveaux protocoles.</p>
-	</article>
-</section>	
+  <h3>Plateforme de simulation Network Simulator v2 (NS-2)</h3>
+  <article>
+    <p>
+      Les progrès réalisés dans ce travail ont été étayés par l'utilisation du
+      simulateur de réseau NS-2 (Network Simulator v2), une plateforme de
+      simulation largement reconnue et utilisée dans le domaine des réseaux
+      informatiques.
+    </p>
+
+    <p>
+      NS-2 a joué un rôle crucial dans le processus de développement, de
+      validation et d'évaluation de nos améliorations. Nous avons pu valider nos
+      idées et nos algorithmes sur des exemples simples avant de les soumettre à
+      des scénarios plus réalistes et complexes. Cette approche nous a permis de
+      garantir la robustesse et l'efficacité de nos propositions avant leur mise
+      en œuvre dans des environnements réels.
+    </p>
+
+    <p>
+      Ce simulateur nous a offert la possibilité de modéliser divers aspects des
+      réseaux informatiques, notamment la topologie du réseau, les protocoles de
+      communication, la gestion de la congestion et bien d'autres. Grâce à NS-2,
+      nous avons pu simuler des réseaux hétérogènes et évaluer différentes
+      théories dans des conditions contrôlées et répétables.
+    </p>
+
+    <p>
+      En résumé, NS-2 s'est révélé être un outil précieux pour la recherche et
+      le développement dans le domaine des réseaux informatiques, offrant une
+      plateforme flexible et puissante pour la conception, la validation et
+      l'évaluation de nouvelles technologies et de nouveaux protocoles.
+    </p>
+  </article>
+</section>
