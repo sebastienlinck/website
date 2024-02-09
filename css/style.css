@@ -81,7 +81,6 @@ nav {
   border-radius: 0.5rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--c3);
   color: var(--c0);
-  overflow: hidden;
 }
 nav ul {
   background-color: var(--c3);
