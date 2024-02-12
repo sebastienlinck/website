@@ -22,7 +22,7 @@
 				<input type="text" name="nom" placeholder="Votre nom" required>
 				<input type="email" name="mail" placeholder="Votre courriel" required>
 				<textarea rows="5" name="message" placeholder="Votre message" required></textarea>
-				<label for="bip1">Sécurité : Placer le curseur sur <?= $cible ?><span style="float:right;"> Valeur actuelle : <span id="bip2">0</span></span></label>
+				<label for="bip1" id="securite">Sécurité : Placer le curseur sur <?= $cible ?><span> Valeur actuelle : <span id="bip2">0</span></span></label>
 				<input type="range" id="bip1" name="bip1" min="0" max="20" value="0" oninput="document.getElementById('bip2').textContent=this.value;" onchange="z=document.getElementById('envoyer-contact');if(this.value==<?= $cible ?>){z.disabled=false;}else{z.disabled=true;}">
 				<input type="submit" name="envoyer" value="Envoyer" id="envoyer-contact" disabled onclick="if(document.getElementById('bip1').value!=<?= $cible ?>){return false;}">
 				<input type="hidden" name="tps" value="<?= base_convert(($cible * 3) + date('z'), 10, 4) ?>">

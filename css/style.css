@@ -12,7 +12,7 @@
   font-size: 1rem;
   margin: 0;
   padding: 0;
-  text-align: left;
+  text-align: justify;
 }
 html,
 body {
@@ -29,7 +29,7 @@ body {
   gap: 1rem;
 }
 #page::before,
-a #page::after {
+#page::after {
   content: "";
 }
 p {
@@ -47,7 +47,7 @@ a {
 }
 .social-icons {
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   height: auto;
   margin-right: 1rem;
   overflow: hidden;
@@ -61,7 +61,7 @@ a {
 header {
   min-height: 10rem;
   background-color: var(--c1);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--c3);
   display: flex;
   flex-flow: column;
@@ -78,17 +78,16 @@ h2 {
 }
 nav {
   background-color: var(--c3);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--c3);
   color: var(--c0);
 }
 nav ul {
-  background-color: var(--c3);
   list-style: none;
   text-align: center;
 }
 nav > ul {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -117,6 +116,7 @@ nav a {
   padding: 0 0.8rem;
 }
 nav ul li ul {
+  background-color: var(--c3);
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--c3), 0.3rem 0 0.3rem var(--c3);
@@ -145,7 +145,7 @@ main {
 }
 section {
   background: var(--c1);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--c3);
   line-height: 160%;
   min-height: 10vh;
@@ -199,7 +199,7 @@ article ul li {
 }
 footer {
   background-color: var(--c3);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 0.3rem var(--c3);
   color: var(--c0);
   line-height: 4rem;
@@ -212,7 +212,7 @@ footer a {
 .hamburger {
   background-color: var(--c3);
   opacity: 0.8;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   display: none;
   padding: 0.5rem;
   position: fixed;
@@ -240,9 +240,6 @@ footer a {
 .visible {
   display: flex;
 }
-.invisible {
-  display: none;
-}
 form {
   max-width: 40rem;
 }
@@ -252,7 +249,7 @@ form label {
 input,
 textarea {
   border: 1px solid var(--c1);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   line-height: 150%;
   margin: 0.3rem 0;
   padding: 0.5rem;
@@ -263,6 +260,10 @@ input[type="range"] {
 }
 textarea {
   resize: vertical;
+}
+#securite {
+  display: flex;
+  justify-content: space-between;
 }
 input[type="submit"],
 button {
@@ -280,7 +281,7 @@ input[type="submit"]:disabled {
   position: fixed;
   bottom: 50px;
   right: -400px;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   max-width: 375px;
   border: 1px solid black;
   transition: all 0.3s ease;
@@ -295,7 +296,7 @@ input[type="submit"]:disabled {
 button {
   background-color: var(--c3);
   border: 1px solid var(--c1);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   margin: 0.3rem 0;
   padding: 0.5rem;
   width: 100%;
@@ -322,10 +323,6 @@ button {
   footer,
   nav ul li ul {
     box-shadow: none;
-  }
-  #page::before,
-  #page::after {
-    content: none;
   }
   header,
   footer,
