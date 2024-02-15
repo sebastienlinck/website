@@ -21,7 +21,7 @@ body {
 }
 #page {
   margin: 0 auto;
-  width: clamp(1000px, 75vw, 1600px);
+  width: clamp(1000px, 80vw, 1600px);
   display: flex;
   flex-flow: column nowrap;
   gap: 1.2rem;
@@ -57,10 +57,10 @@ a {
   filter: invert(100%);
 }
 header {
-  min-height: 10rem;
+  min-height: 11rem;
   background-color: var(--c1);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, .3);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -69,6 +69,7 @@ header {
 h1 {
   color: var(--c3);
   font-size: 3rem;
+  text-align: left;
 }
 h2 {
   color: var(--c3);
@@ -82,7 +83,7 @@ h2 span {
 nav {
   background-color: var(--c3);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, .3);
   color: var(--c0);
 }
 nav ul {
@@ -115,12 +116,11 @@ main {
 section {
   background: var(--c1);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, .3);
   line-height: 160%;
   min-height: 10vh;
   display: flex;
   flex-flow: column nowrap;
-  gap: 1rem;
   overflow: hidden;
 }
 h3 {
@@ -141,17 +141,14 @@ article:last-of-type {
 h4 {
   color: #212121;
   font-size: 1.2rem;
-  padding: .5rem 1rem;
+  padding: 1rem;
 }
 article ul {
-  list-style-type: "\2714";
-  margin: 0.5rem 1rem;
-}
-article ul:last-of-type {
-  margin-bottom: 0;
+  list-style-type: "\2714 ";
+  margin: 0 1rem;
 }
 article ul li {
-  margin: 0.5rem 1rem;
+  margin: 0 0 .5rem;
   padding-left: 0.5rem;
 }
 .cols {
@@ -169,7 +166,7 @@ article ul li {
 footer {
   background-color: var(--c3);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, .3);
   color: var(--c0);
   line-height: 4rem;
   text-align: center;
@@ -274,7 +271,6 @@ button {
   text-align: center;
   cursor: pointer;
 }
-
 @media all and (max-width: 1024px) {
   #page {
     margin: 0;
@@ -309,6 +305,9 @@ button {
   }
   h2 {
     font-size: 1.2rem;
+  }
+  h5 {
+    text-align: center;
   }
   .hamburger {
     display: flex;

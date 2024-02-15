@@ -21,3 +21,9 @@ window.addEventListener('scroll', event => {
 		document.querySelector('.enhaut').classList.remove('visible');
 	}
 });
+
+document.querySelectorAll('.hamburger').forEach(item => {
+	item.addEventListener('click', event => {
+		item.nextElementSibling.classList.toggle('visible');
+	})
+});
