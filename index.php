@@ -13,6 +13,10 @@ $auth_pages = array(
 	'enseignements' => array(
 		'url' => './pages/enseignements.html',
 		'nom' => 'Enseignements'
+	),	
+	'recherche' => array(
+		'url' => './pages/recherche.html',
+		'nom' => 'Recherche'
 	),
 	'publications' => array(
 		'url' => './pages/publications.html',
@@ -21,14 +25,6 @@ $auth_pages = array(
 	'contact' => array(
 		'url' => './pages/contact.php',
 		'nom' => 'Contact'
-	),
-	'these' => array(
-		'url' => './pages/these.html',
-		'nom' => 'Thèse'
-	),
-	'algopath' => array(
-		'url' => './pages/algopath.html',
-		'nom' => 'Algopath'
 	),
 	'mentions-legales' => array(
 		'url' => './pages/mentions-legales.html',
@@ -100,7 +96,10 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 	<div id="page">
 		<header>
 			<h1>Sébastien Linck <?php if ($page != "accueil") echo " - " . $auth_pages[$page]['nom']; ?></h1>
-			<h2>Enseignant en informatique - Responsable de formation</h2>
+			<h2>
+				<span>Enseignant en informatique -&nbsp;</span>
+				<span>Responsable de formation</span>
+			</h2>
 		</header>
 		<nav>
 			<div class="hamburger expand">
@@ -109,15 +108,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 			<ul>
 				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
 				<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
-				<li>
-					<a class="sousmenu expand" href="#">
-						<img class="icons" src="./img/chart-network.svg" alt="icone recherche">Recherche<img class="icons" src="./img/angle-small-down.svg" alt="icone sous-menu">
-					</a>
-					<ul>
-						<li><a href="these"><img class="icons" src="./img/graduation-cap.svg" alt="icone recherche">Ma Thèse</a></li>
-						<li><a href="algopath"><img class="icons" src="./img/puzzle-piece.svg" alt="icone recherche">AlgoPath</a></li>
-					</ul>
-				</li>
+				<li><a href="recherche"><img class="icons" src="./img/chart-network.svg" alt="icone recherche">Recherche</a></li>
 				<li><a href="publications"><img class="icons" src="./img/edit.svg" alt="icone publications">Publications</a></li>
 				<li><a href="contact"><img class="icons" src="./img/envelope.svg" alt="icone contact">Contact</a></li>
 			</ul>

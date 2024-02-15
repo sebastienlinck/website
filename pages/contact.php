@@ -6,7 +6,8 @@
 		</article>
 		<article>
 			<h5>Sébastien Linck</h5>
-			EiSINe - Campus Sup Ardenne<br>
+			EiSINe<br>
+			Campus Sup Ardenne<br>
 			9A rue Claude Chrétien<br>
 			08000 Charleville-Mézières<br><br>
 			contact(@)slinck(.)com
