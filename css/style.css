@@ -194,10 +194,8 @@ footer a {
   background-color: var(--c3);
   opacity: .8;
   border-radius: 1rem;
-  margin: auto;
   position: fixed;
   right: calc(5% - 2rem);
-  text-align: center;
   z-index: 5;
 }
 .enhaut a {
@@ -357,7 +355,7 @@ button {
   }
   .enhaut {
     bottom: 2.2rem;
-    right: calc(50% - 1.1rem);
+    right: calc(50% - 1.7rem);
   }
   footer {
     margin-bottom: 0;

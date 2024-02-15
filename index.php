@@ -102,7 +102,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 			</h2>
 		</header>
 		<nav>
-			<div class="hamburger expand">
+			<div class="hamburger">
 				<img class="icons" src="./img/menu-burger.svg" alt="icone menu">
 			</div>
 			<ul>
