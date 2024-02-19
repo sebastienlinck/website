@@ -120,6 +120,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 		<section id="cookie">
 			<h3></h3>
 			<article>
+				<h4>Utilisation des cookies</h4>
 				<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
 				<button>J'ai compris</button>
 			</article>
