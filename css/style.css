@@ -131,6 +131,12 @@ h3 {
   line-height: 2rem;
   padding: 0.5rem 1.5rem;
 }
+.cols {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
 article,
 .cols article:last-of-type {
   margin: 0 1.5rem;
@@ -150,12 +156,6 @@ article ul {
 article ul li {
   margin: 0 0 .5rem;
   padding-left: 0.5rem;
-}
-.cols {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
 }
 .img-round {
   border-radius: 50%;
