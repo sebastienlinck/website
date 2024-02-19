@@ -1,33 +1,27 @@
 <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-	<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-	<url>
-		<loc>https://www.slinck.com/</loc>
-		<lastmod>2023-03-10T13:01:04+00:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
-		<loc>https://www.slinck.com/enseignements</loc>
-		<lastmod>2023-03-10T13:01:04+00:00</lastmod>
-		<priority>0.80</priority>
-	</url>
-	<url>
-		<loc>https://www.slinck.com/these</loc>
-		<lastmod>2023-03-10T13:01:04+00:00</lastmod>
-		<priority>0.80</priority>
-	</url>
-	<url>
-		<loc>https://www.slinck.com/algopath</loc>
-		<lastmod>2023-03-10T13:01:04+00:00</lastmod>
-		<priority>0.80</priority>
-	</url>
-	<url>
-		<loc>https://www.slinck.com/publications</loc>
-		<lastmod>2023-03-10T13:01:04+00:00</lastmod>
-		<priority>0.80</priority>
-	</url>
-	<url>
-		<loc>https://www.slinck.com/contact</loc>
-		<lastmod>2023-03-10T13:01:04+00:00</lastmod>
-		<priority>0.80</priority>
-	</url>
+<url>
+<loc>https://www.slinck.com/</loc>
+<lastmod>2024-02-16T20:44:41+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://www.slinck.com/enseignements</loc>
+<lastmod>2024-02-16T20:44:41+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.slinck.com/recherche</loc>
+<lastmod>2024-02-16T20:44:41+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.slinck.com/publications</loc>
+<lastmod>2024-02-16T20:44:41+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://www.slinck.com/contact</loc>
+<lastmod>2024-02-16T20:44:41+00:00</lastmod>
+<priority>0.80</priority>
+</url>
 </urlset>
