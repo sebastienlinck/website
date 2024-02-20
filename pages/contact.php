@@ -2,7 +2,7 @@
 	<h3>Mes coordonnées</h3>
 	<div class="cols">
 		<article>
-			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck">
+			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck" width="400" height="400">
 		</article>
 		<article>
 			<h5>Sébastien Linck</h5>
@@ -31,7 +31,7 @@
 			<?php
 			if (isset($_REQUEST['envoyer'], $_REQUEST['tps']) && is_numeric($_REQUEST['bip1'])) {
 				$tps = (base_convert($_REQUEST['tps'], 4, 10) - date('z')) / 3;
-			if ($tps == $_REQUEST['bip1']) {
+				if ($tps == $_REQUEST['bip1']) {
 					$to = 'contact@slinck.com';
 					$from = strip_tags($_REQUEST['mail']);
 					$nom = strip_tags($_REQUEST['nom']);

@@ -59,7 +59,7 @@ header {
   min-height: 11rem;
   background-color: var(--c1);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -83,8 +83,8 @@ nav {
   color: var(--c0);
   background-color: var(--c3);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.3);
-  padding: .5rem;
+  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
 }
 nav ul {
   list-style: none;
@@ -92,7 +92,7 @@ nav ul {
   border-radius: 1rem;
   display: flex;
   flex-flow: row;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 nav a {
   color: var(--c0);
@@ -104,8 +104,10 @@ nav a {
   line-height: 4rem;
   padding: 0 0.8rem;
   border-radius: 1rem;
+  transition: 0.3s;
 }
-nav a:hover, a.active {
+nav a:hover,
+nav a.active {
   background: var(--c4);
 }
 main {
@@ -116,7 +118,7 @@ main {
 section {
   background: var(--c1);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   line-height: 160%;
   min-height: 10vh;
   display: flex;
@@ -135,15 +137,11 @@ h3 {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0;
 }
-article,
-.cols article:last-of-type {
-  margin: 0 1.5rem;
+article {
+  padding: 1rem 1.5rem;
 }
-article:last-of-type {
-  margin-bottom: 1rem;
-}
+
 h4 {
   color: var(--c4);
   font-size: 1.2rem;
@@ -157,22 +155,16 @@ article ul li {
   margin: 0 0 0.5rem;
   padding-left: 0.5rem;
 }
-.cols {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 1rem 0;
-}
 .img-round {
   border-radius: 50%;
   height: auto;
-  width: 18rem;
+  width: clamp(10rem, 100%, 18rem);
   vertical-align: middle;
 }
 footer {
   background-color: var(--c3);
   border-radius: 1rem;
-  box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   color: var(--c0);
   line-height: 4rem;
   text-align: center;
@@ -300,7 +292,6 @@ button {
     border-radius: 0;
     height: auto;
     margin: 0;
-    padding: 1rem;
   }
   header {
     min-height: 4rem;
@@ -349,16 +340,11 @@ button {
   section {
     border-radius: 0;
   }
-  section ul li {
-    margin-right: 0;
-    text-align: justify;
-  }
   .cols > article {
     text-align: center;
   }
   .img-round {
     margin: 1rem auto;
-    max-width: 80%;
   }
   .enhaut {
     bottom: 2.2rem;
