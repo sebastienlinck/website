@@ -52,9 +52,8 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://www.slinck.com">
 	<meta property="og:image" content="img/linck.webp">
-	<link rel="icon" type="image/png" sizes="256x256" href="./img/favicon.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon.png">
+	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
+	<link rel="apple-touch-icon" href="./img/favicon.svg">
 	<link rel="stylesheet" href="./css/style.min.css">
 	<!-- Google Tag Manager -->
 	<script>
