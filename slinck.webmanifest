@@ -1,68 +1,49 @@
 {
-	"short_name": "CV_Linck",
-	"name": "CV Sebastien Linck",
-	"icons": [
-	  {
-		"src": "https://slinck.com/img/favicon144.png",
-		"sizes": "48x48 72x72 96x96 128x128 144x144",
-		"type": "image/png",
-		"purpose": "maskable"
-	  },
-	  {
-		"src": "https://slinck.com/img/favicon.png",
-		"sizes": "256x256",
-		"type": "image/png",
-		"purpose": "any"
-	  },
-	  {
-		"src": "https://slinck.com/img/favicon512.png",
-		"sizes": "512x512",
-		"type": "image/png"
-	  }
-	],
-	"theme_color": "#EFEFEF",
-	"background_color": "#EFEFEF",
-	"start_url": "https://www.slinck.com/",
-	"display": "standalone",
-	"orientation": "portrait",
-	"lang": "fr",
-	"categories": [
-	  "research",
-	  "education",
-	  "personnal"
-	],
-	"scope": "https://www.slinck.com/",
-	"description": "Site web de présentation de mes enseignements et de mes travaux de recherche",
-	"screenshots": [
-	  {
-		"src": "https://slinck.com/img/index.webp",
-		"sizes": "750x1334",
-		"type": "image/webp"
-	  }
-	],
-	"shortcuts": [
-	  {
-		"name": "Mes publications",
-		"url": "/publications"
-	  },
-	  {
-		"name": "Mes enseignements",
-		"url": "/enseignements"
-	  },
-	  {
-		"name": "Ma recherche",
-		"url": "/recherche"
-	  }
-	],
-	"dir": "auto",
-	"prefer_related_applications": false,
-	"display_override": [
-	  "standalone",
-	  "fullscreen",
-	  "window-controls-overlay"
-	],
-	"id": "CVSL1.0",
-	"launch_handler": {
-	  "client_mode": ["navigate-existing", "auto"]
+  "short_name": "CV_Linck",
+  "name": "CV Sebastien Linck",
+  "icons": [
+    {
+      "src": "https://slinck.com/img/favicon512.png",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "theme_color": "#EFEFEF",
+  "background_color": "#EFEFEF",
+  "start_url": "https://www.slinck.com/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "fr",
+  "categories": ["research", "education", "personnal"],
+  "scope": "https://www.slinck.com/",
+  "description": "Site web de présentation de mes enseignements et de mes travaux de recherche",
+  "screenshots": [
+    {
+      "src": "https://slinck.com/img/index.webp",
+      "sizes": "750x1334",
+      "type": "image/webp"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mes publications",
+      "url": "/publications"
+    },
+    {
+      "name": "Mes enseignements",
+      "url": "/enseignements"
+    },
+    {
+      "name": "Ma recherche",
+      "url": "/recherche"
+    }
+  ],
+  "dir": "auto",
+  "prefer_related_applications": false,
+  "display_override": ["standalone", "fullscreen", "window-controls-overlay"],
+  "id": "CVSL1.0",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
   }
-  }
+}
