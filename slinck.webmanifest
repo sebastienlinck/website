@@ -50,8 +50,8 @@
 		"url": "/enseignements"
 	  },
 	  {
-		"name": "Ma thèse",
-		"url": "/these"
+		"name": "Ma recherche",
+		"url": "/recherche"
 	  }
 	],
 	"dir": "auto",
@@ -60,5 +60,9 @@
 	  "standalone",
 	  "fullscreen",
 	  "window-controls-overlay"
-	]
+	],
+	"id": "CVSL1.0",
+	"launch_handler": {
+	  "client_mode": ["navigate-existing", "auto"]
+  }
   }
