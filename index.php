@@ -13,7 +13,7 @@ $auth_pages = array(
 	'enseignements' => array(
 		'url' => './pages/enseignements.html',
 		'nom' => 'Enseignements'
-	),	
+	),
 	'recherche' => array(
 		'url' => './pages/recherche.html',
 		'nom' => 'Recherche'
@@ -67,8 +67,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 				j = d.createElement(s),
 				dl = l != 'dataLayer' ? '&l=' + l : '';
 			j.async = true;
-			j.src =
-				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
 			f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-M85B535');
 	</script>
