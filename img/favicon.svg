@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
- <svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
   <rect width="256" height="256" x="0" y="0" rx="48" ry="48" fill="#333" />
   <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="#fff" font-size="192" font-family="Arial" font-weight="bold">SL</text>
 </svg>
