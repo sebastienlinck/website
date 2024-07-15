@@ -1,10 +1,8 @@
 :root {
-  --c0: #fff;
   --c1: #efefef;
   --c2: #999;
   --c3: #333;
   --c4: #212121;
-  --c5: #000;
 }
 * {
   box-sizing: border-box;
@@ -30,6 +28,7 @@ body {
   content: "";
 }
 p {
+  color: var(--c4);
   margin-bottom: 0.5rem;
   text-align: justify;
   text-indent: 3.2rem;
@@ -79,7 +78,7 @@ h2 span {
   font-size: inherit;
 }
 nav {
-  color: var(--c0);
+  color: var(--c1);
   background-color: var(--c3);
   border-radius: 1rem;
   box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
@@ -92,7 +91,7 @@ nav ul {
   justify-content: space-evenly;
 }
 nav a {
-  color: var(--c0);
+  color: var(--c1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -105,7 +104,7 @@ nav a {
 }
 nav a:hover,
 nav a.active {
-  background: var(--c4);
+  background: var(--c2);
 }
 main {
   display: flex;
@@ -124,7 +123,7 @@ section {
 }
 h3 {
   background-color: var(--c2);
-  color: var(--c4);
+  color: var(--c1);
   font-size: 1.4rem;
   font-variant: small-caps;
   line-height: 2rem;
@@ -162,12 +161,12 @@ footer {
   background-color: var(--c3);
   border-radius: 1rem;
   box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
-  color: var(--c0);
+  color: var(--c1);
   line-height: 4rem;
   text-align: center;
 }
 footer a {
-  color: var(--c0);
+  color: var(--c1);
 }
 .hamburger {
   background-color: var(--c3);
@@ -229,7 +228,7 @@ input[type="submit"],
 button {
   background-color: var(--c3);
   border: none;
-  color: var(--c0);
+  color: var(--c1);
   font-size: 1.1rem;
   text-align: center;
   cursor: pointer;
@@ -260,7 +259,7 @@ button {
   margin: 0.3rem 0;
   padding: 0.5rem;
   width: 100%;
-  color: var(--c0);
+  color: var(--c1);
   font-size: 1.1rem;
   text-align: center;
   cursor: pointer;

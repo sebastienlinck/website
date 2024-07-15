@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.slinck.www.pwa",
+        "sha256_cert_fingerprints": ["5F:02:AF:D9:68:22:76:CF:32:89:11:4C:16:77:BD:32:17:92:EA:E2:F7:CD:99:D1:26:6C:A1:76:00:FE:48:D4"]
+      }
+    }]
