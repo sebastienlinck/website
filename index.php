@@ -49,6 +49,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 								if ($page != "accueil") echo '/' . $page; ?>">
 	<meta name="theme-color" content="#EFEFEF">
 	<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
+	<meta property="og:description" content="École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://www.slinck.com">
 	<meta property="og:image" content="img/linck.webp">
