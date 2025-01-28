@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', TRUE);
+ini_set('display_errors', FALSE);
 setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
 session_set_cookie_params(["SameSite" => "Strict"]);
 session_set_cookie_params(["Secure" => "true"]);
@@ -31,10 +31,7 @@ $auth_pages = array(
 		'nom' => 'Mentions légales'
 	)
 );
-$page = 'accueil';
-if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
-	$page = $_GET['page'];
-}
+$page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages)) ? $_GET['page'] : 'accueil';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -99,7 +96,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 		</header>
 		<nav>
 			<div class="hamburger">
-				<img class="icons" loading="lazy" width="64" height="64" src="./img/menu-burger.svg" alt="icone menu" title="icone menu">
+				<img class="icons" loading="lazy" width="64" height="64" src="./img/menu-burger.svg" alt="icone menu" title="menu principal">
 			</div>
 			<ul>
 				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" loading="lazy" width="64" height="64" src="./img/home.svg" alt="icone accueil" title="icone accueil">Accueil</a></li>
@@ -123,7 +120,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 		</section>
 	</div>
 	<div class="enhaut">
-		<a href="#page"><img class="icons" loading="lazy" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="icone retour"></a>
+		<a href="#page"><img class="icons" loading="lazy" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="retour en haut"></a>
 	</div>
 	<script src="./js/outils.min.js"></script>
 	<script>
