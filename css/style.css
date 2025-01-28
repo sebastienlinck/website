@@ -130,12 +130,12 @@ h3 {
   padding: 0.5rem 1.5rem;
 }
 .cols {
-  align-items: center;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.flex-top {
-  align-items: flex-start;
+.flex-center {
+  align-self: center;
 }
 .flex-cols {
   flex: 1;
