@@ -132,7 +132,7 @@ h3 {
 .cols {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 .flex-center {
   align-self: center;
