@@ -100,7 +100,7 @@ nav a {
   line-height: 4rem;
   padding: 0 0.8rem;
   border-radius: 1rem;
-  transition: 0.3s ;
+  transition: 0.3s;
 }
 nav a:hover,
 nav a.active {
