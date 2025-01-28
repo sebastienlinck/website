@@ -38,6 +38,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 ?>
 <!doctype html>
 <html lang="fr">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,8 +55,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 	<meta property="og:image" content="img/linck.webp">
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<link rel="apple-touch-icon" href="./img/favicon.svg">
-		<!-- Google Tag Manager -->
-		<script>
+	<script>
 		(function(w, d, s, l, i) {
 			w[l] = w[l] || [];
 			w[l].push({
@@ -70,11 +70,10 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 			f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-M85B535');
 	</script>
-	<!-- End Google Tag Manager -->
-	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
+
 		function gtag() {
 			dataLayer.push(arguments);
 		}
