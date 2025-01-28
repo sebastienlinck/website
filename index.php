@@ -8,7 +8,7 @@ session_start();
 $auth_pages = array(
 	'accueil' => array(
 		'url' => './pages/accueil.html',
-		'nom' => 'Accueil'
+		'nom' => 'Présentation'
 	),
 	'enseignements' => array(
 		'url' => './pages/enseignements.html',
@@ -91,7 +91,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="page">
 		<header>
-			<h1>Sébastien Linck <?php if ($page != "accueil") echo " - " . $auth_pages[$page]['nom']; ?></h1>
+			<h1>Sébastien Linck - <?= $auth_pages[$page]['nom']; ?></h1>
 			<h2>
 				<span>Enseignant en informatique -&nbsp;</span>
 				<span>Responsable de formation</span>
