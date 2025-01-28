@@ -134,6 +134,12 @@ h3 {
   display: flex;
   justify-content: space-between;
 }
+.flex-top {
+  align-items: flex-start;
+}
+.flex-cols {
+  flex: 1;
+}
 article {
   padding: 1rem 1.5rem;
 }
