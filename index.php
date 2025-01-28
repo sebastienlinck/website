@@ -40,8 +40,8 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
 	<link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'];
@@ -100,14 +100,14 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 		</header>
 		<nav>
 			<div class="hamburger">
-				<img class="icons" src="./img/menu-burger.svg" alt="icone menu">
+				<img class="icons" loading="lazy" width="64" height="64" src="./img/menu-burger.svg" alt="icone menu" title="icone menu">
 			</div>
 			<ul>
-				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" src="./img/home.svg" alt="icone accueil">Accueil</a></li>
-				<li><a href="enseignements"><img class="icons" src="./img/e-learning.svg" alt="icone enseignement">Enseignements</a></li>
-				<li><a href="recherche"><img class="icons" src="./img/chart-network.svg" alt="icone recherche">Recherche</a></li>
-				<li><a href="publications"><img class="icons" src="./img/edit.svg" alt="icone publications">Publications</a></li>
-				<li><a href="contact"><img class="icons" src="./img/envelope.svg" alt="icone contact">Contact</a></li>
+				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" loading="lazy" width="64" height="64" src="./img/home.svg" alt="icone accueil" title="icone accueil">Accueil</a></li>
+				<li><a href="enseignements"><img class="icons" loading="lazy" width="64" height="64" src="./img/e-learning.svg" alt="icone enseignement" title="icone enseignement">Enseignements</a></li>
+				<li><a href="recherche"><img class="icons" loading="lazy" width="64" height="64" src="./img/chart-network.svg" alt="icone recherche" title="icone recherche">Recherche</a></li>
+				<li><a href="publications"><img class="icons" loading="lazy" width="64" height="64" src="./img/edit.svg" alt="icone publications" title="icone publications">Publications</a></li>
+				<li><a href="contact"><img class="icons" loading="lazy" width="64" height="64" src="./img/envelope.svg" alt="icone contact" title="icone contact">Contact</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -124,7 +124,7 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 		</section>
 	</div>
 	<div class="enhaut">
-		<a href="#page"><img class="icons" src="./img/angle-square-up.svg" alt="icone retour"></a>
+		<a href="#page"><img class="icons" loading="lazy" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="icone retour"></a>
 	</div>
 	<script src="./js/outils.min.js"></script>
 	<script>

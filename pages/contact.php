@@ -2,7 +2,7 @@
 	<h3>Mes coordonnées</h3>
 	<div class="cols">
 		<article>
-			<img class="img-round" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck" width="400" height="400">
+			<img class="img-round" loading="lazy" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck" width="400" height="400">
 		</article>
 		<article>
 			<h5>Sébastien Linck</h5>
@@ -12,8 +12,8 @@
 			08000 Charleville-Mézières<br><br>
 			contact(@)slinck(.)com
 			<br><br>
-			<a target="_blank" href="https://www.linkedin.com/in/slinck/"><img class="social-icons" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn"></a>
-			<a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck"><img class="social-icons" src="img/researchgate.svg" alt="Profil ResearchGate" title="Profil ResearchGate"></a>
+			<a target="_blank" href="https://www.linkedin.com/in/slinck/"><img class="social-icons" loading="lazy" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn"></a>
+			<a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck"><img class="social-icons" loading="lazy" src="img/researchgate.svg" alt="Profil ResearchGate" title="Profil ResearchGate"></a>
 		</article>
 		<article>
 			<?php
