@@ -134,10 +134,10 @@ h3 {
   justify-content: space-between;
   align-items: flex-start;
 }
-.flex-center {
+article:has(.img-round) {
   align-self: center;
 }
-.flex-cols {
+.flex-fill {
   flex: 1;
 }
 article {
