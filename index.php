@@ -38,10 +38,9 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 ?>
 <!doctype html>
 <html lang="fr">
-
 <head>
-	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta charset="utf-8">
+	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
@@ -55,9 +54,8 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 	<meta property="og:image" content="img/linck.webp">
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<link rel="apple-touch-icon" href="./img/favicon.svg">
-	<link rel="stylesheet" href="./css/style.min.css">
-	<!-- Google Tag Manager -->
-	<script>
+		<!-- Google Tag Manager -->
+		<script>
 		(function(w, d, s, l, i) {
 			w[l] = w[l] || [];
 			w[l].push({
@@ -77,13 +75,13 @@ if (!empty($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
 		gtag('config', 'G-CX6WD4QDPN');
 	</script>
+	<link rel="stylesheet" href="./css/style.min.css">
 	<link rel="manifest" href="/slinck.webmanifest">
 	<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
 </head>
