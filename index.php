@@ -70,16 +70,6 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 		})(window, document, 'script', 'dataLayer', 'GTM-M85B535');
 	</script>
 	<!-- End Google Tag Manager -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-		gtag('config', 'G-CX6WD4QDPN');
-	</script>
 	<link rel="stylesheet" href="./css/style.min.css">
 	<link rel="manifest" href="/slinck.webmanifest">
 	<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
