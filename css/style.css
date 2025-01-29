@@ -17,15 +17,11 @@ body {
   scroll-behavior: smooth;
 }
 #page {
-  margin: 0 auto;
+  margin: 1.5rem auto;
   width: clamp(1000px, 80vw, 1600px);
   display: flex;
   flex-flow: column nowrap;
-  gap: 1.2rem;
-}
-#page::before,
-#page::after {
-  content: "";
+  gap: 2.5rem;
 }
 p {
   color: var(--c4);
@@ -160,7 +156,7 @@ article ul li {
 .img-round {
   border-radius: 50%;
   height: auto;
-  width: clamp(10rem, 100%, 18rem);
+  width: clamp(12rem, 100%, 400px);
   vertical-align: middle;
 }
 footer {
