@@ -52,6 +52,7 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 	<meta property="og:image" content="img/linck.webp">
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<link rel="apple-touch-icon" href="./img/favicon.svg">
+	<!-- Google Tag Manager -->
 	<script>
 		(function(w, d, s, l, i) {
 			w[l] = w[l] || [];
@@ -63,10 +64,12 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 				j = d.createElement(s),
 				dl = l != 'dataLayer' ? '&l=' + l : '';
 			j.async = true;
-			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
 			f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-M85B535');
 	</script>
+	<!-- End Google Tag Manager -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -84,7 +87,8 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 
 <body>
 	<!-- Google Tag Manager (noscript) -->
-	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M85B535" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M85B535"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="page">
 		<header>
