@@ -49,7 +49,7 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 	<meta property="og:description" content="École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://www.slinck.com">
-	<meta property="og:image" content="img/linck.webp">
+	<meta property="og:image" content="./img/linck.webp">
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<link rel="apple-touch-icon" href="./img/favicon.svg">
 	<!-- Google Tag Manager -->
@@ -71,7 +71,7 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 	</script>
 	<!-- End Google Tag Manager -->
 	<link rel="stylesheet" href="./css/style.min.css">
-	<link rel="manifest" href="/slinck.webmanifest">
+	<link rel="manifest" href="./slinck.webmanifest">
 	<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
 </head>
 
