@@ -45,7 +45,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
-	<link rel="canonical" href="<?= 'https://$host/$canonicalPage'; ?>">
+	<link rel="canonical" href="<?= 'https://' . $host . $canonicalPage; ?>">
 	<meta name="theme-color" content="#EFEFEF">
 	<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 	<meta property="og:description" content="École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
