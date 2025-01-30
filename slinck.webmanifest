@@ -11,12 +11,12 @@
   ],
   "theme_color": "#EFEFEF",
   "background_color": "#EFEFEF",
-  "start_url": "https://www.slinck.com/",
+  "start_url": "/?utm_source=pwa",
   "display": "standalone",
   "orientation": "portrait",
   "lang": "fr",
-  "categories": ["research", "education", "personnal"],
-  "scope": "https://www.slinck.com/",
+  "categories": ["research", "education", "personal"],
+  "scope": "/",
   "description": "Site web de présentation de mes enseignements et de mes travaux de recherche",
   "screenshots": [
     {
