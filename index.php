@@ -5,6 +5,7 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
 session_set_cookie_params(["SameSite" => "Strict"]);
 session_set_cookie_params(["Secure" => "true"]);
 session_start();
+$host = $_SERVER['HTTP_HOST'];
 $auth_pages = array(
 	'accueil' => array(
 		'url' => './pages/accueil.html',
@@ -32,6 +33,8 @@ $auth_pages = array(
 	)
 );
 $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages)) ? $_GET['page'] : 'accueil';
+$canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES, 'UTF-8') : '';
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -42,14 +45,13 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
 	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
-	<link rel="canonical" href="<?php echo 'https://' . $_SERVER['HTTP_HOST'];
-								if ($page != "accueil") echo '/' . $page; ?>">
+	<link rel="canonical" href="<?= 'https://' . $host . $canonicalPage; ?>">
 	<meta name="theme-color" content="#EFEFEF">
 	<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
 	<meta property="og:description" content="École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="https://www.slinck.com">
-	<meta property="og:image" content="img/linck.webp">
+	<meta property="og:image" content="./img/linck.webp">
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<link rel="apple-touch-icon" href="./img/favicon.svg">
 	<!-- Google Tag Manager -->
@@ -71,7 +73,7 @@ $page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages))
 	</script>
 	<!-- End Google Tag Manager -->
 	<link rel="stylesheet" href="./css/style.min.css">
-	<link rel="manifest" href="/slinck.webmanifest">
+	<link rel="manifest" href="./slinck.webmanifest">
 	<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
 </head>
 

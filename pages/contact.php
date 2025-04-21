@@ -19,7 +19,7 @@
 			<?php
 			$cible = mt_rand(1, 20);
 			?>
-			<form id="contact-form" action="pages/send_form.php" method="post">
+			<form id="contact-form" method="post">
 				<input type="text" name="nom" placeholder="Votre nom" required>
 				<input type="email" name="mail" placeholder="Votre courriel" required>
 				<textarea rows="5" name="message" placeholder="Votre message" required></textarea>
