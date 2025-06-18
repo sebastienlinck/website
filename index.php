@@ -43,7 +43,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $auth_pages[$page]['nom'] ?> - Site de Sébastien Linck - Enseignant</title>
-	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Site web de Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
+	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
 	<link rel="canonical" href="<?= 'https://' . $host . $canonicalPage; ?>">
 	<meta name="theme-color" content="#EFEFEF">
@@ -84,7 +84,9 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="page">
 		<header>
-			<h1>Sébastien Linck - <?= $auth_pages[$page]['nom']; ?></h1>
+			<h1>Sébastien Linck <?php if ($auth_pages[$page]['nom'] != "") {
+									echo "- " . $auth_pages[$page]['nom'];
+								} ?></h1>
 			<h2>
 				<span>Enseignant en informatique -&nbsp;</span>
 				<span>Responsable de formation</span>
