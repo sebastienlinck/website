@@ -49,11 +49,16 @@ a {
   width: auto;
   filter: invert(100%);
 }
+header,
+nav,
+section,
+footer {
+  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.5);
+}
 header {
   min-height: 11rem;
   background-color: var(--c1);
   border-radius: 1rem;
-  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -77,8 +82,7 @@ nav {
   color: var(--c1);
   background-color: var(--c3);
   border-radius: 1rem;
-  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
-  padding: 0.5rem;
+  padding: 0.8rem;
 }
 nav ul {
   list-style: none;
@@ -93,7 +97,7 @@ nav a {
   gap: 0.5rem;
   font-size: 1.4rem;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 3.5rem;
   padding: 0 0.8rem;
   border-radius: 1rem;
   transition: 0.3s;
@@ -105,12 +109,11 @@ nav a.active {
 main {
   display: flex;
   flex-flow: column nowrap;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 section {
   background: var(--c1);
   border-radius: 1rem;
-  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   line-height: 160%;
   min-height: 10vh;
   display: flex;
@@ -137,9 +140,11 @@ article:has(.img-round) {
   flex: 1;
 }
 article {
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
 }
-
+section article:last-of-type {
+  margin-bottom: 1rem;
+}
 h4 {
   color: var(--c4);
   font-size: 1.2rem;
@@ -162,7 +167,6 @@ article ul li {
 footer {
   background-color: var(--c3);
   border-radius: 1rem;
-  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   color: var(--c1);
   line-height: 4rem;
   text-align: center;
