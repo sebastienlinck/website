@@ -84,7 +84,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="page">
 		<header>
-			<h1>Sébastien Linck <?php if ($auth_pages[$page]['nom'] != "") {
+			<h1>Sébastien Linck <?php if ($auth_pages[$page]['nom'] != "Présentation") {
 									echo "- " . $auth_pages[$page]['nom'];
 								} ?></h1>
 			<h2>
