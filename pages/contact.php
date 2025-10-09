@@ -4,7 +4,7 @@
 		<article class="flex-center">
 			<img class="img-round" loading="lazy" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck" width="400" height="400">
 		</article>
-		<article>
+		<article class="flex-center">
 			<h5>Sébastien Linck</h5>
 			EiSINe<br>
 			Campus Sup Ardenne<br>
