@@ -3,16 +3,18 @@
   --c2: #999;
   --c3: #333;
   --c4: #212121;
+  --radius: 1rem;
+  --shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.5);
 }
 * {
   box-sizing: border-box;
-  font-family: Montserrat, Verdana;
-  font-size: 1rem;
   margin: 0;
   padding: 0;
 }
 html,
 body {
+  font-family: Montserrat, Verdana;
+  font-size: 1rem;
   background-color: var(--c1);
   scroll-behavior: smooth;
 }
@@ -26,8 +28,14 @@ body {
 p {
   color: var(--c4);
   margin-bottom: 0.5rem;
-  text-align: justify;
-  text-indent: 3.2rem;
+  text-align: left;
+  hyphens: auto;
+  line-height: 1.6;
+  max-width: 70ch;
+}
+article p:first-of-type,
+section p:first-of-type {
+  text-indent: 1.6rem;
 }
 p:last-child {
   margin: 0;
@@ -38,7 +46,7 @@ a {
   text-decoration: none;
 }
 .social-icons {
-  border-radius: 1rem;
+  border-radius: var(--radius);
   height: auto;
   margin-right: 1rem;
   overflow: hidden;
@@ -53,12 +61,12 @@ header,
 nav,
 section,
 footer {
-  box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow);
 }
 header {
   min-height: 11rem;
   background-color: var(--c1);
-  border-radius: 1rem;
+  border-radius: var(--radius);
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -81,12 +89,12 @@ h2 span {
 nav {
   color: var(--c1);
   background-color: var(--c3);
-  border-radius: 1rem;
+  border-radius: var(--radius);
   padding: 0.8rem;
 }
 nav ul {
   list-style: none;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   display: flex;
   justify-content: space-evenly;
 }
@@ -99,7 +107,7 @@ nav a {
   font-weight: 700;
   line-height: 3.5rem;
   padding: 0 0.8rem;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   transition: 0.3s;
 }
 nav a:hover,
@@ -113,7 +121,7 @@ main {
 }
 section {
   background: var(--c1);
-  border-radius: 1rem;
+  border-radius: var(--radius);
   line-height: 160%;
   min-height: 10vh;
   display: flex;
@@ -166,7 +174,7 @@ article ul li {
 }
 footer {
   background-color: var(--c3);
-  border-radius: 1rem;
+  border-radius: var(--radius);
   color: var(--c1);
   line-height: 4rem;
   text-align: center;
@@ -176,7 +184,7 @@ footer a {
 }
 .hamburger {
   background-color: var(--c3);
-  border-radius: 1rem;
+  border-radius: var(--radius);
   display: none;
   padding: 0.5rem;
   position: fixed;
@@ -194,7 +202,7 @@ footer a {
   padding: 0.5rem;
   background-color: var(--c3);
   opacity: 0.8;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   position: fixed;
   right: calc(5% - 2rem);
   z-index: 5;
@@ -213,12 +221,27 @@ form label {
 }
 input,
 textarea {
-  border: 1px solid var(--c1);
-  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius);
   line-height: 150%;
   margin: 0.3rem 0;
-  padding: 0.5rem;
+  padding: 0.6rem;
   width: 100%;
+  min-height: 2.4rem;
+}
+input:focus,
+textarea:focus {
+  border-color: var(--c3);
+  box-shadow: 0 0 0 3px rgba(33, 33, 33, 0.06);
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(33, 33, 33, 0.18);
+  outline-offset: 3px;
 }
 input[type="range"] {
   accent-color: var(--c3);
@@ -246,7 +269,7 @@ input[type="submit"]:disabled {
   position: fixed;
   bottom: 3rem;
   right: -400px;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   max-width: 375px;
   border: 1px solid black;
   transition: all 0.3s ease;
@@ -258,10 +281,17 @@ input[type="submit"]:disabled {
 #cookie p {
   text-indent: 0;
 }
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
 button {
   background-color: var(--c3);
   border: 1px solid var(--c1);
-  border-radius: 1rem;
+  border-radius: var(--radius);
   margin: 0.3rem 0;
   padding: 0.5rem;
   width: 100%;
