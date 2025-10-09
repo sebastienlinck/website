@@ -31,11 +31,10 @@ p {
   text-align: left;
   hyphens: auto;
   line-height: 1.6;
-  max-width: 70ch;
 }
 article p:first-of-type,
 section p:first-of-type {
-  text-indent: 1.6rem;
+  text-indent: 2rem;
 }
 p:last-child {
   margin: 0;
