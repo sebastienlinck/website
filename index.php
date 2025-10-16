@@ -109,9 +109,9 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 		</main>
 		<?php include("./pages/footer.php"); ?>
 		<section id="cookie">
-			<h3></h3>
+			<h3>Utilisation des cookies</h3>
 			<article>
-				<h4>Utilisation des cookies</h4>
+				<h4>Information</h4>
 				<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
 				<button>J'ai compris</button>
 			</article>
