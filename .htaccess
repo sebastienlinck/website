@@ -1,26 +1,70 @@
+# 1. MIME Type (Gestion des types de fichiers)
+# Ajoute le type MIME pour les images WebP, permettant au navigateur de les reconnaître et de les afficher correctement pour l'optimisation.
+
 AddType image/webp .webp
 
+# 2. Sécurité et Headers HTTP (Nécessite le module mod_headers)
+# Ce bloc gère l'envoi d'entêtes HTTP pour la sécurité, le cache et le SEO.
+
 <IfModule mod_headers.c>
-Header always set X-Content-Type-Options "nosniff"
-Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-Header set X-Frame-Options "sameorigin"
-Header set X-XSS-Protection "1; mode=block"
-Header set Cache-Control "max-age=86400, public"
+
+    # X-Content-Type-Options: Empêche les navigateurs d'essayer de "deviner" le type MIME, prévenant ainsi les attaques de type "MIME sniffing".
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Strict-Transport-Security (HSTS): Force le navigateur à communiquer uniquement en HTTPS pour la durée spécifiée (2 ans), améliorant la sécurité.
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # X-Frame-Options: Empêche l'affichage du site dans une iframe sur un autre domaine, protégeant contre les attaques de clickjacking.
+    Header set X-Frame-Options "sameorigin"
+
+    # X-XSS-Protection: Active la protection anti-XSS intégrée dans le navigateur.
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Cache-Control: Indique au navigateur de mettre en cache les ressources pour 24 heures (86400 secondes), améliorant la vitesse de chargement.
+    Header set Cache-Control "max-age=86400, public"
+
+    # --- Optimisation SEO/Accès : Désindexation des PDF ---
+    # Cible spécifiquement les fichiers PDF dans le répertoire /articles/
+    <FilesMatch "^articles/.*\.pdf$">
+        # X-Robots-Tag: Indique aux moteurs de recherche de NE PAS indexer
+        # le fichier (noindex) et de NE PAS suivre les liens qu'il contient (nofollow).
+        Header set X-Robots-Tag "noindex, nofollow"
+    </FilesMatch>
+    # ---------------------------------------------------------
+
 </IfModule>
+
+# 3. Réécriture d'URL (Nécessite le module mod_rewrite)
+# Essentiel pour la propreté des URLs et le fonctionnement de votre routing PHP.
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L]
-RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1 [L]
+
+    # Redirection HTTPS : Assure que tout le trafic non-HTTPS est redirigé en HTTPS.
+    RewriteCond %{HTTPS} !=on
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
+
+    # Règles de Routing (URL Simples)
+    # 1. Vérifie si la requête n'est PAS un fichier existant (-f)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # 2. Vérifie si la requête n'est PAS un répertoire existant (-d)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # 3. Si c'est un nom sans slash final (ex: /contact), le dirige vers index.php
+    RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L]
+    # 4. Si c'est un nom AVEC slash final (ex: /contact/), le dirige aussi vers index.php
+    RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1 [L]
+
 </IfModule>
+
+# 4. Gestion de l'Expiration (Cache) (Nécessite le module mod_expires)
 
 <IfModule mod_expires.c>
 ExpiresActive On
+# Définit une durée de vie par défaut pour les fichiers (1 jour après modification).
 ExpiresDefault "modification plus 1 day"
 </IfModule>
+
+# 5. Sécurité Serveur
+# Supprime l'affichage de la version d'Apache et du système d'exploitation dans les messages d'erreur, réduisant les informations pour les attaquants.
 
 ServerSignature Off
