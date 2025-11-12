@@ -119,7 +119,8 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 		<header>
 			<h1>Sébastien Linck <?php echo "- " . $auth_pages[$page]['nom']; ?></h1>
 			<h2>
-				<span>Enseignant en informatique -&nbsp;</span>
+				<span>Enseignant en informatique</span>
+				&nbsp;–&nbsp;
 				<span>Responsable de formation</span>
 			</h2>
 		</header>
