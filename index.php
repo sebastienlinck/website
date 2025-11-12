@@ -46,6 +46,38 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<meta name="keywords" content="Sébastien Linck, Enseignant Informatique URCA, Responsable Licence Pro Web, Métiers du Numérique, EiSINe, Développement Front End, SEO, HTML, CSS, JS, PHP, Projets tutorés, Doctorat Réseaux" />
 	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Sébastien Linck - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe - Formations - Enseignements - Travaux de recherche">
 	<meta name="author" content="Sebastien Linck">
+	<meta name="publisher" content="Sébastien Linck" />
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Sébastien Linck",
+			"jobTitle": "Enseignant en Informatique et Responsable de formation",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Université de Reims Champagne-Ardenne (URCA) - EiSINe"
+			},
+			"url": "https://www.slinck.com",
+			"alumniOf": [{
+					"@type": "EducationalOrganization",
+					"name": "Université de Franche-Comté"
+				},
+				{
+					"@type": "EducationalOrganization",
+					"name": "UTBM"
+				}
+			],
+			"knowsAbout": [
+				"Développement Web Full Stack",
+				"HTML5",
+				"CSS3",
+				"JavaScript",
+				"PHP",
+				"SEO",
+				"Communication Digitale"
+			]
+		}
+	</script>
 	<link rel="canonical" href="<?= 'https://' . $host . $canonicalPage; ?>">
 	<meta name="theme-color" content="#EFEFEF">
 	<meta property="og:title" content="Site web de Sébastien Linck - Enseignant - École d’ingénieurs en Sciences Industrielles et Numérique">
