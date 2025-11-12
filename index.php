@@ -9,7 +9,7 @@ $host = $_SERVER['HTTP_HOST'];
 $auth_pages = array(
 	'accueil' => array(
 		'url' => './pages/accueil.html',
-		'nom' => 'Présentation'
+		'nom' => 'Site personnel'
 	),
 	'enseignements' => array(
 		'url' => './pages/enseignements.html',
@@ -117,9 +117,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<!-- End Google Tag Manager (noscript) -->
 	<div id="page">
 		<header>
-			<h1>Sébastien Linck <?php if ($auth_pages[$page]['nom'] != "Présentation") {
-									echo "- " . $auth_pages[$page]['nom'];
-								} ?></h1>
+			<h1>Sébastien Linck <?php echo "- " . $auth_pages[$page]['nom']; ?></h1>
 			<h2>
 				<span>Enseignant en informatique -&nbsp;</span>
 				<span>Responsable de formation</span>
