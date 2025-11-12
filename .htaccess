@@ -1,9 +1,11 @@
 # 1. MIME Type (Gestion des types de fichiers)
+
 # Ajoute le type MIME pour les images WebP, permettant au navigateur de les reconnaître et de les afficher correctement pour l'optimisation.
 
 AddType image/webp .webp
 
 # 2. Sécurité et Headers HTTP (Nécessite le module mod_headers)
+
 # Ce bloc gère l'envoi d'entêtes HTTP pour la sécurité, le cache et le SEO.
 
 <IfModule mod_headers.c>
@@ -35,6 +37,7 @@ AddType image/webp .webp
 </IfModule>
 
 # 3. Réécriture d'URL (Nécessite le module mod_rewrite)
+
 # Essentiel pour la propreté des URLs et le fonctionnement de votre routing PHP.
 
 <IfModule mod_rewrite.c>
@@ -65,6 +68,7 @@ ExpiresDefault "modification plus 1 day"
 </IfModule>
 
 # 5. Sécurité Serveur
+
 # Supprime l'affichage de la version d'Apache et du système d'exploitation dans les messages d'erreur, réduisant les informations pour les attaquants.
 
 ServerSignature Off
