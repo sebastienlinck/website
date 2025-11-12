@@ -125,14 +125,14 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 		</header>
 		<nav>
 			<div class="hamburger">
-				<img class="icons" width="64" height="64" src="./img/menu-burger.svg" alt="icone menu" title="menu principal">
+				<img class="icons" loading="lazy" width="64" height="64" src="./img/menu-burger.svg" alt="icone menu" title="menu principal">
 			</div>
 			<ul>
-				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" width="64" height="64" src="./img/home.svg" alt="icone accueil" title="icone accueil">Accueil</a></li>
-				<li><a href="enseignements"><img class="icons" width="64" height="64" src="./img/e-learning.svg" alt="icone enseignement" title="icone enseignement">Enseignements</a></li>
-				<li><a href="recherche"><img class="icons" width="64" height="64" src="./img/chart-network.svg" alt="icone recherche" title="icone recherche">Recherche</a></li>
-				<li><a href="publications"><img class="icons" width="64" height="64" src="./img/edit.svg" alt="icone publications" title="icone publications">Publications</a></li>
-				<li><a href="contact"><img class="icons" width="64" height="64" src="./img/envelope.svg" alt="icone contact" title="icone contact">Contact</a></li>
+				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" loading="lazy" width="64" height="64" src="./img/home.svg" alt="icone accueil" title="icone accueil">Accueil</a></li>
+				<li><a href="enseignements"><img class="icons" loading="lazy" width="64" height="64" src="./img/e-learning.svg" alt="icone enseignement" title="icone enseignement">Enseignements</a></li>
+				<li><a href="recherche"><img class="icons" loading="lazy" width="64" height="64" src="./img/chart-network.svg" alt="icone recherche" title="icone recherche">Recherche</a></li>
+				<li><a href="publications"><img class="icons" loading="lazy" width="64" height="64" src="./img/edit.svg" alt="icone publications" title="icone publications">Publications</a></li>
+				<li><a href="contact"><img class="icons" loading="lazy" width="64" height="64" src="./img/envelope.svg" alt="icone contact" title="icone contact">Contact</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -149,7 +149,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 		</section>
 	</div>
 	<div class="enhaut">
-		<a href="#page"><img class="icons" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="retour en haut"></a>
+		<a href="#page"><img class="icons" loading="lazy" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="retour en haut"></a>
 	</div>
 	<script src="./js/outils.min.js"></script>
 	<script>
