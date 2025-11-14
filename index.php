@@ -5,6 +5,31 @@ setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
 session_set_cookie_params(["SameSite" => "Strict"]);
 session_set_cookie_params(["Secure" => "true"]);
 session_start();
+$cookie_name = "__Secure-cookieDef";
+$cookie_accepted = isset($_COOKIE[$cookie_name]);
+
+// Si l'utilisateur a cliqué sur "J'ai compris" et que le cookie n'existe pas encore
+if (isset($_GET['accept_cookies']) && $_GET['accept_cookies'] == 'true' && !$cookie_accepted) {
+
+	$expiration_time = time() + (60 * 60 * 24 * 30); // 30 jours
+
+	// Création du cookie côté serveur avec HttpOnly et le préfixe __Secure-
+	setcookie(
+		$cookie_name,
+		'accepted',
+		[
+			'expires' => $expiration_time,
+			'path' => '/',
+			'secure' => true,      // OBLIGATOIRE avec le préfixe
+			'httponly' => true,    // Ajout de HttpOnly (protection XSS)
+			'samesite' => 'Strict'
+		]
+	);
+
+	// Redirection pour nettoyer l'URL (?accept_cookies=true) et éviter les double soumissions
+	header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
+	exit();
+}
 $host = $_SERVER['HTTP_HOST'];
 $auth_pages = array(
 	'accueil' => array(
@@ -140,14 +165,17 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 			<?php include($auth_pages[$page]['url']); ?>
 		</main>
 		<?php include("./pages/footer.php"); ?>
-		<section id="cookie">
-			<h3>Utilisation des cookies</h3>
-			<article>
-				<h4>Information</h4>
-				<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
-				<button>J'ai compris</button>
-			</article>
-		</section>
+		<?php if (!$cookie_accepted): ?>
+			<section id="cookie" class="show">
+				<h3>Utilisation des cookies</h3>
+				<article>
+					<h4>Information</h4>
+					<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
+					<!-- L'élément <a> stylisé en bouton déclenche la logique PHP via le lien -->
+					<a href="?accept_cookies=true" id="cookie-button" role="button">J'ai compris</a>
+				</article>
+			</section>
+		<?php endif; ?>
 	</div>
 	<div class="enhaut">
 		<a href="#page"><img class="icons" loading="lazy" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="retour en haut"></a>
