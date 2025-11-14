@@ -21,7 +21,7 @@ AddType image/webp .webp
 <IfModule mod_headers.c>
     # --- A. PROTECTION DES COOKIES (Contre XSS et Interception) ---
     # Ajoute le drapeau HttpOnly (protection XSS)
-    Header edit Set-Cookie ^(.*)$ "$1;HttpOnly"
+    Header edit Set-Cookie ^(.*)$ "$1;httpOnly"
 
     # Ajoute le drapeau Secure (le cookie ne passe que par HTTPS)
     Header edit Set-Cookie ^(.*)$ "$1;Secure"
