@@ -9,6 +9,11 @@ AddType image/webp .webp
 # Ce bloc gère l'envoi d'entêtes HTTP pour la sécurité, le cache et le SEO.
 
 <IfModule mod_headers.c>
+    # Ajoute le drapeau HttpOnly (protection XSS)
+    Header edit Set-Cookie ^(.*)$ "$1;HttpOnly"
+
+    # Ajoute le drapeau Secure (protection contre l'interception via HTTP)
+    Header edit Set-Cookie ^(.*)$ "$1;Secure"
 
     # X-Content-Type-Options: Empêche les navigateurs d'essayer de "deviner" le type MIME, prévenant ainsi les attaques de type "MIME sniffing".
     Header always set X-Content-Type-Options "nosniff"
