@@ -3,14 +3,20 @@ function onSubmit(token) {
 }
 
 function fcookie() {
-  if (document.cookie.includes("slcook")) return;
+  // Changement ici : Vérifiez le nouveau nom de cookie préfixé.
+  if (document.cookie.includes("__Secure-cookieDef")) return;
+
   document.querySelector("#cookie").classList.add("show");
   document.querySelector("#cookie button").addEventListener("click", () => {
     document.querySelector("#cookie").classList.remove("show");
+
+    // CODE CORRIGÉ :
+    // 1. Le nom du cookie commence par "__Secure-".
+    // 2. Le drapeau "Secure" est essentiel pour que le préfixe fonctionne.
     document.cookie =
-      "cookieDef=slcook; max-age=" +
+      "__Secure-cookieDef=slcook; max-age=" +
       60 * 60 * 24 * 30 +
-      "; samesite=strict; Secure";
+      "; samesite=strict; Secure; path=/";
   });
 }
 
