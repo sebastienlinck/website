@@ -284,6 +284,11 @@ input[type="submit"]:disabled {
 #cookie p {
   text-indent: 0;
 }
+
+#cookie button {
+  margin: 0.5rem;
+  width: auto;
+}
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
