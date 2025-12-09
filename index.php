@@ -142,6 +142,9 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<link rel="stylesheet" href="./css/style.min.css">
 	<link rel="manifest" href="./slinck.webmanifest">
 	<meta name="google-site-verification" content="W4B7FHprbWn7QDiEttuBXnN7X6bL2P1SWMmNO2c8Tlw">
+	<script>
+		window.cookieAccepted = <?= $cookie_accepted ? 'true' : 'false' ?>;
+	</script>
 </head>
 
 <body>
@@ -181,7 +184,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 					<h4>Information</h4>
 					<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
 					<!-- L'élément <a> stylisé en bouton déclenche la logique PHP via le lien -->
-					<a href="?accept_cookies=true" id="cookie-button" role="button">J'ai compris</a>
+					<button id="cookie-button" type="button" aria-label="Accepter les cookies" data-accept-url="?accept_cookies=true">J'ai compris</button>
 				</article>
 			</section>
 		<?php endif; ?>
