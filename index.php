@@ -2,8 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', FALSE);
 setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
-session_set_cookie_params(["SameSite" => "Strict"]);
-session_set_cookie_params(["Secure" => "true"]);
+// Configure les paramètres du cookie de session en une seule fois
+session_set_cookie_params([
+	'samesite' => 'Strict',
+	'secure' => true,
+	'httponly' => true,
+]);
 session_start();
 $cookie_name = "__Secure-cookieDef";
 $cookie_accepted = isset($_COOKIE[$cookie_name]);
@@ -30,7 +34,12 @@ if (isset($_GET['accept_cookies']) && $_GET['accept_cookies'] == 'true' && !$coo
 	header("Location: " . strtok($_SERVER["REQUEST_URI"], '?'));
 	exit();
 }
-$host = $_SERVER['HTTP_HOST'];
+$host = $_SERVER['HTTP_HOST'] ?? '';
+// sanitize host to prevent host header injection
+$host = preg_replace('/[^a-z0-9\.\-:]/i', '', $host);
+if (empty($host)) {
+	$host = 'slinck.com';
+}
 $auth_pages = array(
 	'accueil' => array(
 		'url' => './pages/accueil.html',

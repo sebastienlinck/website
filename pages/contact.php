@@ -29,23 +29,35 @@
 				<input type="hidden" name="tps" value="<?= base_convert(($cible * 3) + date('z'), 10, 4) ?>">
 			</form>
 			<?php
-			if (isset($_REQUEST['envoyer'], $_REQUEST['tps']) && is_numeric($_REQUEST['bip1'])) {
+			if (isset($_REQUEST['envoyer'], $_REQUEST['tps']) && isset($_REQUEST['bip1']) && is_numeric($_REQUEST['bip1'])) {
 				$tps = (base_convert($_REQUEST['tps'], 4, 10) - date('z')) / 3;
 				if ($tps == $_REQUEST['bip1']) {
 					$to = 'contact@slinck.com';
-					$from = strip_tags($_REQUEST['mail']);
-					$nom = strip_tags($_REQUEST['nom']);
-					$message = strip_tags($_REQUEST['message']);
-					$subject = 'Message envoyé par ' . $nom;
-					$subject = trim(iconv_mime_encode('', $subject, ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8']), ' :');
-					$headers = [
-						'MIME-Version: 1.0',
-						'Content-type: text/html; charset=utf-8',
-						'From: ' . $from,
-					];
-					$message = '<html><body><h3>Contenu du message:</h3><p>' . $message . '</p></body></html>';
-					mail($to, $subject, $message, implode("\r\n", $headers));
-					echo '<p>Message envoyé</p>';
+
+					// Validate and sanitize the sender email to prevent header injection
+					$fromRaw = $_REQUEST['mail'] ?? '';
+					$from = filter_var($fromRaw, FILTER_VALIDATE_EMAIL);
+					if ($from === false) {
+						echo '<p>Adresse e-mail invalide.</p>';
+					} else {
+						// sanitize name and message; remove CRLF to prevent header injection
+						$nom = preg_replace('/[\r\n]+/', ' ', strip_tags($_REQUEST['nom'] ?? ''));
+						$messageRaw = strip_tags($_REQUEST['message'] ?? '');
+
+						$subject = 'Message envoyé par ' . $nom;
+						$subject = trim(iconv_mime_encode('', $subject, ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8']), ' :');
+
+						$headers = [
+							'MIME-Version: 1.0',
+							'Content-type: text/html; charset=utf-8',
+							'From: ' . $from,
+						];
+
+						$body = '<html><body><h3>Contenu du message:</h3><p>' . htmlspecialchars($messageRaw, ENT_QUOTES, 'UTF-8') . '</p></body></html>';
+
+						mail($to, $subject, $body, implode("\r\n", $headers));
+						echo '<p>Message envoyé</p>';
+					}
 				}
 			}
 			?>
