@@ -70,11 +70,17 @@ $auth_pages = array(
 		'nom' => 'Erreur'
 	)
 );
-if (isset($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
+if (!isset($_GET['page'])) {
+	// Pas de paramètre → page d'accueil
+	$page = 'accueil';
+	$is404 = false;
+} elseif (array_key_exists($_GET['page'], $auth_pages)) {
+	// Paramètre valide → page correspondante
 	$page = $_GET['page'];
 	$is404 = false;
 } else {
-	$page = 'erreur';  // ta page d'erreur
+	// Paramètre invalide → page d'erreur
+	$page = 'erreur';
 	$is404 = true;
 }
 if ($is404) {
