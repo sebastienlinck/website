@@ -17,22 +17,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Montserrat, Verdana;
-  font-size: 1rem;
+  font-family: Montserrat, Verdana, sans-serif;
 }
 
 html,
 body {
   background-color: var(--c1);
   scroll-behavior: smooth;
+  font-size: 1rem;
+  line-height: 1.6; /* Défini ici pour l'héritage global */
 }
 
 p {
   color: var(--c4);
   margin-bottom: 0.5rem;
-  text-align: left;
   hyphens: auto;
-  line-height: 1.6;
 }
 
 article p:first-of-type,
@@ -51,17 +50,6 @@ a {
 }
 
 /* =========================================================================
-   Utilities
-   ========================================================================= */
-.flex-center {
-  align-self: center;
-}
-
-.flex-fill {
-  flex: 1;
-}
-
-/* =========================================================================
    Layout containers
    ========================================================================= */
 #page {
@@ -69,13 +57,13 @@ a {
   width: clamp(1000px, 80vw, 1600px);
   min-height: 100vh;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   gap: 2.5rem;
 }
 
 main {
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   flex: 1;
   gap: 1.5rem;
 }
@@ -83,11 +71,11 @@ main {
 section {
   background: var(--c1);
   border-radius: var(--radius);
-  line-height: 160%;
   min-height: 10vh;
   display: flex;
-  flex-flow: column nowrap;
+  flex-direction: column;
   overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 /* =========================================================================
@@ -98,7 +86,7 @@ header {
   background-color: var(--c1);
   border-radius: var(--radius);
   display: flex;
-  flex-flow: column;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1.5rem;
   box-shadow: var(--shadow);
@@ -107,18 +95,13 @@ header {
 h1 {
   color: var(--c3);
   font-size: 3rem;
-  text-align: left;
 }
 
 h2 {
   color: var(--c3);
   font-size: 2rem;
   display: flex;
-  flex-flow: row wrap;
-}
-
-h2 span {
-  font-size: inherit;
+  flex-wrap: wrap;
 }
 
 h3 {
@@ -126,7 +109,7 @@ h3 {
   color: var(--c1);
   font-size: 1.4rem;
   font-variant: small-caps;
-  line-height: 2rem;
+  line-height: 2;
   padding: 0.5rem 1.5rem;
 }
 
@@ -149,7 +132,6 @@ nav {
 
 nav ul {
   list-style: none;
-  border-radius: var(--radius);
   display: flex;
   justify-content: space-evenly;
 }
@@ -160,7 +142,6 @@ nav a {
   align-items: center;
   gap: 0.5rem;
   font-size: 1.4rem;
-  font-weight: 700;
   line-height: 3.5rem;
   padding: 0 0.8rem;
   border-radius: var(--radius);
@@ -183,17 +164,9 @@ nav a.active {
   z-index: 3;
 }
 
-.hamburger .icons {
-  height: 2.4rem;
-}
-
 /* =========================================================================
    Articles & content blocks
    ========================================================================= */
-
-section {
-  box-shadow: var(--shadow);
-}
 article {
   padding: 1rem;
 }
@@ -206,7 +179,6 @@ article ul {
 article ul li {
   margin-left: 0.5rem;
   padding-left: 0.5rem;
-  text-align: left;
 }
 
 article:has(.img-round) {
@@ -231,7 +203,6 @@ section article:last-of-type {
   height: auto;
   width: clamp(12rem, 100%, 400px);
   vertical-align: middle;
-  margin: 0;
 }
 
 /* =========================================================================
@@ -263,7 +234,6 @@ input[type="submit"] {
   width: 100%;
   color: var(--c1);
   font-size: 1.1rem;
-  text-align: center;
   cursor: pointer;
 }
 
@@ -271,7 +241,7 @@ input,
 textarea {
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius);
-  line-height: 150%;
+  line-height: 1.5;
   margin: 0.3rem 0;
   padding: 0.6rem;
   width: 100%;
@@ -293,12 +263,8 @@ form {
   max-width: 40rem;
 }
 
-form label {
-  text-align: start;
-}
-
 /* =========================================================================
-   Cookies / notifications
+   Cookies & Scroll Top
    ========================================================================= */
 #cookie {
   position: fixed;
@@ -307,26 +273,15 @@ form label {
   border-radius: var(--radius);
   max-width: 375px;
   border: 1px solid black;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
   z-index: 3;
+  background: var(--c1); /* Ajout d'un fond par sécurité */
 }
 
 #cookie.show {
   right: 3rem;
 }
 
-#cookie p {
-  text-indent: 0;
-}
-
-#cookie button {
-  margin: 0.5rem;
-  width: 100%;
-}
-
-/* =========================================================================
-   Scroll to top button
-   ========================================================================= */
 .enhaut {
   bottom: 2rem;
   display: none;
@@ -343,12 +298,8 @@ form label {
   font-size: 0;
 }
 
-.enhaut .icons {
-  height: 2.4rem;
-}
-
 /* =========================================================================
-   Error page specific
+   Error page
    ========================================================================= */
 #erreur-container {
   flex: 1;
@@ -362,49 +313,25 @@ form label {
 
 #erreur-container > h3 {
   font-size: 3rem;
-  font-weight: bold;
   color: var(--c4);
   background: none;
-  line-height: normal;
-  padding: 0;
   margin-bottom: 1rem;
-}
-
-#erreur-container p {
-  font-size: 1.2rem;
-  color: var(--c4);
-  margin-bottom: 2rem;
 }
 
 #erreur-container .error-btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
   font-weight: 700;
   color: var(--c1);
   background-color: var(--c3);
   border: 1px solid var(--c1);
   border-radius: var(--radius);
-  text-decoration: none;
-  cursor: pointer;
   transition: 0.3s;
 }
 
-#erreur-container .error-btn:hover {
-  background-color: #555;
-}
-
 /* =========================================================================
-   Misc / social / icons
+   Icons
    ========================================================================= */
-.social-icons {
-  border-radius: var(--radius);
-  width: 3.5rem;
-  height: auto;
-  margin-right: 1rem;
-  overflow: hidden;
-}
-
 .icons {
   height: 1.8em;
   width: auto;
@@ -412,108 +339,74 @@ form label {
 }
 
 /* =========================================================================
-   Media queries (desktop/mobile adjustments)
+   Media queries
    ========================================================================= */
-@media all and (max-width: 1024px) {
+@media (max-width: 1024px) {
   #page {
     margin: 0;
-    min-width: 0;
-    padding: 0;
     width: 100%;
   }
-  #page::before,
-  #page::after {
-    content: none;
-  }
+
   section,
   nav,
   header,
   footer,
   nav ul {
     box-shadow: none;
-  }
-  header,
-  footer,
-  article {
     border-radius: 0;
-    height: auto;
-    margin: 0;
   }
+
   header {
     min-height: 4rem;
   }
+
   h1 {
     font-size: 1.6rem;
   }
   h2 {
     font-size: 1.2rem;
   }
-  h5 {
-    text-align: center;
-  }
+
   .hamburger {
     display: flex;
   }
+
   nav {
-    background-color: var(--c3);
     opacity: 0.8;
     position: fixed;
     right: 2.3rem;
     top: 2.3rem;
   }
+
   nav ul {
-    align-items: stretch;
     display: none;
-    flex-flow: column;
-    margin: 0;
-    padding: 0;
-    text-align: left;
+    flex-direction: column;
   }
-  nav ul li,
-  ul li ul {
-    align-items: stretch;
+
+  /* Version simplifiée du menu mobile */
+  nav ul li {
     display: flex;
-    flex-flow: column;
-    line-height: 1.5rem;
-    text-align: left;
+    flex-direction: column;
   }
-  nav ul li ul {
-    position: static;
-  }
+
   .cols {
-    flex-flow: column;
+    flex-direction: column;
   }
-  section {
-    border-radius: 0;
-  }
+
   .cols > article {
     text-align: center;
   }
+
   .img-round {
     margin: 1rem auto;
   }
+
   .enhaut {
     bottom: 2.2rem;
     right: calc(50% - 1.7rem);
   }
-
-  /* Error page adjustments */
-  #erreur-container h3 {
-    font-size: 2rem;
-  }
-  #erreur-container p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  #erreur-container .error-btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-  }
 }
 
-/* =========================================================================
-   Accessibility / reduced motion
-   ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
