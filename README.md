@@ -1,16 +1,39 @@
-# Site web personnel
+# Site personnel de Sébastien Linck
 
-Ce dépôt contient l'ensemble du code de mon [site web personnel](https://www.slinck.com)
+Site web officiel de Sébastien Linck, enseignant en informatique et responsable de formation à l'Université de Reims Champagne-Ardenne (EiSINe).
 
-## Présentation
+## Aperçu
 
-Ce site présente l'ensemble de mes travaux en enseignement et en recherche.
+Le site présente :
+- Les enseignements et formations proposés
+- Les projets de recherche et publications
+- Une page contact et les mentions légales
+- Une navigation fluide avec un menu principal visible sur toutes les pages
+- Une page d’erreur personnalisée
 
-## Support
+## Technologies utilisées
 
-Il sert de support de cours et de tests dans le cadre d'une licence professionnelle.
+- HTML5 & CSS3
+- PHP pour la gestion des pages dynamiques et des cookies
+- JavaScript pour les interactions et la gestion du cookie de consentement
+- Flexbox pour la mise en page responsive
 
-## Technologies
+## Structure
 
-- Entièrement développeé en HTML, CSS, PHP et JS.
-- Aucune utilisation de Framework Front ou Back-end
+/index.php
+/css/style.css
+/pages/
+/js/
+/img/
+
+
+## Fonctionnalités clés
+
+- Pages dynamiques via PHP
+- Gestion du consentement des cookies
+- Responsive design pour desktop et mobile
+- Page d’erreur 404 personnalisée
+
+## Licence
+
+Ce projet est personnel et n’est pas destiné à un usage commercial.
