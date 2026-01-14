@@ -25,7 +25,7 @@ body {
   background-color: var(--c1);
   scroll-behavior: smooth;
   font-size: 1rem;
-  line-height: 1.6; /* Défini ici pour l'héritage global */
+  line-height: 1.6; /* Centralisation du line-height */
 }
 
 p {
@@ -50,10 +50,30 @@ a {
 }
 
 /* =========================================================================
+   Utilities
+   ========================================================================= */
+.flex-center {
+  align-self: center;
+}
+
+.flex-fill {
+  flex: 1;
+}
+
+.social-icons {
+  border-radius: var(--radius);
+  width: 3.5rem;
+  height: auto;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+
+/* =========================================================================
    Layout containers
    ========================================================================= */
 #page {
-  margin: 1.5rem auto;
+  margin: 0 auto;
+  padding: 1rem;
   width: clamp(1000px, 80vw, 1600px);
   min-height: 100vh;
   display: flex;
@@ -79,7 +99,7 @@ section {
 }
 
 /* =========================================================================
-   Headers
+   Headers & Navigation
    ========================================================================= */
 header {
   min-height: 11rem;
@@ -113,15 +133,6 @@ h3 {
   padding: 0.5rem 1.5rem;
 }
 
-h4 {
-  color: var(--c4);
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-}
-
-/* =========================================================================
-   Navigation
-   ========================================================================= */
 nav {
   color: var(--c1);
   background-color: var(--c3);
@@ -153,19 +164,8 @@ nav a.active {
   background: var(--c2);
 }
 
-.hamburger {
-  background-color: var(--c3);
-  border-radius: var(--radius);
-  display: none;
-  padding: 0.5rem;
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  z-index: 3;
-}
-
 /* =========================================================================
-   Articles & content blocks
+   Articles & Content
    ========================================================================= */
 article {
   padding: 1rem;
@@ -195,9 +195,6 @@ section article:last-of-type {
   align-items: flex-start;
 }
 
-/* =========================================================================
-   Images
-   ========================================================================= */
 .img-round {
   border-radius: 50%;
   height: auto;
@@ -206,23 +203,7 @@ section article:last-of-type {
 }
 
 /* =========================================================================
-   Footer
-   ========================================================================= */
-footer {
-  background-color: var(--c3);
-  border-radius: var(--radius);
-  color: var(--c1);
-  line-height: 4rem;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-footer a {
-  color: var(--c1);
-}
-
-/* =========================================================================
-   Buttons & forms
+   Buttons & Forms
    ========================================================================= */
 button,
 input[type="submit"] {
@@ -264,18 +245,31 @@ form {
 }
 
 /* =========================================================================
-   Cookies & Scroll Top
+   Footer & UI Elements
    ========================================================================= */
+footer {
+  background-color: var(--c3);
+  border-radius: var(--radius);
+  color: var(--c1);
+  line-height: 4rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+footer a {
+  color: var(--c1);
+}
+
 #cookie {
   position: fixed;
   bottom: 3rem;
   right: -400px;
+  background: var(--c1);
   border-radius: var(--radius);
   max-width: 375px;
   border: 1px solid black;
   transition: 0.3s ease;
   z-index: 3;
-  background: var(--c1); /* Ajout d'un fond par sécurité */
 }
 
 #cookie.show {
@@ -294,8 +288,30 @@ form {
   z-index: 5;
 }
 
-.enhaut a {
-  font-size: 0;
+.hamburger {
+  background-color: var(--c3);
+  border-radius: var(--radius);
+  display: none;
+  padding: 0.5rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 3;
+}
+
+/* =========================================================================
+   Icons (Filters & Sizes)
+   ========================================================================= */
+.icons {
+  height: 1.8em;
+  width: auto;
+  filter: invert(100%);
+  vertical-align: middle;
+}
+
+.hamburger .icons,
+.enhaut .icons {
+  height: 2.4rem;
 }
 
 /* =========================================================================
@@ -330,15 +346,6 @@ form {
 }
 
 /* =========================================================================
-   Icons
-   ========================================================================= */
-.icons {
-  height: 1.8em;
-  width: auto;
-  filter: invert(100%);
-}
-
-/* =========================================================================
    Media queries
    ========================================================================= */
 @media (max-width: 1024px) {
@@ -359,7 +366,6 @@ form {
   header {
     min-height: 4rem;
   }
-
   h1 {
     font-size: 1.6rem;
   }
@@ -383,20 +389,12 @@ form {
     flex-direction: column;
   }
 
-  /* Version simplifiée du menu mobile */
-  nav ul li {
-    display: flex;
-    flex-direction: column;
-  }
-
   .cols {
     flex-direction: column;
   }
-
   .cols > article {
     text-align: center;
   }
-
   .img-round {
     margin: 1rem auto;
   }
