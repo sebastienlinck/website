@@ -1,26 +1,111 @@
+# =================================================================
+
+# Fichier de Configuration .htaccess - Sécurité, Performance et Routing
+
+# Fichier optimisé pour les projets de Licence Pro Web
+
+# =================================================================
+
+# 1. MIME Type (Gestion des types de fichiers)
+
+# -----------------------------------------------------------------
+
+# Ajoute le type MIME pour les images WebP pour l'optimisation.
+
 AddType image/webp .webp
 
+# 2. Sécurité et Headers HTTP (Nécessite le module mod_headers.c)
+
+# -----------------------------------------------------------------
+
 <IfModule mod_headers.c>
-Header always set X-Content-Type-Options "nosniff"
-Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-Header set X-Frame-Options "sameorigin"
-Header set X-XSS-Protection "1; mode=block"
-Header set Cache-Control "max-age=86400, public"
+    # --- A. PROTECTION DES COOKIES (Contre XSS et Interception) ---
+    # Ajoute le drapeau HttpOnly (protection XSS)
+    Header always edit Set-Cookie ^(.*)$ "$1;httpOnly"
+
+    # Ajoute le drapeau Secure (le cookie ne passe que par HTTPS)
+    Header always edit Set-Cookie ^(.*)$ "$1;Secure"
+
+    # --- B. EN-TÊTES DE SÉCURITÉ MODERNES ---
+
+    # X-Content-Type-Options: Anti-MIME sniffing.
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Strict-Transport-Security (HSTS): Force HTTPS pour 2 ans (63072000 secondes).
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+
+    # X-Frame-Options: Anti-Clickjacking (Autorise uniquement l'affichage sur le même domaine).
+    Header set X-Frame-Options "sameorigin"
+
+    # Content-Security-Policy (CSP): Politique de base pour se protéger du XSS. À adapter si vous utilisez des services externes.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
+
+    # Referrer-Policy: Protège contre la fuite d'informations sensibles dans l'URL de référence.
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions-Policy: Bloque les APIs du navigateur (caméra, micro, etc.) si non nécessaires.
+    Header always set Permissions-Policy "geolocation='none', camera='none', microphone='none', payment='self'"
+
+    # X-XSS-Protection: Défense en profondeur legacy.
+    Header set X-XSS-Protection "1; mode=block"
+
+
+    # --- C. GESTION DU CACHE ET SEO ---
+
+    # Cache-Control: Indique au navigateur de mettre en cache les ressources pour 24 heures.
+    Header set Cache-Control "max-age=86400, public"
+
+    # Désindexation des PDF (ou autres fichiers sensibles) dans le répertoire /articles/
+    <FilesMatch "^articles/.*\.pdf$">
+        Header set X-Robots-Tag "noindex, nofollow"
+    </FilesMatch>
+
 </IfModule>
+
+# 3. Réécriture d'URL (Nécessite le module mod_rewrite.c)
+
+# -----------------------------------------------------------------
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L]
-RewriteRule ^([a-zA-Z0-9_-]+)/$ index.php?page=$1 [L]
+
+    # Redirection HTTPS : Assure que tout le trafic non-HTTPS est redirigé en HTTPS.
+    RewriteCond %{HTTPS} !=on
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,QSA,L]
+
+    # --- Règles de Routing (URL Simples) pour le routeur PHP ---
+
+    # 1. Vérifie si la requête n'est PAS un fichier existant (-f)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # 2. Vérifie si la requête n'est PAS un répertoire existant (-d)
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # 3. Dirige toutes les requêtes propres vers index.php (gère avec ou sans slash final)
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?page=$1 [L]
+
 </IfModule>
+
+# 4. Gestion de l'Expiration (Cache) (Nécessite le module mod_expires.c)
+
+# -----------------------------------------------------------------
+
+# Complète Cache-Control avec une gestion de l'expiration basée sur le temps de modification.
 
 <IfModule mod_expires.c>
 ExpiresActive On
+# Définit une durée de vie par défaut pour les fichiers (1 jour après modification).
 ExpiresDefault "modification plus 1 day"
 </IfModule>
 
+# 5. Sécurité Serveur et Fichiers Sensibles
+
+# -----------------------------------------------------------------
+
+# Supprime l'affichage de la version d'Apache et du système d'exploitation.
+
 ServerSignature Off
+
+# Protection maximale contre l'accès direct aux fichiers de configuration et sensibles
+
+<FilesMatch "(\.htaccess|\.htpasswd|\.ini|\.env|\.bak|\.sql)$">
+Require all denied
+</FilesMatch>
