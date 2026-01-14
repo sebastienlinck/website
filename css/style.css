@@ -1,18 +1,18 @@
-/*--------------------------------------*/
-/*            VARIABLES GLOBALES        */
-/*--------------------------------------*/
+/* =========================================================================
+   :root & variables
+   ========================================================================= */
 :root {
-  --c1: #efefef; /* fond clair */
-  --c2: #999;    /* gris secondaire */
-  --c3: #333;    /* couleur principale / texte foncé */
-  --c4: #212121; /* couleur texte sombre */
+  --c1: #efefef;
+  --c2: #999;
+  --c3: #333;
+  --c4: #212121;
   --radius: 1rem;
   --shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.5);
 }
 
-/*--------------------------------------*/
-/*           RESET / GLOBAL             */
-/*--------------------------------------*/
+/* =========================================================================
+   Global resets & typography
+   ========================================================================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,9 +21,27 @@
   font-size: 1rem;
 }
 
-html, body {
+html,
+body {
   background-color: var(--c1);
   scroll-behavior: smooth;
+}
+
+p {
+  color: var(--c4);
+  margin-bottom: 0.5rem;
+  text-align: left;
+  hyphens: auto;
+  line-height: 1.6;
+}
+
+article p:first-of-type,
+section p:first-of-type {
+  text-indent: 2rem;
+}
+
+p:last-child {
+  margin: 0;
 }
 
 a {
@@ -32,9 +50,20 @@ a {
   text-decoration: none;
 }
 
-/*--------------------------------------*/
-/*             STRUCTURE PAGE            */
-/*--------------------------------------*/
+/* =========================================================================
+   Utilities
+   ========================================================================= */
+.flex-center {
+  align-self: center;
+}
+
+.flex-fill {
+  flex: 1;
+}
+
+/* =========================================================================
+   Layout containers
+   ========================================================================= */
 #page {
   margin: 1.5rem auto;
   width: clamp(1000px, 80vw, 1600px);
@@ -61,9 +90,20 @@ section {
   overflow: hidden;
 }
 
-/*--------------------------------------*/
-/*             TYPOGRAPHIE               */
-/*--------------------------------------*/
+/* =========================================================================
+   Headers
+   ========================================================================= */
+header {
+  min-height: 11rem;
+  background-color: var(--c1);
+  border-radius: var(--radius);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
 h1 {
   color: var(--c3);
   font-size: 3rem;
@@ -96,31 +136,15 @@ h4 {
   padding: 0.5rem 1rem;
 }
 
-p {
-  color: var(--c4);
-  margin-bottom: 0.5rem;
-  text-align: left;
-  hyphens: auto;
-  line-height: 1.6;
-}
-
-article p:first-of-type,
-section p:first-of-type {
-  text-indent: 2rem;
-}
-
-p:last-child {
-  margin: 0;
-}
-
-/*--------------------------------------*/
-/*            NAVIGATION                 */
-/*--------------------------------------*/
+/* =========================================================================
+   Navigation
+   ========================================================================= */
 nav {
   color: var(--c1);
   background-color: var(--c3);
   border-radius: var(--radius);
   padding: 0.8rem;
+  box-shadow: var(--shadow);
 }
 
 nav ul {
@@ -148,44 +172,30 @@ nav a.active {
   background: var(--c2);
 }
 
-/*--------------------------------------*/
-/*            HEADER / FOOTER            */
-/*--------------------------------------*/
-header {
-  min-height: 11rem;
-  background-color: var(--c1);
-  border-radius: var(--radius);
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  padding: 1.5rem;
-}
-
-footer {
+.hamburger {
   background-color: var(--c3);
   border-radius: var(--radius);
-  color: var(--c1);
-  line-height: 4rem;
-  text-align: center;
+  display: none;
+  padding: 0.5rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 3;
 }
 
-footer a {
-  color: var(--c1);
+.hamburger .icons {
+  height: 2.4rem;
 }
 
-/*--------------------------------------*/
-/*           ARTICLES / CONTENT          */
-/*--------------------------------------*/
+/* =========================================================================
+   Articles & content blocks
+   ========================================================================= */
+
+section {
+  box-shadow: var(--shadow);
+}
 article {
-  padding: 1rem 1rem;
-}
-
-article:has(.img-round) {
-  align-self: center;
-}
-
-section article:last-of-type {
-  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 article ul {
@@ -199,56 +209,62 @@ article ul li {
   text-align: left;
 }
 
-/*--------------------------------------*/
-/*            FLEX UTILITIES             */
-/*--------------------------------------*/
+article:has(.img-round) {
+  align-self: center;
+}
+
+section article:last-of-type {
+  margin-bottom: 1rem;
+}
+
 .cols {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.flex-center {
-  align-self: center;
-}
-
-.flex-fill {
-  flex: 1;
-}
-
-/*--------------------------------------*/
-/*              IMAGES / ICONS           */
-/*--------------------------------------*/
+/* =========================================================================
+   Images
+   ========================================================================= */
 .img-round {
   border-radius: 50%;
   height: auto;
   width: clamp(12rem, 100%, 400px);
   vertical-align: middle;
+  margin: 0;
 }
 
-.social-icons {
+/* =========================================================================
+   Footer
+   ========================================================================= */
+footer {
+  background-color: var(--c3);
   border-radius: var(--radius);
-  width: 3.5rem;
-  height: auto;
-  margin-right: 1rem;
-  overflow: hidden;
+  color: var(--c1);
+  line-height: 4rem;
+  text-align: center;
+  box-shadow: var(--shadow);
 }
 
-.icons {
-  height: 1.8em;
-  width: auto;
-  filter: invert(100%);
+footer a {
+  color: var(--c1);
 }
 
-/*--------------------------------------*/
-/*                FORMULAIRES            */
-/*--------------------------------------*/
-form {
-  max-width: 40rem;
-}
-
-form label {
-  text-align: start;
+/* =========================================================================
+   Buttons & forms
+   ========================================================================= */
+button,
+input[type="submit"] {
+  background-color: var(--c3);
+  border: 1px solid var(--c1);
+  border-radius: var(--radius);
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  color: var(--c1);
+  font-size: 1.1rem;
+  text-align: center;
+  cursor: pointer;
 }
 
 input,
@@ -273,39 +289,67 @@ textarea {
   resize: vertical;
 }
 
-input[type="submit"],
-button {
-  background-color: var(--c3);
-  border: none;
-  color: var(--c1);
-  font-size: 1.1rem;
-  text-align: center;
-  cursor: pointer;
+form {
+  max-width: 40rem;
 }
 
-input[type="submit"]:disabled {
-  background-color: rgba(0, 0, 0, 0.1);
+form label {
+  text-align: start;
 }
 
-/*--------------------------------------*/
-/*           BOUTONS / INTERACTIONS      */
-/*--------------------------------------*/
-button {
-  background-color: var(--c3);
-  border: 1px solid var(--c1);
+/* =========================================================================
+   Cookies / notifications
+   ========================================================================= */
+#cookie {
+  position: fixed;
+  bottom: 3rem;
+  right: -400px;
   border-radius: var(--radius);
-  margin: 0.3rem 0;
-  padding: 0.5rem;
-  width: 100%;
-  color: var(--c1);
-  font-size: 1.1rem;
-  text-align: center;
-  cursor: pointer;
+  max-width: 375px;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+  z-index: 3;
 }
 
-/*--------------------------------------*/
-/*         404 / ERREUR PAGE             */
-/*--------------------------------------*/
+#cookie.show {
+  right: 3rem;
+}
+
+#cookie p {
+  text-indent: 0;
+}
+
+#cookie button {
+  margin: 0.5rem;
+  width: 100%;
+}
+
+/* =========================================================================
+   Scroll to top button
+   ========================================================================= */
+.enhaut {
+  bottom: 2rem;
+  display: none;
+  padding: 0.5rem;
+  background-color: var(--c3);
+  opacity: 0.8;
+  border-radius: var(--radius);
+  position: fixed;
+  right: calc(5% - 2rem);
+  z-index: 5;
+}
+
+.enhaut a {
+  font-size: 0;
+}
+
+.enhaut .icons {
+  height: 2.4rem;
+}
+
+/* =========================================================================
+   Error page specific
+   ========================================================================= */
 #erreur-container {
   flex: 1;
   display: flex;
@@ -350,48 +394,26 @@ button {
   background-color: #555;
 }
 
-/*--------------------------------------*/
-/*             HAMBURGER / ENHAUT        */
-/*--------------------------------------*/
-.hamburger {
-  background-color: var(--c3);
+/* =========================================================================
+   Misc / social / icons
+   ========================================================================= */
+.social-icons {
   border-radius: var(--radius);
-  display: none;
-  padding: 0.5rem;
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  z-index: 3;
+  width: 3.5rem;
+  height: auto;
+  margin-right: 1rem;
+  overflow: hidden;
 }
 
-.hamburger .icons,
-.enhaut .icons {
-  height: 2.4rem;
+.icons {
+  height: 1.8em;
+  width: auto;
+  filter: invert(100%);
 }
 
-.enhaut {
-  bottom: 2rem;
-  display: none;
-  padding: 0.5rem;
-  background-color: var(--c3);
-  opacity: 0.8;
-  border-radius: var(--radius);
-  position: fixed;
-  right: calc(5% - 2rem);
-  z-index: 5;
-}
-
-.enhaut a {
-  font-size: 0;
-}
-
-.visible {
-  display: flex;
-}
-
-/*--------------------------------------*/
-/*               MEDIA QUERIES           */
-/*--------------------------------------*/
+/* =========================================================================
+   Media queries (desktop/mobile adjustments)
+   ========================================================================= */
 @media all and (max-width: 1024px) {
   #page {
     margin: 0;
@@ -399,12 +421,10 @@ button {
     padding: 0;
     width: 100%;
   }
-
   #page::before,
   #page::after {
     content: none;
   }
-
   section,
   nav,
   header,
@@ -412,7 +432,6 @@ button {
   nav ul {
     box-shadow: none;
   }
-
   header,
   footer,
   article {
@@ -420,23 +439,21 @@ button {
     height: auto;
     margin: 0;
   }
-
   header {
     min-height: 4rem;
   }
-
   h1 {
     font-size: 1.6rem;
   }
-
   h2 {
     font-size: 1.2rem;
   }
-
+  h5 {
+    text-align: center;
+  }
   .hamburger {
     display: flex;
   }
-
   nav {
     background-color: var(--c3);
     opacity: 0.8;
@@ -444,7 +461,6 @@ button {
     right: 2.3rem;
     top: 2.3rem;
   }
-
   nav ul {
     align-items: stretch;
     display: none;
@@ -453,7 +469,6 @@ button {
     padding: 0;
     text-align: left;
   }
-
   nav ul li,
   ul li ul {
     align-items: stretch;
@@ -462,54 +477,43 @@ button {
     line-height: 1.5rem;
     text-align: left;
   }
-
   nav ul li ul {
     position: static;
   }
-
   .cols {
     flex-flow: column;
   }
-
   section {
     border-radius: 0;
   }
-
   .cols > article {
     text-align: center;
   }
-
   .img-round {
     margin: 1rem auto;
   }
-
   .enhaut {
     bottom: 2.2rem;
     right: calc(50% - 1.7rem);
   }
 
-  #erreur-container > h3 {
+  /* Error page adjustments */
+  #erreur-container h3 {
     font-size: 2rem;
   }
-
   #erreur-container p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
-
   #erreur-container .error-btn {
     font-size: 1rem;
     padding: 0.6rem 1.2rem;
   }
-
-  footer {
-    margin-bottom: 0;
-  }
 }
 
-/*--------------------------------------*/
-/*       PREFERS REDUCED MOTION         */
-/*--------------------------------------*/
+/* =========================================================================
+   Accessibility / reduced motion
+   ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
