@@ -64,9 +64,22 @@ $auth_pages = array(
 	'mentions-legales' => array(
 		'url' => './pages/mentions-legales.html',
 		'nom' => 'Mentions légales'
+	),
+	'erreur' => array(
+		'url' => './pages/erreur.html',
+		'nom' => 'Erreur'
 	)
 );
-$page = isset($_GET['page']) && in_array($_GET['page'], array_keys($auth_pages)) ? $_GET['page'] : 'accueil';
+if (isset($_GET['page']) && array_key_exists($_GET['page'], $auth_pages)) {
+	$page = $_GET['page'];
+	$is404 = false;
+} else {
+	$page = 'erreur';  // ta page d'erreur
+	$is404 = true;
+}
+if ($is404) {
+	http_response_code(404);
+}
 $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES, 'UTF-8') : '';
 
 ?>
