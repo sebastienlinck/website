@@ -18,15 +18,6 @@ Le site présente :
 - JavaScript pour les interactions et la gestion du cookie de consentement
 - Flexbox pour la mise en page responsive
 
-## Structure
-
-/index.php
-/css/style.css
-/pages/
-/js/
-/img/
-
-
 ## Fonctionnalités clés
 
 - Pages dynamiques via PHP
