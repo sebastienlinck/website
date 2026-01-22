@@ -141,6 +141,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<link rel="apple-touch-icon" href="./img/favicon.svg">
 
+
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
 	<script>
@@ -153,6 +154,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 
 		gtag('config', 'G-CX6WD4QDPN');
 	</script>
+
 
 	<link rel="stylesheet" href="./css/style.min.css">
 	<link rel="manifest" href="./slinck.webmanifest">
