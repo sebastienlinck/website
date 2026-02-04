@@ -43,7 +43,7 @@ if (empty($host)) {
 $auth_pages = array(
 	'accueil' => array(
 		'url' => './pages/accueil.html',
-		'nom' => ''
+		'nom' => 'Site personnel'
 	),
 	'enseignements' => array(
 		'url' => './pages/enseignements.html',
