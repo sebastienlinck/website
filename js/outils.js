@@ -43,7 +43,15 @@ window.addEventListener("scroll", (event) => {
 
 document.querySelectorAll(".hamburger").forEach((item) => {
   item.addEventListener("click", (event) => {
-    item.nextElementSibling.classList.toggle("visible");
+    const targetMenu = item.nextElementSibling;
+    if (targetMenu) {
+      targetMenu.classList.toggle("visible");
+    } else {
+      console.warn(
+        "Hamburger menu clicked, but no next sibling found to toggle visibility.",
+        item,
+      );
+    }
   });
 });
 

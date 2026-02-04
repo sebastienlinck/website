@@ -43,7 +43,7 @@ if (empty($host)) {
 $auth_pages = array(
 	'accueil' => array(
 		'url' => './pages/accueil.html',
-		'nom' => 'Site personnel'
+		'nom' => ''
 	),
 	'enseignements' => array(
 		'url' => './pages/enseignements.html',
@@ -200,7 +200,6 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 				<article>
 					<h4>Information</h4>
 					<p>Ce site utilise des cookies pour vous garantir la meilleure expérience sur notre site.</p>
-					<!-- L'élément <a> stylisé en bouton déclenche la logique PHP via le lien -->
 					<button id="cookie-button" type="button" aria-label="Accepter les cookies" data-accept-url="?accept_cookies=true">J'ai compris</button>
 				</article>
 			</section>

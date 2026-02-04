@@ -365,6 +365,7 @@ footer a {
 
   header {
     min-height: 4rem;
+    padding: 0;
   }
   h1 {
     font-size: 1.6rem;
@@ -389,11 +390,12 @@ footer a {
     flex-direction: column;
   }
 
+  nav ul.visible {
+    display: flex; /* Ou 'block' selon le comportement désiré */
+  }
+
   .cols {
     flex-direction: column;
-  }
-  .cols > article {
-    text-align: center;
   }
   .img-round {
     margin: 1rem auto;
