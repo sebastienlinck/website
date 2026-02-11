@@ -282,18 +282,6 @@ footer a {
   right: 3rem;
 }
 
-.enhaut {
-  bottom: 2rem;
-  display: none;
-  padding: 0.5rem;
-  background-color: var(--c3);
-  opacity: 0.8;
-  border-radius: var(--radius);
-  position: fixed;
-  right: calc(5% - 2rem);
-  z-index: 5;
-}
-
 .hamburger {
   background-color: var(--c3);
   border-radius: var(--radius);
@@ -315,8 +303,7 @@ footer a {
   vertical-align: middle;
 }
 
-.hamburger .icons,
-.enhaut .icons {
+.hamburger .icons {
   height: 2.4rem;
 }
 
@@ -412,11 +399,6 @@ footer a {
   }
   .img-round {
     margin: 1rem auto;
-  }
-
-  .enhaut {
-    bottom: 2.2rem;
-    right: calc(50% - 1.7rem);
   }
 }
 

@@ -205,9 +205,6 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 			</section>
 		<?php endif; ?>
 	</div>
-	<div class="enhaut">
-		<a href="#page"><img class="icons" loading="lazy" width="64" height="64" src="./img/angle-square-up.svg" alt="icone retour" title="retour en haut"></a>
-	</div>
 	<script src="./js/outils.min.js"></script>
 	<script>
 		if (typeof navigator.serviceWorker !== 'undefined') {
