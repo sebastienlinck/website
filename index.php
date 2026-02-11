@@ -184,9 +184,9 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 			</div>
 			<ul>
 				<li><a href="<?= 'https://' . $_SERVER['HTTP_HOST'] ?>"><img class="icons" loading="lazy" width="64" height="64" src="./img/home.svg" alt="icone accueil" title="icone accueil">Accueil</a></li>
-				<li><a href="enseignements"><img class="icons" loading="lazy" width="64" height="64" src="./img/e-learning.svg" alt="icone enseignement" title="icone enseignement">Enseignements</a></li>
-				<li><a href="recherche"><img class="icons" loading="lazy" width="64" height="64" src="./img/chart-network.svg" alt="icone recherche" title="icone recherche">Recherche</a></li>
-				<li><a href="publications"><img class="icons" loading="lazy" width="64" height="64" src="./img/edit.svg" alt="icone publications" title="icone publications">Publications</a></li>
+				<li><a href="enseignements"><img class="icons" loading="lazy" width="64" height="64" src="./img/lesson.svg" alt="icone enseignement" title="icone enseignement">Enseignements</a></li>
+				<li><a href="recherche"><img class="icons" loading="lazy" width="64" height="64" src="./img/network-analytic.svg" alt="icone recherche" title="icone recherche">Recherche</a></li>
+				<li><a href="publications"><img class="icons" loading="lazy" width="64" height="64" src="./img/books.svg" alt="icone publications" title="icone publications">Publications</a></li>
 				<li><a href="contact"><img class="icons" loading="lazy" width="64" height="64" src="./img/envelope.svg" alt="icone contact" title="icone contact">Contact</a></li>
 			</ul>
 		</nav>
