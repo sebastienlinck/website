@@ -1,7 +1,7 @@
 <?php
 // 1. L'ADRESSE QUI EXISTE DANS PLESK (Celle que vous avez validée)
 $email_expediteur = 'contact@slinck.com'; // ou contact@slinck.com
-$destinataire     = 'contact@slinck.com'; // Pour le test
+$destinataire     = 'poubelle@slinck.com'; // Pour le test
 
 $sujet = "Test Plesk avec paramètre -f";
 $message = "Si ce message arrive, le problème était l'enveloppe de l'expéditeur (Return-Path).";
