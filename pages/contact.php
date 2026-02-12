@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
     $type_statut = "error";
   } else {
     // 4. PRÉPARATION DE L'EMAIL
-    $to = 'contact@dev.slinck.com'; // Votre adresse de réception
+    $to = 'contact@slinck.com'; // Votre adresse de réception
 
     // Encodage du sujet pour gérer les accents
     $subject = 'Message de ' . $nom_saisi . ' (via slinck.com)';
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
     $headers = [
       'MIME-Version: 1.0',
       'Content-type: text/html; charset=utf-8',
-      'From: contact@dev.slinck.com',
+      'From: contact@slinck.com',
       'Reply-To: ' . $email_saisi,
       'X-Mailer: PHP/' . phpversion()
     ];
