@@ -25,7 +25,7 @@ foreach ($headers as $k => $v) {
 // On dit explicitement au serveur : "Je suis contact@..., pas 'apache'"
 // Attention : Pas d'espace entre -f et l'email
 $parametres_postfix = "-f" . $email_expediteur;
-
+echo "Sendmail Path: " . ini_get('sendmail_path') . "<br>";
 // 4. ENVOI ET DIAGNOSTIC
 echo "<h3>Tentative d'envoi...</h3>";
 echo "De : $email_expediteur <br>";
