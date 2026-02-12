@@ -1,66 +1,152 @@
-<section>
-	<h3>Mes coordonnées</h3>
-	<div class="cols">
-		<article class="flex-center">
-			<img class="img-round" loading="lazy" src="img/linck.webp" alt="Sébastien Linck" title="Sébastien Linck" width="400" height="400">
-		</article>
-		<article class="flex-center">
-			<h5>Sébastien Linck</h5>
-			EiSINe<br>
-			Campus Sup Ardenne<br>
-			9A rue Claude Chrétien<br>
-			08000 Charleville-Mézières<br><br>
-			contact(@)slinck(.)com
-			<br><br>
-			<a target="_blank" href="https://www.linkedin.com/in/slinck/"><img class="social-icons" loading="lazy" src="img/linkedin.svg" alt="Profil LinkedIn" title="Profil LinkedIn" width="64" height="64"></a>
-			<a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck"><img class="social-icons" loading="lazy" src="img/researchgate.svg" alt="Profil ResearchGate" title="Profil ResearchGate" width="64" height="64"></a>
-		</article>
-		<article>
-			<?php
-			$cible = mt_rand(1, 20);
-			?>
-			<form id="contact-form" method="post">
-				<input type="text" name="nom" placeholder="Votre nom" required>
-				<input type="email" name="mail" placeholder="Votre courriel" required>
-				<textarea rows="5" name="message" placeholder="Votre message" required></textarea>
-				<label for="bip1" id="securite">Sécurité : Placer le curseur sur <?= $cible ?><span> Valeur actuelle : <span id="bip2">0</span></span></label>
-				<input type="range" id="bip1" name="bip1" min="0" max="20" value="0" oninput="document.getElementById('bip2').textContent=this.value;" onchange="z=document.getElementById('envoyer-contact');if(this.value==<?= $cible ?>){z.disabled=false;}else{z.disabled=true;}">
-				<input type="submit" name="envoyer" value="Envoyer" id="envoyer-contact" disabled onclick="if(document.getElementById('bip1').value!=<?= $cible ?>){return false;}">
-				<input type="hidden" name="tps" value="<?= base_convert(($cible * 3) + date('z'), 10, 4) ?>">
-			</form>
-			<?php
-			if (isset($_REQUEST['envoyer'], $_REQUEST['tps']) && isset($_REQUEST['bip1']) && is_numeric($_REQUEST['bip1'])) {
-				$tps = (base_convert($_REQUEST['tps'], 4, 10) - date('z')) / 3;
-				if ($tps == $_REQUEST['bip1']) {
-					$to = 'contact@slinck.com';
+<?php
+// --- LOGIQUE PHP (À placer en haut du fichier) ---
 
-					// Validate and sanitize the sender email to prevent header injection
-					$fromRaw = $_REQUEST['mail'] ?? '';
-					$from = filter_var($fromRaw, FILTER_VALIDATE_EMAIL);
-					if ($from === false) {
-						echo '<p>Adresse e-mail invalide.</p>';
-					} else {
-						// sanitize name and message; remove CRLF to prevent header injection
-						$nom = preg_replace('/[\r\n]+/', ' ', strip_tags($_REQUEST['nom'] ?? ''));
-						$messageRaw = strip_tags($_REQUEST['message'] ?? '');
+$message_statut = '';
+$type_statut = ''; // 'success' ou 'error'
 
-						$subject = 'Message envoyé par ' . $nom;
-						$subject = trim(iconv_mime_encode('', $subject, ['input-charset' => 'UTF-8', 'output-charset' => 'UTF-8']), ' :');
+// Initialisation des variables pour éviter les erreurs "undefined variable" dans le HTML
+$nom_saisi = '';
+$email_saisi = '';
+$message_saisi = '';
 
-						$headers = [
-							'MIME-Version: 1.0',
-							'Content-type: text/html; charset=utf-8',
-							'From: ' . $from,
-						];
+// Traitement du formulaire uniquement si envoyé
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
 
-						$body = '<html><body><h3>Contenu du message:</h3><p>' . htmlspecialchars($messageRaw, ENT_QUOTES, 'UTF-8') . '</p></body></html>';
+  // 1. PROTECTION HONEYPOT (Anti-Robot)
+  // Si le champ caché "website_check" est rempli, c'est un robot -> on arrête tout.
+  if (!empty($_POST['website_check'])) {
+    die();
+  }
 
-						mail($to, $subject, $body, implode("\r\n", $headers));
-						echo '<p>Message envoyé</p>';
-					}
-				}
-			}
-			?>
-		</article>
-	</div>
-</section>
+  // 2. NETTOYAGE DES ENTRÉES
+  $nom_saisi = strip_tags(trim($_POST['nom'] ?? ''));
+  $email_saisi = filter_var(trim($_POST['mail'] ?? ''), FILTER_SANITIZE_EMAIL);
+  $message_saisi = strip_tags(trim($_POST['message'] ?? ''));
+
+  // 3. VALIDATION
+  if (empty($nom_saisi) || empty($message_saisi) || !filter_var($email_saisi, FILTER_VALIDATE_EMAIL)) {
+    $message_statut = "Merci de vérifier votre email et de remplir tous les champs.";
+    $type_statut = "error";
+  } else {
+    // 4. PRÉPARATION DE L'EMAIL
+    $to = 'contact@dev.slinck.com'; // Votre adresse de réception
+
+    // Encodage du sujet pour gérer les accents
+    $subject = 'Message de ' . $nom_saisi . ' (via slinck.com)';
+
+    // Configuration des en-têtes pour éviter le SPAM
+    // Le "From" doit être une adresse de VOTRE domaine (ex: contact@slinck.com)
+    // Le "Reply-To" permet de répondre directement à l'internaute
+    $headers = [
+      'MIME-Version: 1.0',
+      'Content-type: text/html; charset=utf-8',
+      'From: contact@dev.slinck.com',
+      'Reply-To: ' . $email_saisi,
+      'X-Mailer: PHP/' . phpversion()
+    ];
+
+    // Corps du message en HTML propre
+    $body = "
+        <html>
+        <head>
+          <title>Nouveau message de $nom_saisi</title>
+        </head>
+        <body>
+          <div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd;'>
+            <h2 style='color: #333;'>Nouveau message reçu</h2>
+            <p><strong>De :</strong> $nom_saisi</p>
+            <p><strong>Email :</strong> <a href='mailto:$email_saisi'>$email_saisi</a></p>
+            <hr>
+            <p style='white-space: pre-line;'>" . htmlspecialchars($message_saisi) . "</p>
+          </div>
+        </body>
+        </html>
+        ";
+
+    // 5. ENVOI
+    if (mail($to, $subject, $body, implode("\r\n", $headers))) {
+      $message_statut = "Votre message a bien été envoyé.";
+      $type_statut = "success";
+      // On vide les champs après succès
+      $nom_saisi = $email_saisi = $message_saisi = '';
+    } else {
+      $message_statut = "Erreur technique lors de l'envoi du message.";
+      $type_statut = "error";
+    }
+  }
+}
+?>
+
+<div class="bento-grid">
+
+  <article class="card span-1 card-c4 centered">
+    <img class="img-avatar" src="img/linck.webp" alt="Sébastien Linck" loading="lazy" width="150" height="150" />
+
+    <h3>Sébastien Linck</h3>
+    <p>
+      EiSINe<br>
+      Campus Sup Ardenne<br>
+      9A rue Claude Chrétien<br>
+      08000 Charleville-Mézières<br>
+    </p>
+    <p>contact(@)slinck(.)com</p>
+    <div class="social-links">
+      <a target="_blank" href="https://www.linkedin.com/in/slinck/" aria-label="LinkedIn">
+        <img src="img/linkedin.svg" alt="LinkedIn" width="40" style="filter: brightness(0) invert(1)" />
+      </a>
+      <a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck" aria-label="ResearchGate">
+        <img src="img/researchgate.svg" alt="ResearchGate" width="40" style="filter: brightness(0) invert(1)" />
+      </a>
+    </div>
+  </article>
+
+  <article class="card span-2 card-c3">
+    <h3>Envoyer un message</h3>
+
+    <?php if (!empty($message_statut)): ?>
+      <div style="padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem; text-align: center; font-weight:bold; background: <?= $type_statut == 'success' ? 'var(--pine)' : 'var(--berry)' ?>; color: var(--crystal);">
+        <?= $message_statut ?>
+      </div>
+    <?php endif; ?>
+
+    <form id="contact-form" method="post" action="">
+
+      <div style="display:none; opacity:0; position:absolute; left:-9999px;">
+        <label for="website_check">Ne remplissez pas ce champ si vous êtes humain :</label>
+        <input type="text" id="website_check" name="website_check" autocomplete="off" tabindex="-1" value="">
+      </div>
+
+      <label for="nom">Votre nom</label>
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        placeholder="Nom Prénom"
+        required
+        value="<?= htmlspecialchars($nom_saisi) ?>" />
+
+      <label for="mail">Votre courriel</label>
+      <input
+        type="email"
+        id="mail"
+        name="mail"
+        placeholder="email@exemple.com"
+        required
+        value="<?= htmlspecialchars($email_saisi) ?>" />
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        rows="6"
+        name="message"
+        placeholder="Votre message..."
+        required><?= htmlspecialchars($message_saisi) ?></textarea>
+
+      <input
+        type="submit"
+        name="envoyer"
+        value="Envoyer le message"
+        id="envoyer-contact" />
+    </form>
+  </article>
+</div>
