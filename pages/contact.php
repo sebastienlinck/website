@@ -99,7 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
 
         } catch (Exception $e) {
             $message_statut = "Erreur technique lors de l'envoi. Contactez l'administrateur.";
-            // Pour débugger (retirer en production) : $message_statut .= $mail->ErrorInfo;
+             // Pour débugger (retirer en production) : 
+            $message_statut .= $mail->ErrorInfo;
             $type_statut = "error";
         }
     }
