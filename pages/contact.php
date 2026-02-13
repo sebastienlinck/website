@@ -1,104 +1,184 @@
 <?php
-// --- IMPORTATION MANUELLE DE PHPMAILER ---
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+// ============================================================
+// 1. CHARGEMENT DE PHPMAILER (Installation Manuelle)
+// ============================================================
+// On vérifie que les fichiers sont bien là pour éviter une page blanche fatale
+if (file_exists('PHPMailer/src/Exception.php')) {
+    require 'PHPMailer/src/Exception.php';
+    require 'PHPMailer/src/PHPMailer.php';
+    require 'PHPMailer/src/SMTP.php';
+} else {
+    die("Erreur : Le dossier PHPMailer/src/ est introuvable. Vérifiez l'upload FTP.");
+}
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// --- LOGIQUE METIER ---
+// ============================================================
+// 2. LOGIQUE DE TRAITEMENT
+// ============================================================
 
 $message_statut = '';
-$type_statut = ''; 
+$type_statut = ''; // 'success' ou 'error'
 
+// Variables pour pré-remplir le formulaire en cas d'erreur
 $nom_saisi = '';
 $email_saisi = '';
 $message_saisi = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
 
-    // 1. HONEYPOT
+    // A. HONEYPOT (Anti-Spam basique)
     if (!empty($_POST['website_check'])) {
-        die();
+        die(); // Arrêt silencieux si un robot remplit ce champ caché
     }
 
-    // 2. NETTOYAGE
+    // B. RÉCUPÉRATION ET NETTOYAGE
     $nom_saisi = strip_tags(trim($_POST['nom'] ?? ''));
     $email_saisi = filter_var(trim($_POST['mail'] ?? ''), FILTER_SANITIZE_EMAIL);
     $message_saisi = strip_tags(trim($_POST['message'] ?? ''));
 
-    // 3. VALIDATION
+    // C. VALIDATION
     if (empty($nom_saisi) || empty($message_saisi) || !filter_var($email_saisi, FILTER_VALIDATE_EMAIL)) {
-        $message_statut = "Merci de vérifier votre email et de remplir tous les champs.";
+        $message_statut = "Veuillez remplir tous les champs et vérifier votre email.";
         $type_statut = "error";
     } else {
         
-        // 4. CONFIGURATION SMTP (Vos paramètres)
+        // D. ENVOI VIA SMTP
         $mail = new PHPMailer(true);
 
         try {
-            // Paramètres Serveur
+            // --- Configuration Serveur (Vos paramètres slinck.com) ---
             $mail->isSMTP();
-            $mail->Host       = 'slinck.com';           // Votre serveur sortant
+            $mail->Host       = 'slinck.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'contact@slinck.com';   // Votre utilisateur
-            $mail->Password   = 'VOTRE_MOT_DE_PASSE_ICI'; // <-- ATTENTION : Mettez le vrai mot de passe ici
+            $mail->Username   = 'contact@slinck.com';
+            $mail->Password   = 'VOTRE_MOT_DE_PASSE_ICI'; // <--- À REMPLACER !!!
             
-            // Sécurité & Port (465 = SMTPS)
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
-            $mail->Port       = 465; 
+            // Port 465 impose le chiffrement SMTPS
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port       = 465;
             $mail->CharSet    = 'UTF-8';
 
-            // Expéditeur et Destinataire
-            // Note : Le "From" DOIT être l'adresse authentifiée (contact@slinck.com)
-            $mail->setFrom('contact@slinck.com', 'Site Slinck'); 
-            
-            // Où voulez-vous recevoir le mail ? (Probablement sur la même adresse)
-            $mail->addAddress('contact@slinck.com');             
-            
-            // Permet de répondre directement au visiteur en cliquant sur "Répondre"
-            $mail->addReplyTo($email_saisi, $nom_saisi);         
+            // --- Expéditeur & Destinataire ---
+            // Le From DOIT être l'adresse authentifiée pour éviter le spam
+            $mail->setFrom('contact@slinck.com', 'Site Web Slinck');
+            $mail->addAddress('contact@slinck.com'); // Réception
+            $mail->addReplyTo($email_saisi, $nom_saisi); // Pour répondre au visiteur
 
-            // Contenu du mail
+            // --- Contenu du mail ---
             $mail->isHTML(true);
-            $mail->Subject = 'Nouveau message de ' . $nom_saisi . ' (via le site)';
+            $mail->Subject = 'Nouveau message de ' . $nom_saisi . ' (via slinck.com)';
             
-            $mail->Body    = "
+            // Template HTML du mail
+            $mail->Body = "
                 <html>
-                <head><title>Message de $nom_saisi</title></head>
-                <body>
-                  <div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd;'>
-                    <h2 style='color: #333;'>Nouveau message reçu</h2>
-                    <p><strong>De :</strong> $nom_saisi</p>
-                    <p><strong>Email :</strong> <a href='mailto:$email_saisi'>$email_saisi</a></p>
-                    <hr>
-                    <p style='white-space: pre-line;'>" . nl2br(htmlspecialchars($message_saisi)) . "</p>
-                  </div>
+                <body style='background-color:#f4f4f4; padding:20px; font-family: sans-serif;'>
+                    <div style='max-width:600px; margin:0 auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);'>
+                        <h2 style='color:#2c3e50; border-bottom:2px solid #eee; padding-bottom:10px;'>Nouveau contact</h2>
+                        <p><strong>Nom :</strong> $nom_saisi</p>
+                        <p><strong>Email :</strong> <a href='mailto:$email_saisi'>$email_saisi</a></p>
+                        <div style='background:#f9f9f9; padding:15px; border-left:4px solid #007bff; margin-top:20px;'>
+                            " . nl2br(htmlspecialchars($message_saisi)) . "
+                        </div>
+                    </div>
                 </body>
                 </html>
             ";
             
-            // Version texte brut pour les clients mail très anciens
             $mail->AltBody = "De: $nom_saisi ($email_saisi)\n\nMessage:\n$message_saisi";
 
             $mail->send();
             
-            $message_statut = "Votre message a bien été envoyé.";
+            // Succès
+            $message_statut = "Votre message a bien été envoyé via SMTP.";
             $type_statut = "success";
             
-            // Vider les champs après succès
+            // On vide les variables pour effacer le formulaire
             $nom_saisi = $email_saisi = $message_saisi = '';
 
         } catch (Exception $e) {
-            // En production, évitez d'afficher $mail->ErrorInfo complet aux visiteurs car cela peut révéler des infos serveur.
-            // Préférez un log serveur ou un message générique.
-            $message_statut = "Une erreur est survenue lors de l'envoi du message.";
-            // Pour le débogage (à retirer en prod) : 
-            // $message_statut .= " " . $mail->ErrorInfo;
+            $message_statut = "Erreur technique lors de l'envoi. Contactez l'administrateur.";
+            // Pour débugger (retirer en production) : $message_statut .= $mail->ErrorInfo;
             $type_statut = "error";
         }
     }
 }
 ?>
+
+<div class="bento-grid">
+
+  <article class="card span-1 card-c4 centered">
+    <img class="img-avatar" src="img/linck.webp" alt="Sébastien Linck" loading="lazy" width="150" height="150" />
+
+    <h3>Sébastien Linck</h3>
+    <p>
+      EiSINe<br>
+      Campus Sup Ardenne<br>
+      9A rue Claude Chrétien<br>
+      08000 Charleville-Mézières<br>
+    </p>
+    <p>contact(@)slinck(.)com</p>
+    <div class="social-links">
+      <a target="_blank" href="https://www.linkedin.com/in/slinck/" aria-label="LinkedIn">
+        <img src="img/linkedin.svg" alt="LinkedIn" width="40" style="filter: brightness(0) invert(1)" />
+      </a>
+      <a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck" aria-label="ResearchGate">
+        <img src="img/researchgate.svg" alt="ResearchGate" width="40" style="filter: brightness(0) invert(1)" />
+      </a>
+    </div>
+  </article>
+
+  <article class="card span-2 card-c3">
+    <h3>Envoyer un message</h3>
+
+    <?php if (!empty($message_statut)): ?>
+      <div style="padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem; text-align: center; font-weight:bold; 
+           background: <?= $type_statut == 'success' ? 'var(--pine)' : 'var(--berry)' ?>; 
+           color: var(--crystal);">
+        <?= $message_statut ?>
+      </div>
+    <?php endif; ?>
+
+    <form id="contact-form" method="post" action="">
+
+      <div style="display:none; opacity:0; position:absolute; left:-9999px;">
+        <label for="website_check">Humains, ignorez ce champ :</label>
+        <input type="text" id="website_check" name="website_check" autocomplete="off" tabindex="-1" value="">
+      </div>
+
+      <label for="nom">Votre nom</label>
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        placeholder="Nom Prénom"
+        required
+        value="<?= htmlspecialchars($nom_saisi) ?>" />
+
+      <label for="mail">Votre courriel</label>
+      <input
+        type="email"
+        id="mail"
+        name="mail"
+        placeholder="email@exemple.com"
+        required
+        value="<?= htmlspecialchars($email_saisi) ?>" />
+
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        rows="6"
+        name="message"
+        placeholder="Votre message..."
+        required><?= htmlspecialchars($message_saisi) ?></textarea>
+
+      <input
+        type="submit"
+        name="envoyer"
+        value="Envoyer le message"
+        id="envoyer-contact" />
+    </form>
+  </article>
+</div>
