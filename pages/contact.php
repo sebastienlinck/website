@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
             $mail->send();
             
             // Succès
-            $message_statut = "Votre message a bien été envoyé via SMTP.";
+            $message_statut = "Votre message a bien été envoyé.";
             $type_statut = "success";
             
             // On vide les variables pour effacer le formulaire
@@ -99,8 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
 
         } catch (Exception $e) {
             $message_statut = "Erreur technique lors de l'envoi. Contactez l'administrateur.";
-             // Pour débugger (retirer en production) : 
-            $message_statut .= $mail->ErrorInfo;
+             // Pour débugger (retirer en production) : $message_statut .= $mail->ErrorInfo;
             $type_statut = "error";
         }
     }
