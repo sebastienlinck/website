@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
             $mail->Host       = 'slinck.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'contact@slinck.com';
-            $mail->Password   = 'VOTRE_MOT_DE_PASSE_ICI'; // <--- À REMPLACER !!!
+            $mail->Password   = '@sh417aH8'; // <--- À REMPLACER !!!
             
             // Port 465 impose le chiffrement SMTPS
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
