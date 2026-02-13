@@ -1,14 +1,13 @@
 <?php
-// ============================================================
-// 1. CHARGEMENT DE PHPMAILER (Installation Manuelle)
-// ============================================================
-// On vérifie que les fichiers sont bien là pour éviter une page blanche fatale
-if (file_exists('./PHPMailer/Exception.php')) {
-    require './PHPMailer/Exception.php';
-    require './PHPMailer/PHPMailer.php';
-    require './PHPMailer/SMTP.php';
+// On utilise __DIR__ pour pointer sur le dossier actuel (pages)
+$path = __DIR__ . '/PHPMailer/';
+
+if (file_exists($path . 'Exception.php')) {
+    require $path . 'Exception.php';
+    require $path . 'PHPMailer.php';
+    require $path . 'SMTP.php';
 } else {
-    die("Erreur : Le dossier PHPMailer/src/ est introuvable. Vérifiez l'upload FTP.");
+    die("Erreur : Les fichiers PHPMailer sont introuvables dans : " . $path);
 }
 
 use PHPMailer\PHPMailer\PHPMailer;
