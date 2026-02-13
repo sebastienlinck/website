@@ -3,10 +3,10 @@
 // 1. CHARGEMENT DE PHPMAILER (Installation Manuelle)
 // ============================================================
 // On vérifie que les fichiers sont bien là pour éviter une page blanche fatale
-if (file_exists('PHPMailer/src/Exception.php')) {
-    require 'PHPMailer/src/Exception.php';
-    require 'PHPMailer/src/PHPMailer.php';
-    require 'PHPMailer/src/SMTP.php';
+if (file_exists('PHPMailer/Exception.php')) {
+    require 'PHPMailer/Exception.php';
+    require 'PHPMailer/PHPMailer.php';
+    require 'PHPMailer/SMTP.php';
 } else {
     die("Erreur : Le dossier PHPMailer/src/ est introuvable. Vérifiez l'upload FTP.");
 }
