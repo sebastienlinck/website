@@ -121,105 +121,90 @@ function generateCaptcha() {
   refreshButton.addEventListener("click", generateCaptcha, { once: true });
 }
 
-/* --- GESTION DU FORMULAIRE DE CONTACT AJAX --- */
 document.addEventListener("DOMContentLoaded", () => {
   // Générer le CAPTCHA au chargement
   generateCaptcha();
 
   const contactForm = document.getElementById("contact-form");
-  if (contactForm) {
+  const submitButton = document.getElementById("envoyer-contact");
+
+  if (contactForm && submitButton) {
+    // Désactiver le bouton au chargement
+    submitButton.disabled = true;
+
+    // Vérifier le CAPTCHA en temps réel
+    const captchaInput = document.getElementById("captcha");
+    if (captchaInput) {
+      captchaInput.addEventListener("input", function () {
+        checkCaptchaAndUpdateButton();
+      });
+    }
+
+    // Vérifier le CAPTCHA avant soumission
     contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
+      if (checkCaptchaAndUpdateButton()) {
+        // Si le CAPTCHA est correct, continuer avec la soumission
+        const form = e.target;
+        const formData = new FormData(form);
+        const statusMessageElement = document.getElementById("status-message");
 
-      const form = e.target;
-      const formData = new FormData(form);
-      const statusMessageElement = document.getElementById("status-message");
-      const captchaInput = document.getElementById("captcha");
-      const captchaQuestion = document.getElementById("captcha-question");
+        // Effacer les messages précédents
+        if (statusMessageElement) {
+          statusMessageElement.innerHTML = "";
+        }
 
-      // Vérification du CAPTCHA
-      if (captchaInput && captchaQuestion) {
-        const userAnswer = parseInt(captchaInput.value);
-        const correctAnswer = parseInt(captchaQuestion.dataset.solution);
+        try {
+          const response = await fetch("contact.php", {
+            method: "POST",
+            body: formData,
+          });
 
-        if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
+          const result = await response.json();
+
+          if (result.success) {
+            // Afficher un message de succès
+            showStatusMessage(result.message, "success", statusMessageElement);
+            // Réinitialiser le formulaire
+            form.reset();
+            // Régénérer le CAPTCHA
+            generateCaptcha();
+            // Désactiver le bouton après soumission
+            submitButton.disabled = true;
+          } else {
+            // Afficher un message d'erreur
+            showStatusMessage(result.message, "error", statusMessageElement);
+          }
+        } catch (error) {
           showStatusMessage(
-            "Veuillez résoudre correctement le calcul CAPTCHA.",
+            "Erreur technique lors de l'envoi du message.",
             "error",
             statusMessageElement,
           );
-          generateCaptcha(); // Régénérer le CAPTCHA
-          return;
         }
-      }
-
-      // Effacer les messages précédents
-      if (statusMessageElement) {
-        statusMessageElement.innerHTML = "";
-      }
-
-      try {
-        const response = await fetch("contact.php", {
-          method: "POST",
-          body: formData,
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          // Afficher un message de succès
-          showStatusMessage(result.message, "success", statusMessageElement);
-          // Réinitialiser le formulaire
-          form.reset();
-          // Régénérer le CAPTCHA
-          generateCaptcha();
-        } else {
-          // Afficher un message d'erreur
-          showStatusMessage(result.message, "error", statusMessageElement);
-        }
-      } catch (error) {
-        showStatusMessage(
-          "Erreur technique lors de l'envoi du message.",
-          "error",
-          statusMessageElement,
-        );
       }
     });
   }
 });
 
-/* --- FONCTION D'AFFICHAGE DES MESSAGES DE STATUT --- */
-function showStatusMessage(message, type, element) {
-  if (!element) return;
+function checkCaptchaAndUpdateButton() {
+  const captchaInput = document.getElementById("captcha");
+  const captchaQuestion = document.getElementById("captcha-question");
+  const submitButton = document.getElementById("envoyer-contact");
 
-  // Créer le message de statut
-  const statusDiv = document.createElement("div");
-  statusDiv.className = `status-message ${type}`;
-  statusDiv.textContent = message;
+  if (captchaInput && captchaQuestion && submitButton) {
+    const userAnswer = parseInt(captchaInput.value);
+    const correctAnswer = parseInt(captchaQuestion.dataset.solution);
 
-  // Ajouter le message à l'élément parent
-  element.appendChild(statusDiv);
-
-  // Supprimer le message après 5 secondes
-  setTimeout(() => {
-    if (statusDiv && statusDiv.parentNode) {
-      statusDiv.parentNode.removeChild(statusDiv);
+    if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
+      // CAPTCHA incorrect ou vide
+      submitButton.disabled = true;
+      return false;
+    } else {
+      // CAPTCHA correct
+      submitButton.disabled = false;
+      return true;
     }
-  }, 5000);
+  }
+  return false;
 }
-
-/* --- GESTION DU RAZ DU FORMULAIRE --- */
-document.addEventListener("DOMContentLoaded", () => {
-  const resetButtons = document.querySelectorAll("[data-reset-form]");
-  resetButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const formId = this.getAttribute("data-reset-form");
-      const form = document.getElementById(formId);
-      if (form) {
-        form.reset();
-        // Régénérer le CAPTCHA si présent
-        generateCaptcha();
-      }
-    });
-  });
-});

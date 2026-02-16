@@ -432,6 +432,7 @@ input[type="submit"]:disabled {
   margin: 1rem 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -447,17 +448,6 @@ input[type="submit"]:disabled {
   align-items: center;
   gap: 0.5rem;
   min-height: 2.5rem; /* Hauteur fixe pour l'alignement */
-}
-
-.captcha-text {
-  min-width: 120px; /* Largeur fixe pour le texte de la question */
-  text-align: right;
-  font-size: 1rem;
-}
-
-.equals-sign {
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
 }
 
 .captcha-input {
