@@ -380,12 +380,7 @@ textarea {
     border-color 0.3s,
     box-shadow 0.3s;
 }
-input[type="range"] {
-  width: 100%;
-  height: 8px;
-  border-radius: 5px;
-  accent-color: var(--berry); /* Chrome + Firefox */
-}
+
 input[type="submit"] {
   width: 50%;
   margin: auto;
@@ -411,18 +406,96 @@ input[type="submit"]:disabled {
   opacity: 0.4;
   color: rgba(var(--crystal));
 }
-.security-box {
-  background: var(--bg-app);
-  color: var(--text-main);
+
+/* Styles pour les messages de statut */
+.status-message {
   padding: 1rem;
-  margin-bottom: 1.25rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
 }
-.security-box label {
+
+.status-message.success {
+  background: var(--pine);
+  color: var(--crystal);
+}
+
+.status-message.error {
+  background: var(--berry);
+  color: var(--crystal);
+}
+
+/* Styles pour le CAPTCHA */
+.captcha-container {
+  margin: 1rem 0;
   display: flex;
-  justify-content: space-between;
-  color: var(--accent-text);
+  align-items: center;
+  gap: 1rem;
 }
+
+.captcha-label {
+  margin: 0;
+  min-width: 180px;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.captcha-question {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.5rem; /* Hauteur fixe pour l'alignement */
+}
+
+.captcha-text {
+  min-width: 120px; /* Largeur fixe pour le texte de la question */
+  text-align: right;
+  font-size: 1rem;
+}
+
+.equals-sign {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.captcha-input {
+  width: 60px;
+  padding: 0.5rem;
+  text-align: center;
+  height: 2.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#captcha {
+  width: 4rem;
+  margin: 0;
+}
+
+#refresh-captcha {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  color: var(--accent);
+  transition: transform 0.5s ease;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+}
+
+#refresh-captcha:active {
+  transform: rotate(180deg);
+}
+
 [data-theme="dark"] input[type="text"],
 [data-theme="dark"] input[type="email"],
 [data-theme="dark"] textarea,
@@ -576,7 +649,7 @@ input[type="submit"]:disabled {
   input[type="submit"] {
     width: 100%;
   }
-  .security-box label {
+  .captcha-container {
     flex-direction: column;
   }
 }

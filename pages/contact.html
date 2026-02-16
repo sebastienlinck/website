@@ -32,6 +32,18 @@
             <input type="email" id="mail" name="mail" placeholder="email@exemple.com" required value="" />
             <label for="message">Message</label>
             <textarea id="message" rows="6" name="message" placeholder="Votre message..." required></textarea>
+
+            <!-- Champ CAPTCHA amélioré -->
+            <div class="captcha-container">
+                <label for="captcha">Résolvez ce calcul simple :</label>
+                <div class="captcha-question">
+                    <span id="captcha-question"></span>
+                    <span>=</span>
+                    <input type="text" id="captcha" name="captcha" required>
+                </div>
+                <button type="button" id="refresh-captcha" aria-label="Changer le calcul">&orarr;</button>
+            </div>
+
             <input type="submit" name="envoyer" value="Envoyer le message" id="envoyer-contact" />
         </form>
     </article>
