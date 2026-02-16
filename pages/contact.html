@@ -1,0 +1,38 @@
+<div class="bento-grid">
+    <article class="card span-1 card-c4 centered">
+        <img class="img-avatar" src="img/linck.webp" alt="Sébastien Linck" loading="lazy" width="150" height="150" />
+        <h3>Sébastien Linck</h3>
+        <p>
+            EiSINe<br>
+            Campus Sup Ardenne<br>
+            9A rue Claude Chrétien<br>
+            08000 Charleville-Mézières<br>
+        </p>
+        <p>contact(@)slinck(.)com</p>
+        <div class="social-links">
+            <a target="_blank" href="https://www.linkedin.com/in/slinck/" aria-label="LinkedIn">
+                <img src="img/linkedin.svg" alt="LinkedIn" width="40" style="filter: brightness(0) invert(1)" />
+            </a>
+            <a target="_blank" href="https://www.researchgate.net/profile/Sebastien-Linck" aria-label="ResearchGate">
+                <img src="img/researchgate.svg" alt="ResearchGate" width="40" style="filter: brightness(0) invert(1)" />
+            </a>
+        </div>
+    </article>
+    <article class="card span-2 card-c3">
+        <h3>Envoyer un message</h3>
+        <div id="status-message"></div>
+        <form id="contact-form" novalidate>
+            <div style="display:none; opacity:0; position:absolute; left:-9999px;">
+                <label for="website_check">Ne remplissez pas ce champ si vous êtes humain :</label>
+                <input type="text" id="website_check" name="website_check" autocomplete="off" tabindex="-1" value="">
+            </div>
+            <label for="nom">Votre nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Nom Prénom" required value="" />
+            <label for="mail">Votre courriel</label>
+            <input type="email" id="mail" name="mail" placeholder="email@exemple.com" required value="" />
+            <label for="message">Message</label>
+            <textarea id="message" rows="6" name="message" placeholder="Votre message..." required></textarea>
+            <input type="submit" name="envoyer" value="Envoyer le message" id="envoyer-contact" />
+        </form>
+    </article>
+</div>

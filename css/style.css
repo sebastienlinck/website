@@ -7,7 +7,6 @@
   --crystal: #f2f3e2;
   --orange: #b86133;
   --berry: #7b3c45;
-
   /* Thème Clair */
   --bg-app: var(--crystal);
   --bg-card: var(--crystal);
@@ -22,7 +21,6 @@
   --gap: 1.25rem;
   --shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4);
 }
-
 [data-theme="dark"] {
   --bg-app: var(--antracite);
   --bg-card: var(--antracite);
@@ -34,7 +32,6 @@
   --accent: var(--berry);
   --accent-text: var(--orange);
 }
-
 /* --- RESET & BASE --- */
 * {
   box-sizing: border-box;
@@ -42,13 +39,11 @@
   padding: 0;
   transition: 0.3s;
 }
-
 html {
   font-size: 100%;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
 }
-
 body {
   font-family:
     system-ui,
@@ -59,15 +54,12 @@ body {
   line-height: 1.6;
   font-size: 1rem;
 }
-
 ul {
   padding-left: 1.25rem;
 }
-
 a {
   text-decoration: none;
 }
-
 /* --- LAYOUT GLOBAL --- */
 .app-container {
   display: flex;
@@ -77,14 +69,12 @@ a {
   max-width: 100rem;
   margin: 0 auto;
 }
-
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
-
 /* --- SIDEBAR & NAV --- */
 .sidebar {
   width: 6rem;
@@ -102,7 +92,6 @@ a {
   box-shadow: var(--shadow);
   z-index: 100;
 }
-
 .logo-area {
   font-weight: 900;
   font-size: 1.5rem;
@@ -115,7 +104,6 @@ a {
   justify-content: center;
   border-radius: 0.5rem;
 }
-
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -123,7 +111,6 @@ a {
   width: 100%;
   align-items: center;
 }
-
 .nav-item {
   display: flex;
   flex-direction: column;
@@ -134,21 +121,18 @@ a {
   width: 100%;
   transition: 0.2s;
 }
-
 .nav-item img {
   width: 2rem;
   height: 2rem;
   margin-bottom: 0.25rem;
   filter: brightness(0) invert(1);
 }
-
 .nav-item:hover,
 .nav-item.active {
   opacity: 1;
   color: var(--orange);
   transform: scale(1.05);
 }
-
 /* --- BOUTON THEME --- */
 .theme-toggle {
   background: rgba(255, 255, 255, 0.1);
@@ -164,11 +148,9 @@ a {
   overflow: hidden;
   transition: 0.3s;
 }
-
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-
 .theme-toggle img {
   position: absolute;
   width: 1.5rem;
@@ -176,27 +158,22 @@ a {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   filter: brightness(0) invert(1);
 }
-
 .icon-moon {
   opacity: 1;
   transform: rotate(0) scale(1);
 }
-
 .icon-sun {
   opacity: 0;
   transform: rotate(90deg) scale(0.5);
 }
-
 [data-theme="dark"] .icon-moon {
   opacity: 0;
   transform: rotate(-90deg) scale(0.5);
 }
-
 [data-theme="dark"] .icon-sun {
   opacity: 1;
   transform: rotate(0) scale(1);
 }
-
 /* --- HEADER --- */
 header {
   display: flex;
@@ -205,20 +182,17 @@ header {
   padding-bottom: 0.75rem;
   border-bottom: 2px solid var(--border);
 }
-
 header h1 {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.2;
 }
-
 header h2 {
   font-size: 1.6rem;
   color: var(--accent-text);
   font-weight: 600;
 }
-
 /* --- GRILLE BENTO & CARTES --- */
 .bento-grid {
   display: grid;
@@ -226,7 +200,6 @@ header h2 {
   gap: var(--gap);
   grid-auto-flow: dense;
 }
-
 /* Base commune pour toutes les cartes */
 .card {
   background: var(--card-bg);
@@ -238,23 +211,19 @@ header h2 {
   flex-direction: column;
   transition: border-color 0.3s;
 }
-
 .card.centered {
   align-items: center;
   justify-content: space-around;
   text-align: center;
   gap: var(--gap);
 }
-
 .card:hover {
   border-color: var(--accent);
 }
-
 .card a {
   color: var(--card-link);
   font-weight: 600;
 }
-
 .card h3 {
   color: var(--card-h3);
   font-size: 1.4rem;
@@ -264,7 +233,6 @@ header h2 {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--card-h3);
 }
-
 .card h4 {
   color: var(--card-h4);
   font-size: 1.2rem;
@@ -272,18 +240,15 @@ header h2 {
   font-variant: small-caps;
   margin-bottom: 0.5rem;
 }
-
 .card p,
 .card li {
   margin-bottom: 0.5rem;
   text-align: justify;
 }
-
 .card p:last-child,
 .card li:last-child {
   margin-bottom: 0;
 }
-
 /* Tailles de cartes */
 .span-2 {
   grid-column: span 2;
@@ -294,7 +259,6 @@ header h2 {
 .row-2 {
   grid-row: span 2;
 }
-
 /* Division interne 50/50 */
 .cols-2 {
   display: grid;
@@ -302,7 +266,6 @@ header h2 {
   gap: var(--gap);
   height: 100%;
 }
-
 /* Carte avec image seule */
 .card:has(> .img-avatar:only-child) {
   box-shadow: none;
@@ -314,7 +277,6 @@ header h2 {
   justify-content: center;
   text-align: center;
 }
-
 /* --- VARIABLES PAR TYPE DE CARTE --- */
 .card {
   --card-bg: var(--crystal);
@@ -330,7 +292,6 @@ header h2 {
   --card-h4: var(--sulphur);
   --card-link: var(--sulphur);
 }
-
 .card-c2 {
   --card-bg: var(--pine);
   --card-text: var(--crystal);
@@ -338,7 +299,6 @@ header h2 {
   --card-h4: var(--orange);
   --card-link: var(--sulphur);
 }
-
 .card-c3 {
   --card-bg: var(--orange);
   --card-text: var(--crystal);
@@ -346,7 +306,6 @@ header h2 {
   --card-h4: var(--antracite);
   --card-link: var(--antracite);
 }
-
 .card-c4 {
   --card-bg: var(--berry);
   --card-text: var(--crystal);
@@ -354,12 +313,10 @@ header h2 {
   --card-h4: var(--orange);
   --card-link: var(--sulphur);
 }
-
 /* Carte avec bordure accentuée */
 .card-border-accent {
   border: 2px solid var(--accent) !important;
 }
-
 /* --- CONTENU --- */
 .img-avatar {
   width: 100%;
@@ -371,19 +328,16 @@ header h2 {
   object-fit: cover;
   box-shadow: var(--shadow);
 }
-
 .split-content {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
 }
-
 .split-content > div {
   flex: 1 1 18rem;
   min-width: 0;
 }
-
 .social-links {
   width: 30%;
   display: flex;
@@ -391,7 +345,6 @@ header h2 {
   justify-content: space-around;
   gap: var(--gap);
 }
-
 /* --- FOOTER --- */
 footer {
   margin-top: auto;
@@ -402,18 +355,15 @@ footer {
   gap: 1rem;
   color: var(--text-muted);
 }
-
 footer a {
   color: var(--accent-text);
   font-weight: 600;
 }
-
 /* --- FORMULAIRES --- */
 #contact-form {
   display: flex;
   flex-direction: column;
 }
-
 input[type="text"],
 input[type="email"],
 textarea {
@@ -430,14 +380,12 @@ textarea {
     border-color 0.3s,
     box-shadow 0.3s;
 }
-
 input[type="range"] {
   width: 100%;
   height: 8px;
   border-radius: 5px;
   accent-color: var(--berry); /* Chrome + Firefox */
 }
-
 input[type="submit"] {
   width: 50%;
   margin: auto;
@@ -453,19 +401,16 @@ input[type="submit"] {
     box-shadow 0.2s,
     background-color 0.3s;
 }
-
 input[type="submit"]:hover:not(:disabled) {
   box-shadow: var(--shadow);
   filter: brightness(1.1);
 }
-
 input[type="submit"]:disabled {
   background: var(--berry);
   cursor: not-allowed;
   opacity: 0.4;
   color: rgba(var(--crystal));
 }
-
 .security-box {
   background: var(--bg-app);
   color: var(--text-main);
@@ -473,20 +418,17 @@ input[type="submit"]:disabled {
   margin-bottom: 1.25rem;
   border-radius: 0.5rem;
 }
-
 .security-box label {
   display: flex;
   justify-content: space-between;
   color: var(--accent-text);
 }
-
 [data-theme="dark"] input[type="text"],
 [data-theme="dark"] input[type="email"],
 [data-theme="dark"] textarea,
 [data-theme="dark"] .security-box {
   background: var(--antracite);
 }
-
 /* --- BANNIERE COOKIES --- */
 #cookie {
   position: fixed;
@@ -503,17 +445,14 @@ input[type="submit"]:disabled {
   transform: translateY(150%);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 #cookie.show {
   transform: translateY(0);
 }
-
 #cookie h3 {
   border: none;
   margin-bottom: 10px;
   font-size: 1.1rem;
 }
-
 #cookie button {
   background: var(--accent);
   color: white;
@@ -525,7 +464,6 @@ input[type="submit"]:disabled {
   width: 100%;
   margin-top: 15px;
 }
-
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 900px) {
   .app-container {
@@ -534,7 +472,6 @@ input[type="submit"]:disabled {
     padding-bottom: 6.5rem;
     gap: 1.25rem;
   }
-
   /* --- BARRE DE NAVIGATION (BOTTOM BAR) --- */
   .sidebar {
     position: fixed;
@@ -543,12 +480,10 @@ input[type="submit"]:disabled {
     top: auto; /* IMPORTANT : annule le sticky top du desktop */
     width: 100%;
     height: 3.5rem;
-
     /* TRANSFORMATION EN GRILLE : 6 colonnes égales */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     align-items: center;
-
     padding: 0;
     margin: 0;
     border-radius: 1rem 1rem 0 0;
@@ -558,17 +493,14 @@ input[type="submit"]:disabled {
     box-shadow: 0 -0.25rem 1.25rem rgba(0, 0, 0, 0.1);
     z-index: 9999;
   }
-
   .logo-area,
   .nav-item span {
     display: none;
   }
-
   /* ASTUCE : On efface ce conteneur du flux visuel */
   .nav-links {
     display: contents;
   }
-
   /* Les liens deviennent des enfants directs de la grille .sidebar */
   .nav-item {
     display: flex; /* Pour centrer l'icône */
@@ -579,32 +511,27 @@ input[type="submit"]:disabled {
     padding: 0;
     border: none;
   }
-
   .nav-item.active {
     background: transparent;
     color: var(--accent);
     /* Petit trait ou indicateur visuel optionnel */
     box-shadow: inset 0 -3px 0 var(--accent);
   }
-
   .nav-item img.icons {
     width: 1.6rem;
     height: 1.6rem;
     margin: 0;
   }
-
   .nav-item.active img.icons {
     filter: invert(44%) sepia(63%) saturate(477%) hue-rotate(-10deg)
       brightness(93%) contrast(88%);
     transform: scale(1.1);
   }
-
   /* Le bouton thème devient la 6ème colonne */
   .theme-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100% !important;
     height: 100% !important;
     margin: 0 !important;
@@ -614,51 +541,41 @@ input[type="submit"]:disabled {
     background: transparent !important; /* On enlève le fond gris pour l'uniformité */
     border-left: 1px solid rgba(128, 128, 128, 0.1) !important; /* Séparateur subtil */
   }
-
   .theme-toggle img {
     width: 1.6rem;
     height: 1.6rem;
     margin: 0;
     display: block;
   }
-
   /* --- RESTE DU LAYOUT MOBILE --- */
   .bento-grid {
     grid-template-columns: 1fr;
   }
-
   .bento-grid > * {
     grid-column: 1 / -1 !important;
   }
-
   .profile-layout,
   header,
   footer {
     flex-direction: column;
     text-align: center;
   }
-
   .profile-layout {
     align-items: center;
   }
-
   .cols-2 {
     grid-template-columns: 1fr;
   }
-
   header,
   footer {
     gap: 0.75rem;
   }
-
   header {
     align-items: center;
   }
-
   input[type="submit"] {
     width: 100%;
   }
-
   .security-box label {
     flex-direction: column;
   }

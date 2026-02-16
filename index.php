@@ -59,7 +59,7 @@ $auth_pages = array(
 		'sous_titre' => 'Articles, Conférences &amp; Thèse'
 	),
 	'contact' => array(
-		'url' => './pages/contact.php',
+		'url' => './pages/contact.html',
 		'nom' => 'Contact',
 		'titre_h1' => 'Contact',
 		'sous_titre' => 'Coordonnées &amp; Formulaire'
@@ -200,7 +200,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 			<button id="cookie-button" type="button" data-accept-url="?accept_cookies=true">J'ai compris</button>
 		</section>
 	<?php endif; ?>
-	<script src="./js/outils.min.js"></script>
+	<script src="./js/scripts.min.js"></script>
 	<script>
 		if (typeof navigator.serviceWorker !== 'undefined') {
 			navigator.serviceWorker.register('sw.js');
