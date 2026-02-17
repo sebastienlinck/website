@@ -7,6 +7,12 @@
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "maskable any"
+    },
+    {
+      "src": "https://slinck.com/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "theme_color": "#EFEFEF",
@@ -18,13 +24,6 @@
   "categories": ["research", "education", "personal"],
   "scope": "/",
   "description": "Site web de présentation de mes enseignements et de mes travaux de recherche",
-  "screenshots": [
-    {
-      "src": "https://slinck.com/img/index.webp",
-      "sizes": "750x1334",
-      "type": "image/webp"
-    }
-  ],
   "shortcuts": [
     {
       "name": "Mes publications",

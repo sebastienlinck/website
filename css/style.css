@@ -2,12 +2,13 @@
 :root {
   /* Couleurs de la nouvelle palette */
   --antracite: #2f2f2f;
-  --pine: #3b5639;
-  --sulphur: #b19e3e;
+  --pine: #264d23;
+  --sulphur: #eac611;
   --crystal: #f2f3e2;
-  --orange: #b86133;
-  --berry: #7b3c45;
+  --orange: #d15f22;
+  --berry: #963b3b;
   /* Thème Clair */
+
   --bg-app: var(--crystal);
   --bg-card: var(--crystal);
   --text-main: var(--antracite);
@@ -309,8 +310,8 @@ header h2 {
 .card-c4 {
   --card-bg: var(--berry);
   --card-text: var(--crystal);
-  --card-h3: var(--sulphur);
-  --card-h4: var(--orange);
+  --card-h3: var(--orange);
+  --card-h4: var(--sulphur);
   --card-link: var(--sulphur);
 }
 /* Carte avec bordure accentuée */
@@ -488,8 +489,7 @@ input[type="submit"]:disabled {
 
 [data-theme="dark"] input[type="text"],
 [data-theme="dark"] input[type="email"],
-[data-theme="dark"] textarea,
-[data-theme="dark"] .security-box {
+[data-theme="dark"] textarea {
   background: var(--antracite);
 }
 /* --- BANNIERE COOKIES --- */
