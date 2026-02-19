@@ -103,7 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
       $response['message'] = "Votre message a bien été envoyé. Merci !";
     } catch (Exception $e) {
       $response['message'] = "Le message n'a pu être envoyé. Erreur SMTP.";
-      // Optionnel pour débug : $response['debug'] = $mail->ErrorInfo;
+      // Optionnel pour débug : 
+      $response['debug'] = $mail->ErrorInfo;
     }
   }
 }
