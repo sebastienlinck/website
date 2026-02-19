@@ -102,7 +102,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?= $auth_pages[$page]['nom'] ?> - Sébastien Linck - <?= $auth_pages[$page]['sous_titre'] ?></title>
+	<title>Sébastien Linck - <?= $auth_pages[$page]['sous_titre'] ?></title>
 	<meta name="keywords" content="Sébastien Linck, Enseignant Informatique URCA, Responsable Licence Pro Web, Métiers du Numérique, EiSINe, Développement Front End, SEO, HTML, CSS, JS, PHP, Projets tutorés, Doctorat Réseaux" />
 	<meta name="description" content="<?= $auth_pages[$page]['nom'] ?> - Sébastien Linck - <?= $auth_pages[$page]['sous_titre'] ?> - École d’ingénieurs en Sciences Industrielles et Numérique - EiSINe">
 	<meta name="author" content="Sebastien Linck">
