@@ -36,6 +36,7 @@
   --border: var(--cobalt);
   --accent: var(--magenta);
   --accent-text: var(--soft-pink);
+  --shadow: 0 0.5rem 1rem rgba(205, 223, 178, 0.12);
 }
 
 /* --- RESET & BASE --- */
@@ -254,7 +255,6 @@ header h2 {
 [data-theme="dark"] .card-c1 {
   background-color: var(--deep-purple);
   color: var(--soft-purple);
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .card-c2 {
@@ -301,8 +301,9 @@ header h2 {
   border: none;
 }
 .img-avatar {
-  width: 100%;
-  max-width: 16rem;
+  height: 100%;
+  width: auto;
+  max-height: 16rem;
   aspect-ratio: 1/1;
   border-radius: var(--radius);
   border: 3px solid var(--accent);
@@ -359,12 +360,19 @@ textarea {
   width: 100%;
   padding: 0.8rem;
   margin: 0.5rem 0 1.25rem 0;
+  font-size: 1rem;
   border: 2px solid transparent;
-  border-radius: 0.6rem;
+  border-radius: var(--radius);
   background: rgba(45, 27, 77, 0.05);
   color: var(--text-main);
   font-family: inherit;
 }
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
 input:focus,
 textarea:focus {
   outline: none;
@@ -441,6 +449,7 @@ input[type="submit"] {
 }
 #refresh-captcha {
   background: none;
+  font-weight: bold;
   border: none;
   cursor: pointer;
   display: flex;
@@ -453,10 +462,6 @@ input[type="submit"] {
   line-height: 1;
   padding: 0;
   margin: 0;
-  transition: transform 0.5s ease;
-}
-#refresh-captcha:active {
-  transform: rotate(180deg);
 }
 
 /* --- FOOTER --- */
