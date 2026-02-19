@@ -1,9 +1,28 @@
 <?php
 
 /**
+ * Fonction simple pour charger le fichier .env
+ */
+function loadEnv($path)
+{
+  if (!file_exists($path)) return;
+  $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+  foreach ($lines as $line) {
+    if (strpos(trim($line), '#') === 0) continue;
+    list($name, $value) = explode('=', $line, 2);
+    putenv(trim($name) . "=" . trim($value));
+  }
+}
+
+// Chargement des variables
+loadEnv(__DIR__ . '/.env');
+
+/**
  * Traitement sécurisé du formulaire de contact
  * Version : 2.0 (Support AJAX + PHPMailer + Captcha Server-side)
  */
+
+
 
 header('Content-Type: application/json');
 
@@ -70,17 +89,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
     try {
       // Paramètres Serveur
       $mail->isSMTP();
-      $mail->Host       = 'slinck.com';
+      $mail->Host      = getenv('SMTP_HOST');
       $mail->SMTPAuth   = true;
-      $mail->Username   = 'contact@slinck.com';
-      $mail->Password   = '@sh417aH8'; // À placer dans un fichier .env en production
+      $mail->Username   = getenv('SMTP_USER');
+      $mail->Password   = getenv('SMTP_PASS');
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-      $mail->Port       = 465;
+      $mail->Port       = getenv('SMTP_PORT');
       $mail->CharSet    = 'UTF-8';
 
-      // Destinataires
-      $mail->setFrom('contact@slinck.com', 'Site Web Slinck');
-      $mail->addAddress('contact@slinck.com');
+      $mail->setFrom(getenv('MAIL_FROM'), getenv('MAIL_FROM_NAME'));
+      $mail->addAddress(getenv('MAIL_TO'));
       $mail->addReplyTo($email, $nom);
 
       // Contenu
@@ -103,8 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
       $response['message'] = "Votre message a bien été envoyé. Merci !";
     } catch (Exception $e) {
       $response['message'] = "Le message n'a pu être envoyé. Erreur SMTP.";
-      // Optionnel pour débug : 
-      $response['debug'] = $mail->ErrorInfo;
+      // Optionnel pour débug : $response['debug'] = $mail->ErrorInfo;
     }
   }
 }
