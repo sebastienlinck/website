@@ -35,7 +35,7 @@ $host = preg_replace('/[^a-z0-9\.\-:]/i', '', $host);
 // --- ROUTING ---
 $auth_pages = array(
 	'accueil' => array(
-		'url' => './pages/accueil.html', 
+		'url' => './pages/accueil.html',
 		'nom' => 'Site personnel',
 		'titre_h1' => 'Sébastien Linck',
 		'sous_titre' => 'Enseignant en informatique &amp; Responsable de formation'
@@ -111,14 +111,13 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 	<link rel="icon" type="image/svg" sizes="256x256" href="./img/favicon.svg">
 	<meta name="theme-color" content="#0A1F44">
 	<meta property="og:title" content="Sébastien Linck – Enseignant en sciences du numérique | EiSINe">
- <meta property="og:description" content="Site web de Sébastien Linck, enseignant à l’École d’ingénieurs en Sciences Industrielles et Numérique (EiSINe) : formations, enseignements et travaux de recherche.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.slinck.com/">
-<meta property="og:image" content="https://www.slinck.com/img/linck.webp">
-<meta property="og:site_name" content="Sébastien Linck">
-	<link rel="stylesheet" href="./css/style.min.css">
-
+	<meta property="og:description" content="Site web de Sébastien Linck, enseignant à l’École d’ingénieurs en Sciences Industrielles et Numérique (EiSINe) : formations, enseignements et travaux de recherche.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.slinck.com/">
+	<meta property="og:image" content="https://www.slinck.com/img/linck.webp">
+	<meta property="og:site_name" content="Sébastien Linck">
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX6WD4QDPN"></script>
+
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -128,7 +127,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 		gtag('js', new Date());
 		gtag('config', 'G-CX6WD4QDPN');
 	</script>
-
+	<link rel="stylesheet" href="./css/style.min.css">
 	<script>
 		// On vérifie le stockage local immédiatement
 		// Si 'dark' est trouvé, on applique l'attribut au HTML avant même l'affichage
@@ -189,7 +188,7 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 			?>
 
 			<?php include('./pages/footer.php'); ?>
-			
+
 		</main>
 	</div>
 
