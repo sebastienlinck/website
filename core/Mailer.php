@@ -28,11 +28,11 @@ function loadEnv(string $path): void
   }
 }
 
-loadEnv(__DIR__ . '/.env');
+loadEnv(__DIR__ . '/../.env');
 
 // --- 2. DÉPENDANCES ET INITIALISATION ---
 
-$pathMailer = __DIR__ . '/PHPMailer/';
+$pathMailer = __DIR__ . '/../vendor/PHPMailer/';
 
 if (!file_exists($pathMailer . 'Exception.php')) {
   echo json_encode(['success' => false, 'message' => 'Erreur système : PHPMailer manquant.']);

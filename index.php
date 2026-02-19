@@ -33,43 +33,43 @@ $host = preg_replace('/[^a-z0-9\.\-:]/i', '', $host);
 // --- ROUTING ---
 $auth_pages = array(
 	'accueil' => array(
-		'url' => './pages/accueil.html',
+		'url' => './views/accueil.html',
 		'nom' => 'Site personnel',
 		'titre_h1' => 'Sébastien Linck',
 		'sous_titre' => 'Enseignant en informatique &amp; Responsable de formation'
 	),
 	'enseignements' => array(
-		'url' => './pages/enseignements.html',
+		'url' => './views/enseignements.html',
 		'nom' => 'Enseignements',
 		'titre_h1' => 'Enseignements',
 		'sous_titre' => 'Modules pédagogiques détaillés'
 	),
 	'recherche' => array(
-		'url' => './pages/recherche.html',
+		'url' => './views/recherche.html',
 		'nom' => 'Recherche',
 		'titre_h1' => 'Recherche',
 		'sous_titre' => 'Réseaux, Mobilité &amp; Innovation Pédagogique'
 	),
 	'publications' => array(
-		'url' => './pages/publications.html',
+		'url' => './views/publications.html',
 		'nom' => 'Publications',
 		'titre_h1' => 'Publications',
 		'sous_titre' => 'Articles, Conférences &amp; Thèse'
 	),
 	'contact' => array(
-		'url' => './pages/contact.html',
+		'url' => './views/contact.html',
 		'nom' => 'Contact',
 		'titre_h1' => 'Contact',
 		'sous_titre' => 'Coordonnées &amp; Formulaire'
 	),
 	'mentions-legales' => array(
-		'url' => './pages/mentions-legales.html',
+		'url' => './views/mentions-legales.html',
 		'nom' => 'Mentions légales',
 		'titre_h1' => 'Mentions Légales',
 		'sous_titre' => 'Informations juridiques &amp; CGU'
 	),
 	'erreur' => array(
-		'url' => './pages/erreur.html',
+		'url' => './views/erreur.html',
 		'nom' => 'Erreur',
 		'titre_h1' => 'Erreur 404',
 		'sous_titre' => 'Page introuvable'
@@ -181,11 +181,11 @@ $canonicalPage = $page !== 'accueil' ? '/' . htmlspecialchars($page, ENT_QUOTES,
 			if (file_exists($auth_pages[$page]['url'])) {
 				include($auth_pages[$page]['url']);
 			} else {
-				include('./pages/erreur.html');
+				include('./views/erreur.html');
 			}
 			?>
 
-			<?php include('./pages/footer.php'); ?>
+			<?php include('./views/footer.php'); ?>
 
 		</main>
 	</div>
