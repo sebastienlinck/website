@@ -78,8 +78,8 @@ function showStatusMessage(message, type, container) {
   if (!container) return;
 
   // Utilisation des variables de couleurs définies dans votre thème
-  const bgColor = type === "success" ? "var(--cobalt)" : "var(--magenta)";
-  const textColor = "var(--soft-purple)";
+  const bgColor = type === "success" ? "var(--deep-purple)" : "var(--magenta)";
+  const textColor = type === "success" ? "var(--soft-purple)" : "var(--soft-pink)";
 
   container.innerHTML = `
     <div style="padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem; 

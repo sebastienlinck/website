@@ -14,6 +14,8 @@ session_start();
 $cookie_name = "__Secure-cookieDef";
 $cookie_accepted = isset($_COOKIE[$cookie_name]);
 
+header("Content-Security-Policy: script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;");
+
 // Gestion de l'acceptation via URL
 if (isset($_GET['accept_cookies']) && $_GET['accept_cookies'] == 'true' && !$cookie_accepted) {
 	$expiration_time = time() + (60 * 60 * 24 * 180); // 180 jours
