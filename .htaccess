@@ -2,7 +2,7 @@
 
 <IfModule mod_headers.c>
     # La CSP condensée pour GTM, GA4 et Google Fonts
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.stats.g.doubleclick.net; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://*.doubleclick.net https://*.google.com https://*.google.fr;"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://storage.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.stats.g.doubleclick.net; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://*.doubleclick.net https://*.google.com https://*.google.fr;"
     
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "sameorigin"
