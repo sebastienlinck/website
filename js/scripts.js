@@ -8,11 +8,14 @@ function fcookie() {
     (document.cookie && document.cookie.includes("__Secure-cookieDef"))
   )
     return;
+
   const cookieEl = document.querySelector("#cookie");
   if (!cookieEl) return;
+
   setTimeout(() => {
     cookieEl.classList.add("show");
   }, 1000);
+
   const acceptBtn = document.querySelector("#cookie-button");
   if (acceptBtn) {
     acceptBtn.addEventListener("click", (e) => {
@@ -68,6 +71,24 @@ function convertNumberToWords(number) {
   return units[number];
 }
 
+/**
+ * Affiche graphiquement le retour du serveur (Succès ou Erreur)
+ */
+function showStatusMessage(message, type, container) {
+  if (!container) return;
+
+  // Utilisation des variables de couleurs définies dans votre thème
+  const bgColor = type === "success" ? "var(--pine)" : "var(--berry)";
+  const textColor = "var(--crystal)";
+
+  container.innerHTML = `
+    <div style="padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem; 
+                text-align: center; font-weight: bold; background: ${bgColor}; color: ${textColor};">
+      ${message}
+    </div>
+  `;
+}
+
 /* --- GESTION DU CAPTCHA AVANCÉ --- */
 function generateCaptcha() {
   const questionElement = document.getElementById("captcha-question");
@@ -75,104 +96,103 @@ function generateCaptcha() {
 
   if (!questionElement || !refreshButton) return;
 
-  // Définir les nombres et l'opérateur
   const num1 = Math.floor(Math.random() * 10);
   const num2 = Math.floor(Math.random() * 10);
   const operators = ["plus", "moins", "fois"];
   const operator = operators[Math.floor(Math.random() * operators.length)];
 
-  // Calculer la réponse
   let solution;
+  let questionText;
+
   switch (operator) {
     case "plus":
       solution = num1 + num2;
-      break;
-    case "moins":
-      solution = num1 - num2;
-      break;
-    case "fois":
-      solution = num1 * num2;
-      break;
-    default:
-      solution = 0;
-  }
-
-  // Créer la question en lettres
-  let questionText;
-  switch (operator) {
-    case "plus":
       questionText = `${convertNumberToWords(num1)} plus ${convertNumberToWords(num2)}`;
       break;
     case "moins":
+      solution = num1 - num2;
       questionText = `${convertNumberToWords(num1)} moins ${convertNumberToWords(num2)}`;
       break;
     case "fois":
+      solution = num1 * num2;
       questionText = `${convertNumberToWords(num1)} fois ${convertNumberToWords(num2)}`;
       break;
     default:
+      solution = 0;
       questionText = "";
   }
 
-  // Mettre à jour l'élément de question
   questionElement.textContent = questionText;
   questionElement.dataset.solution = solution;
 
-  // Ajouter un événement pour rafraîchir le CAPTCHA
   refreshButton.addEventListener("click", generateCaptcha, { once: true });
 }
 
+function checkCaptchaAndUpdateButton() {
+  const captchaInput = document.getElementById("captcha");
+  const captchaQuestion = document.querySelector("#captcha-question");
+  const submitButton = document.getElementById("envoyer-contact");
+
+  if (captchaInput && captchaQuestion && submitButton) {
+    const userAnswer = parseInt(captchaInput.value);
+    const correctAnswer = parseInt(captchaQuestion.dataset.solution);
+
+    if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
+      submitButton.disabled = true;
+      return false;
+    } else {
+      submitButton.disabled = false;
+      return true;
+    }
+  }
+  return false;
+}
+
+/* --- INITIALISATION FORMULAIRE --- */
 document.addEventListener("DOMContentLoaded", () => {
-  // Générer le CAPTCHA au chargement
   generateCaptcha();
 
   const contactForm = document.getElementById("contact-form");
   const submitButton = document.getElementById("envoyer-contact");
 
   if (contactForm && submitButton) {
-    // Désactiver le bouton au chargement
     submitButton.disabled = true;
 
-    // Vérifier le CAPTCHA en temps réel
     const captchaInput = document.getElementById("captcha");
     if (captchaInput) {
-      captchaInput.addEventListener("input", function () {
-        checkCaptchaAndUpdateButton();
-      });
+      captchaInput.addEventListener("input", checkCaptchaAndUpdateButton);
     }
 
-    // Vérifier le CAPTCHA avant soumission
     contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
+
       if (checkCaptchaAndUpdateButton()) {
-        // Si le CAPTCHA est correct, continuer avec la soumission
         const form = e.target;
         const formData = new FormData(form);
-        const statusMessageElement = document.getElementById("status-message");
 
-        // Effacer les messages précédents
-        if (statusMessageElement) {
-          statusMessageElement.innerHTML = "";
-        }
+        // IMPORTANT : On ajoute manuellement 'envoyer' pour que le PHP le détecte
+        formData.append("envoyer", "1");
+
+        const statusMessageElement = document.getElementById("status-message");
+        if (statusMessageElement) statusMessageElement.innerHTML = "";
 
         try {
+          // On cible bien sendmail.php
           const response = await fetch("sendmail.php", {
             method: "POST",
             body: formData,
           });
 
+          if (!response.ok) throw new Error("Erreur réseau");
+
           const result = await response.json();
 
           if (result.success) {
-            // Afficher un message de succès
             showStatusMessage(result.message, "success", statusMessageElement);
-            // Réinitialiser le formulaire
             form.reset();
-            // Régénérer le CAPTCHA
             generateCaptcha();
-            // Désactiver le bouton après soumission
             submitButton.disabled = true;
           } else {
-            // Afficher un message d'erreur
             showStatusMessage(result.message, "error", statusMessageElement);
           }
         } catch (error) {
@@ -186,25 +206,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-function checkCaptchaAndUpdateButton() {
-  const captchaInput = document.getElementById("captcha");
-  const captchaQuestion = document.getElementById("captcha-question");
-  const submitButton = document.getElementById("envoyer-contact");
-
-  if (captchaInput && captchaQuestion && submitButton) {
-    const userAnswer = parseInt(captchaInput.value);
-    const correctAnswer = parseInt(captchaQuestion.dataset.solution);
-
-    if (isNaN(userAnswer) || userAnswer !== correctAnswer) {
-      // CAPTCHA incorrect ou vide
-      submitButton.disabled = true;
-      return false;
-    } else {
-      // CAPTCHA correct
-      submitButton.disabled = false;
-      return true;
-    }
-  }
-  return false;
-}
