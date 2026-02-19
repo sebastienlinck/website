@@ -78,8 +78,8 @@ function showStatusMessage(message, type, container) {
   if (!container) return;
 
   // Utilisation des variables de couleurs définies dans votre thème
-  const bgColor = type === "success" ? "var(--pine)" : "var(--berry)";
-  const textColor = "var(--crystal)";
+  const bgColor = type === "success" ? "var(--cobalt)" : "var(--magenta)";
+  const textColor = "var(--soft-purple)";
 
   container.innerHTML = `
     <div style="padding: 1rem; border-radius: var(--radius); margin-bottom: 1rem; 
@@ -89,38 +89,41 @@ function showStatusMessage(message, type, container) {
   `;
 }
 
-/* --- GESTION DU CAPTCHA AVANCÉ --- */
-function generateCaptcha() {
+/* --- GESTION DU CAPTCHA AVANCÉ --- */function generateCaptcha() {
   const questionElement = document.getElementById("captcha-question");
   const refreshButton = document.getElementById("refresh-captcha");
-
   if (!questionElement || !refreshButton) return;
 
-  const num1 = Math.floor(Math.random() * 10);
-  const num2 = Math.floor(Math.random() * 10);
+  let num1 = Math.floor(Math.random() * 10);
+  let num2 = Math.floor(Math.random() * 10);
   const operators = ["plus", "moins", "fois"];
   const operator = operators[Math.floor(Math.random() * operators.length)];
 
-  let solution;
-  let questionText;
-
-  switch (operator) {
-    case "plus":
-      solution = num1 + num2;
-      questionText = `${convertNumberToWords(num1)} plus ${convertNumberToWords(num2)}`;
-      break;
-    case "moins":
-      solution = num1 - num2;
-      questionText = `${convertNumberToWords(num1)} moins ${convertNumberToWords(num2)}`;
-      break;
-    case "fois":
-      solution = num1 * num2;
-      questionText = `${convertNumberToWords(num1)} fois ${convertNumberToWords(num2)}`;
-      break;
-    default:
-      solution = 0;
-      questionText = "";
+  // UX : Éviter les résultats négatifs pour l'opérateur "moins"
+  if (operator === "moins" && num1 < num2) {
+    [num1, num2] = [num2, num1]; // On inverse les deux nombres
   }
+
+  let solution;
+  let questionText = `${convertNumberToWords(num1)} ${operator} ${convertNumberToWords(num2)}`;
+
+  if (operator === "plus") solution = num1 + num2;
+  else if (operator === "moins") solution = num1 - num2;
+  else solution = num1 * num2;
+
+  questionElement.textContent = questionText;
+  questionElement.dataset.solution = solution;
+  
+  // On stocke aussi l'opération dans des champs cachés pour le PHP (Optionnel mais conseillé)
+  let form = document.getElementById("contact-form");
+  if (!document.getElementById("captcha_op")) {
+      form.insertAdjacentHTML('beforeend', `<input type="hidden" name="c_n1" value="${num1}"><input type="hidden" name="c_n2" value="${num2}"><input type="hidden" name="c_op" value="${operator}">`);
+  } else {
+      document.getElementsByName("c_n1")[0].value = num1;
+      document.getElementsByName("c_n2")[0].value = num2;
+      document.getElementsByName("c_op")[0].value = operator;
+  }
+}
 
   questionElement.textContent = questionText;
   questionElement.dataset.solution = solution;
