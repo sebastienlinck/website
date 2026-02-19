@@ -15,7 +15,7 @@
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?page=$1 [L,QSA]
+    RewriteRule ^(.+)$ index.php?page=$1 [L,QSA]
 </IfModule>
 
 # 3. PERFORMANCE (Cache)
