@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', FALSE);
-setlocale(LC_TIME, 'fr_FR.utf8', 'fr_FR', 'fra');
 
 // --- GESTION SESSION &amp; COOKIES ---
 session_set_cookie_params([
@@ -9,12 +8,9 @@ session_set_cookie_params([
 	'secure' => true,
 	'httponly' => true,
 ]);
-session_start();
 
 $cookie_name = "__Secure-cookieDef";
 $cookie_accepted = isset($_COOKIE[$cookie_name]);
-
-header("Content-Security-Policy: script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com;");
 
 // Gestion de l'acceptation via URL
 if (isset($_GET['accept_cookies']) && $_GET['accept_cookies'] == 'true' && !$cookie_accepted) {
