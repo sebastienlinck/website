@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
           // On cible bien sendmail.php
-          const response = await fetch("sendmail.php", {
+          const response = await fetch("./pages/sendmail.php", {
             method: "POST",
             body: formData,
           });
