@@ -89,7 +89,7 @@ function showStatusMessage(message, type, container) {
   `;
 }
 
-/* --- GESTION DU CAPTCHA AVANCÉ --- */function generateCaptcha() {
+/* --- GESTION DU CAPTCHA AVANCÉ --- */ function generateCaptcha() {
   const questionElement = document.getElementById("captcha-question");
   const refreshButton = document.getElementById("refresh-captcha");
   if (!questionElement || !refreshButton) return;
@@ -113,22 +113,19 @@ function showStatusMessage(message, type, container) {
 
   questionElement.textContent = questionText;
   questionElement.dataset.solution = solution;
-  
+
   // On stocke aussi l'opération dans des champs cachés pour le PHP (Optionnel mais conseillé)
   let form = document.getElementById("contact-form");
   if (!document.getElementById("captcha_op")) {
-      form.insertAdjacentHTML('beforeend', `<input type="hidden" name="c_n1" value="${num1}"><input type="hidden" name="c_n2" value="${num2}"><input type="hidden" name="c_op" value="${operator}">`);
+    form.insertAdjacentHTML(
+      "beforeend",
+      `<input type="hidden" name="c_n1" value="${num1}"><input type="hidden" name="c_n2" value="${num2}"><input type="hidden" name="c_op" value="${operator}">`,
+    );
   } else {
-      document.getElementsByName("c_n1")[0].value = num1;
-      document.getElementsByName("c_n2")[0].value = num2;
-      document.getElementsByName("c_op")[0].value = operator;
+    document.getElementsByName("c_n1")[0].value = num1;
+    document.getElementsByName("c_n2")[0].value = num2;
+    document.getElementsByName("c_op")[0].value = operator;
   }
-}
-
-  questionElement.textContent = questionText;
-  questionElement.dataset.solution = solution;
-
-  refreshButton.addEventListener("click", generateCaptcha, { once: true });
 }
 
 function checkCaptchaAndUpdateButton() {
