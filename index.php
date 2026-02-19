@@ -36,7 +36,7 @@ $auth_pages = array(
 		'url' => './views/accueil.html',
 		'nom' => 'Site personnel',
 		'titre_h1' => 'Sébastien Linck',
-		'sous_titre' => 'Enseignant en informatique &amp; Responsable de formation'
+		'sous_titre' => 'Enseignant &amp; Responsable de formation'
 	),
 	'enseignements' => array(
 		'url' => './views/enseignements.html',
