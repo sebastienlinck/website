@@ -465,12 +465,11 @@ input[type="submit"] {
 
 /* --- FOOTER --- */
 footer {
-  margin-top: auto;
-  padding: 2rem 0;
+  padding-top: 1rem;
   border-top: 2px solid var(--border);
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: var(--gap);
   color: var(--text-muted);
   font-weight: 600;
 }
@@ -553,5 +552,10 @@ footer a {
   }
   .cols-2 {
     grid-template-columns: 1fr;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
 }
