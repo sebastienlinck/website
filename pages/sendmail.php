@@ -1,60 +1,62 @@
 <?php
 header('Content-Type: application/json');
 
+// Inclusion des classes PHPMailer
+$path = __DIR__ . '/PHPMailer/'; // Ajustez le chemin si nécessaire
+require $path . 'Exception.php';
+require $path . 'PHPMailer.php';
+require $path . 'SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 $response = ['success' => false, 'message' => ''];
 
-// Traitement du formulaire uniquement si envoyé
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['envoyer'])) {
-  // 1. PROTECTION HONEYPOT (Anti-Robot)
+
+  // 1. Honeypot
   if (!empty($_POST['website_check'])) {
-    die(json_encode(['success' => false, 'message' => '']));
+    exit;
   }
 
-  // 2. NETTOYAGE DES ENTRÉES
-  $nom_saisi = strip_tags(trim($_POST['nom'] ?? ''));
-  $email_saisi = filter_var(trim($_POST['mail'] ?? ''), FILTER_SANITIZE_EMAIL);
-  $message_saisi = strip_tags(trim($_POST['message'] ?? ''));
+  // 2. Nettoyage
+  $nom = strip_tags(trim($_POST['nom'] ?? ''));
+  $email = filter_var(trim($_POST['mail'] ?? ''), FILTER_SANITIZE_EMAIL);
+  $message = strip_tags(trim($_POST['message'] ?? ''));
 
-  // 3. VALIDATION
-  if (empty($nom_saisi) || empty($message_saisi) || !filter_var($email_saisi, FILTER_VALIDATE_EMAIL)) {
-    $response['message'] = "Merci de vérifier votre email et de remplir tous les champs.";
+  // 3. Validation
+  if (empty($nom) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $response['message'] = "Veuillez vérifier les informations saisies.";
   } else {
-    // 4. PRÉPARATION DE L'EMAIL
-    $to = 'contact@slinck.com';
-    $subject = 'Message de ' . $nom_saisi . ' (via slinck.com)';
-    $headers = [
-      'MIME-Version: 1.0',
-      'Content-type: text/html; charset=utf-8',
-      'From: contact@slinck.com',
-      'Reply-To: ' . $email_saisi,
-      'X-Mailer: PHP/' . phpversion()
-    ];
-    $body = "
-      <html>
-      <head>
-        <title>Nouveau message de $nom_saisi</title>
-      </head>
-      <body>
-        <div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd;'>
-          <h2 style='color: #333;'>Nouveau message reçu</h2>
-          <p><strong>De :</strong> $nom_saisi</p>
-          <p><strong>Email :</strong> <a href='mailto:$email_saisi'>$email_saisi</a></p>
-          <hr>
-          <p style='white-space: pre-line;'>" . htmlspecialchars($message_saisi) . "</p>
-        </div>
-      </body>
-      </html>
-    ";
+    $mail = new PHPMailer(true);
+    try {
+      // Configuration SMTP (Paramètres de votre premier fichier)
+      $mail->isSMTP();
+      $mail->Host       = 'slinck.com';
+      $mail->SMTPAuth   = true;
+      $mail->Username   = 'contact@slinck.com';
+      $mail->Password   = '@sh417aH8';
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+      $mail->Port       = 465;
+      $mail->CharSet    = 'UTF-8';
 
-    // 5. ENVOI
-    if (mail($to, $subject, $body, implode("\r\n", $headers))) {
+      // Destinataires
+      $mail->setFrom('contact@slinck.com', 'Site Slinck');
+      $mail->addAddress('contact@slinck.com');
+      $mail->addReplyTo($email, $nom);
+
+      // Contenu
+      $mail->isHTML(true);
+      $mail->Subject = "Nouveau message de $nom";
+      $mail->Body    = "<strong>Nom:</strong> $nom<br><strong>Email:</strong> $email<hr>" . nl2br(htmlspecialchars($message));
+
+      $mail->send();
       $response['success'] = true;
       $response['message'] = "Votre message a bien été envoyé.";
-    } else {
-      $response['message'] = "Erreur technique lors de l'envoi du message.";
+    } catch (Exception $e) {
+      $response['message'] = "Erreur technique : {$mail->ErrorInfo}";
     }
   }
 }
 
 echo json_encode($response);
-exit;

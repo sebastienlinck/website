@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-          const response = await fetch("contact.php", {
+          const response = await fetch("sendmail.php", {
             method: "POST",
             body: formData,
           });
