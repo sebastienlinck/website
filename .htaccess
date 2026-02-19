@@ -39,8 +39,7 @@ AddType image/webp .webp
 
     # Content-Security-Policy (CSP): Politique de base pour se protéger du XSS. À adapter si vous utilisez des services externes.
 
-Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com; img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;" # Referrer-Policy: Protège contre la fuite d'informations sensibles dans l'URL de référence.
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com; img-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;"Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
     # Permissions-Policy: Bloque les APIs du navigateur (caméra, micro, etc.) si non nécessaires.
     Header always set Permissions-Policy "geolocation='none', camera='none', microphone='none', payment='self'"
